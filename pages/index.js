@@ -47,12 +47,12 @@ export default function Home() {
         <div className={styles.searchWrap}>
           <input className={styles.searchInput} type="text" placeholder="Search 100 topics..." value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
-       <Link href="/travel" style={{fontSize:'12px',color:'#1D9E75',textDecoration:'none',padding:'6px 12px',border:'1px solid #1D9E75',borderRadius:'16px',marginRight:'8px',flexShrink:0}}>✈ Travel</Link>
-<Link href="/pro" className={styles.proBadge}>Pro ✦</Link>
-<div style={{display:'flex',alignItems:'center',gap:'8px',flexShrink:0}}>
+        <div style={{display:'flex',alignItems:'center',gap:'8px',flexShrink:0}}>
           <Link href="/travel" style={{fontSize:'12px',color:'#1D9E75',textDecoration:'none',padding:'6px 12px',border:'1px solid #1D9E75',borderRadius:'16px'}}>✈ Travel</Link>
           <Link href="/pro" className={styles.proBadge}>Pro ✦</Link>
         </div>
+      </nav>
+
       <section className={styles.hero}>
         <div className={styles.heroEyebrow}>🌍 The world's most viewed videos — ranked</div>
         <h1 className={styles.heroTitle}>100 TOPICS.<br /><em>BILLIONS</em> OF VIEWS.</h1>
@@ -83,7 +83,7 @@ export default function Home() {
       </div>
 
       <div className={styles.gridHeader}>
-        <span className={styles.gridLabel}>{filtered.length === 100 ? 'All 100 topics — click any to see the world\'s most viewed videos' : `Showing ${filtered.length} topics`}</span>
+        <span className={styles.gridLabel}>{filtered.length === 100 ? 'Showing all 100 topics' : `Showing ${filtered.length} topics`}</span>
         <span className={styles.gridCount}>{filtered.length} topics</span>
       </div>
 
