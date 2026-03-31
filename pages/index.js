@@ -47,8 +47,8 @@ export default function Home() {
         <div className={styles.searchWrap}>
           <input className={styles.searchInput} type="text" placeholder="Search 100 topics..." value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
-        <Link href="/pro" className={styles.proBadge}>Pro ✦</Link>
-      </nav>
+       <Link href="/travel" style={{fontSize:'12px',color:'#1D9E75',textDecoration:'none',padding:'6px 12px',border:'1px solid #1D9E75',borderRadius:'16px',marginRight:'8px',flexShrink:0}}>✈ Travel</Link>
+<Link href="/pro" className={styles.proBadge}>Pro ✦</Link>
 
       <section className={styles.hero}>
         <div className={styles.heroEyebrow}>🌍 The world's most viewed videos — ranked</div>
