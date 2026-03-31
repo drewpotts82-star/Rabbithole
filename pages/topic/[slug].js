@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import topics from '../../data/topics';
+import videoData from '../../data/videoData';
 
 export async function getStaticPaths() {
   const paths = topics.map((t) => ({ params: { slug: t.slug } }));
@@ -10,13 +11,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const topic = topics.find((t) => t.slug === params.slug);
   const related = topics.filter((t) => t.category === topic.category && t.slug !== topic.slug).slice(0, 6);
-  return { props: { topic, related } };
+  const videos = videoData[params.slug] || [];
+  return { props: { topic, related, videos } };
 }
 
 const tierColors = { gold: '#EF9F27', silver: '#B4B2A9', bronze: '#D85A30' };
-const fakeViews = ['892M','741M','624M','580M','498M','441M','389M','312M','267M','198M'];
 
-export default function TopicPage({ topic, related }) {
+export default function TopicPage({ topic, related, videos }) {
   return (
     <div style={{background:'#111110',minHeight:'100vh',color:'#f0efe9',fontFamily:'DM Sans, sans-serif'}}>
       <Head>
@@ -46,28 +47,36 @@ export default function TopicPage({ topic, related }) {
       <div style={{display:'flex',alignItems:'center',gap:'12px',padding:'14px 24px',background:'#1e1e1c',borderBottom:'1px solid #333331'}}>
         <div style={{fontSize:'24px'}}>{topic.emoji}</div>
         <div style={{flex:1}}>
-          <strong style={{display:'block',fontSize:'13px',color:'#f0efe9',marginBottom:'2px'}}>Gear & products from these videos</strong>
-          <span style={{fontSize:'11px',color:'#777672'}}>{topic.affText} — shop what the pros use</span>
+          <strong style={{display:'block',fontSize:'13px',color:'#f0efe9',marginBottom:'2px'}}>Gear from these videos</strong>
+          <span style={{fontSize:'11px',color:'#777672'}}>{topic.affText}</span>
         </div>
         <a href={topic.affLink} target="_blank" rel="noopener noreferrer" style={{background:'#1D9E75',color:'#fff',padding:'8px 18px',borderRadius:'20px',fontSize:'12px',fontWeight:'500',textDecoration:'none'}}>Shop now →</a>
       </div>
 
       <div style={{padding:'24px',maxWidth:'800px',margin:'0 auto'}}>
-        <h2 style={{fontFamily:'Bebas Neue, sans-serif',fontSize:'22px',letterSpacing:'1px',color:'#f0efe9',marginBottom:'14px'}}>Top 10 videos of all time</h2>
-        {topic.videos.map((video, i) => (
-          <div key={i} style={{display:'flex',alignItems:'center',gap:'12px',padding:'10px 12px',borderRadius:'8px',marginBottom:'2px',cursor:'pointer'}}>
-            <div style={{fontFamily:'Bebas Neue, sans-serif',fontSize:'22px',color:'#444441',width:'28px',textAlign:'center',flexShrink:0}}>{i + 1}</div>
-            <div style={{width:'72px',height:'42px',borderRadius:'6px',display:'flex',alignItems:'center',justifyContent:'center',background:topic.bg,flexShrink:0,fontSize:'20px'}}>{topic.emoji}</div>
-            <div style={{flex:1,minWidth:0}}>
-              <div style={{fontSize:'13px',fontWeight:'500',color:'#f0efe9',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{video}</div>
-              <div style={{fontSize:'11px',color:'#777672',marginTop:'2px'}}>YouTube · {topic.name}</div>
+        <h2 style={{fontFamily:'Bebas Neue, sans-serif',fontSize:'22px',letterSpacing:'1px',color:'#f0efe9',marginBottom:'16px'}}>Top 10 videos of all time</h2>
+
+        {videos.length > 0 ? videos.slice(0,10).map((video, i) => (
+          <div key={i} style={{marginBottom:'16px',borderRadius:'10px',overflow:'hidden',background:'#1e1e1c',border:'1px solid #333331'}}>
+            <div style={{position:'relative',paddingBottom:'56.25%',height:0}}>
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.title}
+                style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',border:'none'}}
+                allowFullScreen
+              />
             </div>
-            <div style={{fontSize:'12px',color:'#1D9E75',whiteSpace:'nowrap',flexShrink:0}}>{fakeViews[i]}</div>
+            <div style={{padding:'10px 14px',display:'flex',alignItems:'center',gap:'10px'}}>
+              <div style={{fontFamily:'Bebas Neue, sans-serif',fontSize:'20px',color:'#444441',minWidth:'28px'}}>{i+1}</div>
+              <div style={{fontSize:'13px',color:'#f0efe9',fontWeight:'500'}}>{video.title}</div>
+            </div>
           </div>
-        ))}
+        )) : (
+          <p style={{color:'#777672'}}>Videos coming soon!</p>
+        )}
       </div>
 
-      <div style={{margin:'8px 24px 24px',maxWidth:'752px',marginLeft:'auto',marginRight:'auto'}}>
+      <div style={{margin:'0 24px 24px',maxWidth:'752px',marginLeft:'auto',marginRight:'auto'}}>
         <div style={{background:'#1e1e1c',border:'1px solid #333331',borderRadius:'12px',padding:'20px 24px',textAlign:'center'}}>
           <h3 style={{fontFamily:'Bebas Neue, sans-serif',fontSize:'24px',color:'#f0efe9',marginBottom:'6px'}}>Love {topic.name}?</h3>
           <p style={{fontSize:'13px',color:'#777672',marginBottom:'14px'}}>Shop the exact gear featured in these videos.</p>
