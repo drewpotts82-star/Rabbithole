@@ -49,7 +49,10 @@ export default function Home() {
         </div>
        <Link href="/travel" style={{fontSize:'12px',color:'#1D9E75',textDecoration:'none',padding:'6px 12px',border:'1px solid #1D9E75',borderRadius:'16px',marginRight:'8px',flexShrink:0}}>✈ Travel</Link>
 <Link href="/pro" className={styles.proBadge}>Pro ✦</Link>
-
+<div style={{display:'flex',alignItems:'center',gap:'8px',flexShrink:0}}>
+          <Link href="/travel" style={{fontSize:'12px',color:'#1D9E75',textDecoration:'none',padding:'6px 12px',border:'1px solid #1D9E75',borderRadius:'16px'}}>✈ Travel</Link>
+          <Link href="/pro" className={styles.proBadge}>Pro ✦</Link>
+        </div>
       <section className={styles.hero}>
         <div className={styles.heroEyebrow}>🌍 The world's most viewed videos — ranked</div>
         <h1 className={styles.heroTitle}>100 TOPICS.<br /><em>BILLIONS</em> OF VIEWS.</h1>
