@@ -3,7 +3,7 @@ const API_KEY = 'AIzaSyAopvOVfJzsuu9eQGQebtabvM61KgJ2wXA';
 
 const topics = [
   { slug: "fishing", query: "fishing world record catch biggest fish" },
-  { slug: "soccer", query: "soccer best goals ever all time" },
+  { slug: "soccer", query: "soccer skills freestyle street football" },
   { slug: "gym", query: "gym workout bodybuilding best ever" },
   { slug: "music-videos", query: "most viewed music video of all time" },
   { slug: "perfume", query: "best perfume fragrance review all time" },
