@@ -1,5 +1,5 @@
 import fs from 'fs';
-const API_KEY = 'AIzaSyAx1LkL9zN4PpG67LORrbYNFp_pJLCDdW0';
+const API_KEY = 'AIzaSyAopvOVfJzsuu9eQGQebtabvM61KgJ2wXA';
 
 const topics = [
   { slug: "fishing", query: "fishing world record catch biggest fish" },
