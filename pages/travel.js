@@ -70,6 +70,44 @@ export default function TravelPage() {
         </div>
       </section>
 
+      
+      {/* Featured This Week */}
+      {(() => {
+        const weekIndex = Math.floor(Date.now() / (7 * 86400000)) % destinations.length;
+        const featured = destinations[weekIndex % destinations.length];
+        const todIndex = Math.floor(Date.now() / 86400000) % destinations.length;
+        const tod = destinations[(todIndex + 1) % destinations.length];
+        return (
+          <div style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
+              {/* Featured This Week */}
+              <div style={{ padding: '16px 20px', border: '1px solid #EF9F27', borderRadius: '12px', background: 'rgba(239,159,39,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ fontSize: '22px' }}>{featured.emoji}</span>
+                  <div>
+                    <div style={{ fontSize: '10px', letterSpacing: '0.1em', color: '#EF9F27', textTransform: 'uppercase', marginBottom: '2px' }}>⭐ Destination of the Week</div>
+                    <div style={{ fontSize: '16px', fontWeight: '600', color: '#f0efe9' }}>{featured.name}</div>
+                    <div style={{ fontSize: '11px', color: '#777672' }}>Changes every Monday</div>
+                  </div>
+                </div>
+                <Link href={`/destination/${featured.slug}`} style={{ background: '#EF9F27', color: '#111110', textDecoration: 'none', padding: '8px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: '600', whiteSpace: 'nowrap' }}>Explore →</Link>
+              </div>
+              {/* Destination of the Day */}
+              <div style={{ padding: '16px 20px', border: '1px solid #2a2a28', borderRadius: '12px', background: '#0d0d0b', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ fontSize: '22px' }}>{tod.emoji}</span>
+                  <div>
+                    <div style={{ fontSize: '10px', letterSpacing: '0.1em', color: '#777672', textTransform: 'uppercase', marginBottom: '2px' }}>📅 Destination of the Day</div>
+                    <div style={{ fontSize: '16px', fontWeight: '600', color: '#f0efe9' }}>{tod.name}</div>
+                    <div style={{ fontSize: '11px', color: '#777672' }}>Changes every day</div>
+                  </div>
+                </div>
+                <Link href={`/destination/${tod.slug}`} style={{ background: '#1D9E75', color: '#fff', textDecoration: 'none', padding: '8px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: '500', whiteSpace: 'nowrap' }}>Visit today →</Link>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
       <div style={{ display: 'flex', gap: '8px', padding: '16px 24px', overflowX: 'auto', borderBottom: '1px solid #333331', scrollbarWidth: 'none' }}>
         {FILTERS.map((f) => (
           <button key={f.value} onClick={() => setActiveFilter(f.value)} style={{ padding: '6px 16px', borderRadius: '20px', border: `1px solid ${activeFilter === f.value ? '#D85A30' : '#333331'}`, color: activeFilter === f.value ? '#fff' : '#777672', background: activeFilter === f.value ? '#D85A30' : 'transparent', fontSize: '12px', whiteSpace: 'nowrap', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif' }}>
