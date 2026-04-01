@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         email: email,
         attributes: { TOPIC: topic || 'general', SOURCE: 'rabbitholevideo.com' },
-        listIds: [2],
+        listIds: [3],
         updateEnabled: true,
       }),
     });
