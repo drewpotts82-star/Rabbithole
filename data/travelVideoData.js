@@ -3250,6 +3250,428 @@ const travelVideoData = {
       "id": "OlncQbaz6u4",
       "title": "WE ATE $426 CRAB LEGS IN ALASKA!"
     }
-  ]
+  ],
+  "phuket": [
+    {
+      "id": "Z6usE8yFSUU",
+      "title": "Bangkok Trip ₹40,000 Mein! Complete Budget Guide #bangkok #thailandtrip #tripdust #shorts"
+    },
+    {
+      "id": "fVBVb8qSuNU",
+      "title": "Street Food Phuket!! ULTIMATE CRISPY ROTI + Best Thai Food, Beaches, Attractions in Thailand!!"
+    },
+    {
+      "id": "4ehNo4zhwkQ",
+      "title": "$100 Thailand Street Food Challenge!! Budget Bombshell!!"
+    },
+    {
+      "id": "oJUXt9oYbeo",
+      "title": "Phuket Bangla road Beautiful World 🌎Ladies #banglaroad #phuket #thailand #patongbeach #2023"
+    },
+    {
+      "id": "FrmEiMnGMIY",
+      "title": "Bangkok Shopping ✨🎉 | #thailand #vibewithpaaru #shorts"
+    },
+    {
+      "id": "T-ZC6UlpNAI",
+      "title": "Best Seafood in Phuket!! 🇹🇭 GIANT LOBSTER + Crab Curry in Phuket, Thailand!!"
+    },
+    {
+      "id": "DUtcq_2y1jg",
+      "title": "ফুকেটে মাত্র 250 টাকায় Thai Massage 🇹🇭 Phuket Nightlife। Bangla Road । Best Nightlife Thailand"
+    },
+    {
+      "id": "592BjAZBgT4",
+      "title": "The most underrated hotel in Bangkok, Thailand 🇹🇭"
+    },
+    {
+      "id": "F2PTz6If3sY",
+      "title": "Thai Street Food - BEST $5 MEALS in Phuket, Thailand!! 🇹🇭"
+    },
+    {
+      "id": "bpd6uGHpoYY",
+      "title": "Thai Street Food Tour!! 🇹🇭 BEST FOOD at Chatuchak Weekend Market, Bangkok!"
+    }
+  ],
+  "chiang-mai": [
+    {
+      "id": "4ehNo4zhwkQ",
+      "title": "$100 Thailand Street Food Challenge!! Budget Bombshell!!"
+    },
+    {
+      "id": "rVUw-ZnYe18",
+      "title": "THAI FOOD HEAVEN in Chiang Mai, Thailand! What you SHOULD be eating in Thailand."
+    },
+    {
+      "id": "1fxcu6NzmVw",
+      "title": "Unique and RARE THAI FOOD in Chiang Mai, Thailand! | Best Restaurants in Chiang Mai Tour"
+    },
+    {
+      "id": "2V_gcPKXYDs",
+      "title": "Best Beach in the World | Maya Bay | Thailand Travel Vlog | Phi Phi Island"
+    },
+    {
+      "id": "1j-q5RgOfwI",
+      "title": "Thailand Street Food - INSANE WHOLE HERBAL CHICKEN + 11 Best Foods to Try in Chiang Mai!!"
+    },
+    {
+      "id": "2hV2MQpTdCg",
+      "title": "Michelin Guide Street Food Tour!! $0.64 THAI CURRY NOODLES in Chiang Mai, Thailand!"
+    },
+    {
+      "id": "k7RDbONGSgY",
+      "title": "bangkok in 4 days"
+    },
+    {
+      "id": "D5IHtepIvFQ",
+      "title": "The Ultimate 420 Experience In Thailand (Bangkok + Koh Samui Travel Vlog)"
+    },
+    {
+      "id": "BWqB7KGHTq4",
+      "title": "Discover Thailand | The Most Amazing Places in Thailand | Thailand Travel Documentary 4K"
+    },
+    {
+      "id": "D2A-Jf_u9V4",
+      "title": "First Hour In BANGKOK - 15 Worst Arrival Mistakes To Avoid"
+    }
+  ],
+  "penang": [
+    {
+      "id": "_lZjm3mMl3g",
+      "title": "Malaysia STREET FOOD Heaven!! 🇲🇾 27 Meals Best Malaysian Food in Penang! [Full Documentary]"
+    },
+    {
+      "id": "iVsn8X5K7pw",
+      "title": "Ultimate MALAYSIAN STREET FOOD in Penang!! 🇲🇾 5 MUST-EAT Foods in Penang, Malaysia!!"
+    },
+    {
+      "id": "rakfl1KCaMk",
+      "title": "I Ate the Best Malaysian STREET FOOD for 24 Hours in Kuala Lumpur!! 🇲🇾"
+    },
+    {
+      "id": "javHnh7nu2k",
+      "title": "14 Hours Eating Best INDIAN STREET FOOD in Penang, Malaysia!! 🇲🇾"
+    },
+    {
+      "id": "zJu_nYLqKCk",
+      "title": "Only eating street food for a full day in Penang 🍜🍛"
+    },
+    {
+      "id": "x0TEgAoMJFQ",
+      "title": "Chennai To Malaysia✈️ | Flight Food❌ | Soru Irundha Podhum"
+    },
+    {
+      "id": "6UKN1YpVweg",
+      "title": "BEST 10 STREET FOOD in PENANG MALAYSIA l Should be on your bucket list!"
+    },
+    {
+      "id": "x8NvVj5i9IE",
+      "title": "BEST 10 KUALA LUMPUR MICHELIN STREET FOOD / Malaysia Michelin Guide"
+    },
+    {
+      "id": "OZgupBqrMI0",
+      "title": "Avoid This Man in Penang, Malaysia! 🇲🇾"
+    },
+    {
+      "id": "S2NDPhOeSfI",
+      "title": "14 Days in MALAYSIA Vlog: Kuala Lumpur, Langkawi, Penang, Cameron Highlands | Itinerary &amp; Guide"
+    },
+    {
+      "id": "SqoozK8twsc",
+      "title": "PENANG, MALAYSIA | 10 Awesome Things To Do On Penang Island"
+    },
+    {
+      "id": "Gb2hMQaRvA0",
+      "title": "20 Best Food in Penang | Penang Street Food | What to Eat in Penang"
+    },
+    {
+      "id": "eWkskhBHAHI",
+      "title": "4 days in penang"
+    },
+    {
+      "id": "a_d65uKurck",
+      "title": "Malaysia Trip Budget | Malaysia Trip under ₹45,000"
+    },
+    {
+      "id": "QMxdmJ_2Ubg",
+      "title": "We took Malaysia&#39;s Business Class Train Kuala Lumpur to Penang 🇲🇾"
+    },
+    {
+      "id": "F6w2jD-PpT0",
+      "title": "HUGE Penang STREET FOOD Guide - Street Food in Malaysia | DURIAN + Laksa &amp; more w/ Chasing a Plate"
+    },
+    {
+      "id": "C_5kC3J4T3o",
+      "title": "Best Restaurant in Penang, Malaysia - 9 Must Try Peranakan Foods! | Auntie Gaik Lean&#39;s"
+    },
+    {
+      "id": "4xDeb_UEjaA",
+      "title": "Top 7 things to do in Kuala Lumpur, Malaysia! | World Travel"
+    },
+    {
+      "id": "gQ7bxektkU8",
+      "title": "20+ Things to Do in Penang, Malaysia - 4K Penang Travel Guide"
+    },
+    {
+      "id": "EgJZ0yIePow",
+      "title": "Malaysia Tour Guide 2025 | India to Malaysia Itinerary, Trip Plan &amp; Budget in Hindi"
+    },
+    {
+      "id": "fsNT0C20lj4",
+      "title": "Top 10 Tourist Places You Must Visit Near Kuala Lumpur in Malaysia | 3-Day Complete Guide"
+    },
+    {
+      "id": "YLlOmo2hOnI",
+      "title": "What To Do And Eat In Kuching, Malaysia! | 4D3N Travel Guide"
+    },
+    {
+      "id": "sDlqdczymhM",
+      "title": "8 THINGS TO DO in George Town, PENANG Travel Guide"
+    },
+    {
+      "id": "ajxkQYxLNdY",
+      "title": "3D2N Solo Trip to Penang, Malaysia | Weekend Getaway from Singapore | Travel Vlog"
+    },
+    {
+      "id": "gMQ3vvRTPBE",
+      "title": "Penang Malaysia Vlog 🇲🇾 George Town, Best Malaysian Food, Cafe Hopping, Malaysia Travel Guide 2025"
+    }
+  ],
+  "lombok": [
+    {
+      "id": "PXhexkrHq1c",
+      "title": "DON&#39;T go HERE in BALI!! ❌ #bali #traveltips #indonesia #ubud #canggu #monkeys  @Christian.Grossi"
+    },
+    {
+      "id": "UrykleUEkpY",
+      "title": "Street Food in Lombok - BEST GRILLED CHICKEN in the WORLD!!  Mataram, Indonesia!"
+    },
+    {
+      "id": "z4Coqn1a6t4",
+      "title": "Best Things To Do in Bali 4K"
+    },
+    {
+      "id": "5v6u_U6QRQA",
+      "title": "Wonders of Indonesia | The Most Amazing Places in Indonesia | Travel Video 4K"
+    },
+    {
+      "id": "IwtNFzX0ni8",
+      "title": "10 Best Places to Visit in Indonesia - Travel Video"
+    },
+    {
+      "id": "VOZk2XhnOgs",
+      "title": "17 Things I Wish I Knew BEFORE Travelling To BALI"
+    },
+    {
+      "id": "kZ06nOhdr6Q",
+      "title": "Bali 2025 Travel Guide: Best Places to Visit &amp; Things to Do • Ubud, Canggu, Seminyak • Budget Vlog"
+    },
+    {
+      "id": "csFQ8UiZNhY",
+      "title": "29 INCREDIBLE Natural Wonders of Indonesia | Best Places to Visit in Indonesia 2024"
+    },
+    {
+      "id": "204O_xorrHk",
+      "title": "Indonesia The Ultimate Travel Guide Best Places to Visit | Explore The Emerald of the Equator"
+    },
+    {
+      "id": "q1NrZ2_FKpE",
+      "title": "13 Best Places to Visit in Bali, Indonesia 🇮🇩"
+    }
+  ],
+  "bhutan": [
+    {
+      "id": "H-ong96EL3o",
+      "title": "Unbelievable Facts about Bhutan!"
+    },
+    {
+      "id": "o6QuNgPRuXk",
+      "title": "THIS IS LIFE IN BHUTAN: The most isolated country in the world?"
+    },
+    {
+      "id": "9r8Ccy_j9wQ",
+      "title": "3 SHOCKING Mistakes Tourists Make in Bhutan"
+    },
+    {
+      "id": "_lcOX55Ef70",
+      "title": "Solo in Paro Bhutan | Tiger&#39;s Nest visit | Bhutan Travel Guide | Bhutan Series Ep 1 | Tanya Khanijow"
+    },
+    {
+      "id": "W4nKWBcICyQ",
+      "title": "Bhutan 10 Day Itinerary: Festivals, Off Beat Wonders &amp; Cultural Secrets |One World Ep4 | Curly Tales"
+    },
+    {
+      "id": "bsfZVgLYNtg",
+      "title": "Bhutan Itinerary 🇧🇹 Magical and Underrated Summer Destination ✨"
+    },
+    {
+      "id": "DPpaZMZ0lhU",
+      "title": "Things to know before you plan a trip to Bhutan! (Part 2) #travel #Bhutan #ytshorts #shorts"
+    },
+    {
+      "id": "qweMQg-Wg94",
+      "title": "Bhutan Itinerary #bhutan #travelguide"
+    },
+    {
+      "id": "c6paDig_s24",
+      "title": "Top Tips for your Bhutan Trip"
+    },
+    {
+      "id": "ChtlBBurFlU",
+      "title": "My Solo Trip to BHUTAN 🇧🇹 | Latest Updates You Need to Know"
+    }
+  ],
+  "mekong-vietnam": [
+    {
+      "id": "nBdrgGJsCJo",
+      "title": "Amazing Places to visit in Vietnam - Travel Video"
+    },
+    {
+      "id": "wk4lP5t-Sw0",
+      "title": "Wonders of Vietnam | Where Time Flows Differently | Most Amazing Places in Vietnam | 4K"
+    },
+    {
+      "id": "Cqawiry5HTY",
+      "title": "10 Things We Wish We Knew BEFORE visiting VIETNAM"
+    },
+    {
+      "id": "w37yakVG2OE",
+      "title": "9 MISTAKES I MADE TRAVELING VIETNAM 🇻🇳 (Watch Before You Go)"
+    },
+    {
+      "id": "tqWp3D4MPWE",
+      "title": "Don’t Make These 4 Mistakes in Vietnam!🇻🇳 #travel #vietnamtravel #hochiminh #hanoi #vietnamilove"
+    },
+    {
+      "id": "Mvsa17OMq-I",
+      "title": "Best Things To Do in Ho Chi Minh City Vietnam 4K"
+    },
+    {
+      "id": "6rHZa1n1WQk",
+      "title": "Going underground into the Cu Chi tunnels from the vietnam war #travel #vietnam"
+    },
+    {
+      "id": "HjNyj2q_FVU",
+      "title": "Vietnam Budget Trip 2026🇻🇳  for 7/10/15 Days | Complete Itinerary, Visa, Tour &amp; Tips from India"
+    },
+    {
+      "id": "Bt7khiH5sNc",
+      "title": "Phu Quoc Vietnam 🇻🇳 Complete Travel Guide 2025 for 2/3/4 Days | Visa Free, Tour &amp; Tips from India"
+    },
+    {
+      "id": "JvTzj71UlCg",
+      "title": "Vietnam Travel Guide: Hanoi, Ha Long Bay, Ho Chi Minh"
+    }
+  ],
+  "cinque-terre": [
+    {
+      "id": "WP316ABiTt0",
+      "title": "Italy&#39;s Riviera: Cinque Terre"
+    },
+    {
+      "id": "02jQiIkEGh8",
+      "title": "Top 100 Places To Visit In Italy - Ultimate Travel Guide"
+    },
+    {
+      "id": "zS4AP0Q8L8g",
+      "title": "Top 10 Places To Visit In Italy - 4K Travel Guide"
+    },
+    {
+      "id": "Mupom-sgjAU",
+      "title": "Top 10 Places On The Amalfi Coast - 4K Travel Guide"
+    },
+    {
+      "id": "6BOgEfHMgrc",
+      "title": "Italy 4K - Relaxing Travel Guide Film with Calming Music and Nature Sounds"
+    },
+    {
+      "id": "KJErL3KkD_8",
+      "title": "Florentine Delights and Tuscan Side-Trips"
+    },
+    {
+      "id": "gkFRfuU4p7g",
+      "title": "Avoid These 9 Tourist SCAMS In Italy!"
+    },
+    {
+      "id": "XBbzOKhG1bQ",
+      "title": "Best Things To Do in Rome Italy 4K"
+    },
+    {
+      "id": "UsnEX58UPTI",
+      "title": "TOP 10 Things to do in FLORENCE | Italy Travel Guide 4K"
+    },
+    {
+      "id": "r3qxd_iGFl4",
+      "title": "Positano: 6 Reasons NOT To Visit | Positano, Amalfi Coast Italy Travel Guide"
+    }
+  ],
+  "bruges": [
+    {
+      "id": "gZuI-dR9pfU",
+      "title": "Belgium: Bruges and Brussels"
+    },
+    {
+      "id": "6PIbdDDtugk",
+      "title": "I Visited Every Country in Europe. Here&#39;s My Rankings"
+    },
+    {
+      "id": "7bJQ0t5tZi4",
+      "title": "The Most Boring City In The World 🌎 #brussels #belgium #travel"
+    },
+    {
+      "id": "o0PT6bOwfFM",
+      "title": "10 Best Places to Visit in Belgium - Travel Video"
+    },
+    {
+      "id": "P3RO1JbL02U",
+      "title": "BRUSSELS, BELGIUM | 10 BEST Things To Do In &amp; Around Brussels"
+    },
+    {
+      "id": "uR3pTLq4vAM",
+      "title": "Wonders of Belgium | The Most Amazing Places in Belgium | Travel Video 4K"
+    },
+    {
+      "id": "_xRUeJN-E8A",
+      "title": "BRUGES, BELGIUM | 5 Things You SHOULD do in Bruges!"
+    },
+    {
+      "id": "g-fmCxT3HNA",
+      "title": "BELGIUM VLOG || exploring fairytale cities Brussels, Bruges, &amp; Ghent! 🇧🇪"
+    },
+    {
+      "id": "JzcBqvhiaiY",
+      "title": "Visiting Best Town (Ghent) &amp; Biggest Jain Temple in Belgium"
+    },
+    {
+      "id": "R274mFeJDOk",
+      "title": "7 Things To Know Before Visiting Belgium"
+    }
+  ],
+  "kotor": [],
+  "madeira": [],
+  "azores": [],
+  "crete": [],
+  "amalfi-positano": [],
+  "buenos-aires": [],
+  "tulum": [],
+  "cancun": [],
+  "vancouver": [],
+  "sedona": [],
+  "nashville": [],
+  "peru-cusco": [],
+  "zanzibar": [],
+  "rwanda": [],
+  "mauritius": [],
+  "oman": [],
+  "georgia-country": [],
+  "abu-dhabi": [],
+  "gold-coast": [],
+  "tasmania": [],
+  "whitsundays": [],
+  "queenstown-nz": [],
+  "cook-islands": [],
+  "bora-bora": [],
+  "colombo": [],
+  "lisbon-sintra": []
 };
 export default travelVideoData;

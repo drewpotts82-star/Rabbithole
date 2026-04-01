@@ -1,5 +1,5 @@
 import fs from 'fs';
-const API_KEY = 'AIzaSyCQE9i0otgEMDqKOo8RqLgGg8kGRgZ8mpQ';
+const API_KEY = 'AIzaSyBXPoiKwJYapFo0wqTJ5w1xUUkgpTWXE_k';
 
 const destinations = [
   { slug: "bali", query: "Bali Indonesia travel guide best" },
@@ -68,6 +68,40 @@ const destinations = [
   { slug: "fiji", query: "Fiji travel guide best islands" },
   { slug: "melbourne", query: "Melbourne Australia travel guide best" },
   { slug: "alaska", query: "Alaska travel guide best" },
+  { slug: "phuket", query: "Phuket Thailand travel guide best" },
+  { slug: "chiang-mai", query: "Chiang Mai Thailand travel guide best" },
+  { slug: "penang", query: "Penang Malaysia travel food guide" },
+  { slug: "lombok", query: "Lombok Indonesia travel guide best" },
+  { slug: "bhutan", query: "Bhutan travel guide tigers nest" },
+  { slug: "mekong-vietnam", query: "Mekong Delta Vietnam travel guide" },
+  { slug: "cinque-terre", query: "Cinque Terre Italy travel guide best" },
+  { slug: "bruges", query: "Bruges Belgium travel guide best" },
+  { slug: "kotor", query: "Kotor Montenegro travel guide best" },
+  { slug: "madeira", query: "Madeira Portugal travel guide best" },
+  { slug: "azores", query: "Azores Portugal travel guide best" },
+  { slug: "crete", query: "Crete Greece travel guide best" },
+  { slug: "amalfi-positano", query: "Positano Amalfi coast travel guide" },
+  { slug: "buenos-aires", query: "Buenos Aires Argentina travel guide" },
+  { slug: "tulum", query: "Tulum Mexico travel guide cenotes" },
+  { slug: "cancun", query: "Cancun Mexico travel guide best" },
+  { slug: "vancouver", query: "Vancouver Canada travel guide best" },
+  { slug: "sedona", query: "Sedona Arizona travel guide hiking" },
+  { slug: "nashville", query: "Nashville Tennessee travel guide best" },
+  { slug: "peru-cusco", query: "Cusco Peru travel guide best" },
+  { slug: "zanzibar", query: "Zanzibar Tanzania travel guide best" },
+  { slug: "rwanda", query: "Rwanda gorilla trekking travel guide" },
+  { slug: "mauritius", query: "Mauritius travel guide best beaches" },
+  { slug: "oman", query: "Oman travel guide best muscat" },
+  { slug: "georgia-country", query: "Georgia Tbilisi travel guide best" },
+  { slug: "abu-dhabi", query: "Abu Dhabi UAE travel guide best" },
+  { slug: "gold-coast", query: "Gold Coast Australia travel guide" },
+  { slug: "tasmania", query: "Tasmania Australia travel guide best" },
+  { slug: "whitsundays", query: "Whitsundays Australia sailing guide" },
+  { slug: "queenstown-nz", query: "Queenstown New Zealand travel guide" },
+  { slug: "cook-islands", query: "Cook Islands travel guide best" },
+  { slug: "bora-bora", query: "Bora Bora French Polynesia travel guide" },
+  { slug: "colombo", query: "Colombo Sri Lanka travel guide" },
+  { slug: "lisbon-sintra", query: "Sintra Portugal travel guide palaces" },
 ];
 
 async function fetchTopVideos(query) {

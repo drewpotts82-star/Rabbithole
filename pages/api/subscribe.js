@@ -1,0 +1,44 @@
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const { email, topic } = req.body;
+
+  if (!email || !email.includes('@')) {
+    return res.status(400).json({ error: 'Invalid email' });
+  }
+
+  try {
+    const response = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': process.env.BREVO_API_KEY,
+      },
+      body: JSON.stringify({
+        email: email,
+        attributes: {
+          TOPIC: topic || 'general',
+          SOURCE: 'rabbitholevideo.com',
+        },
+        listIds: [2],
+        updateEnabled: true,
+      }),
+    });
+
+    if (response.status === 201 || response.status === 204) {
+      return res.status(200).json({ success: true });
+    }
+
+    const data = await response.json();
+    if (data.code === 'duplicate_parameter') {
+      return res.status(200).json({ success: true, message: 'Already subscribed' });
+    }
+
+    return res.status(400).json({ error: data.message || 'Failed to subscribe' });
+  } catch (error) {
+    return res.status(500).json({ error: 'Server error' });
+  }
+}
