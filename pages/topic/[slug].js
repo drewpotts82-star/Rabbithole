@@ -161,7 +161,7 @@ export default function TopicPage({ topic, related, videos }) {
                 <button onClick={() => toggleFire(i)} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${fired[i]?'#EF9F27':'#333331'}`, background:fired[i]?'rgba(239,159,39,0.15)':'transparent', color:fired[i]?'#EF9F27':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
                   <span style={{ fontSize:'14px' }}>🔥</span><span>{fired[i]?'Lit':'Fire'}</span>
                 </button>
-                <button onClick={() => toggleSave(i)} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${saved[i]?'#1D9E75':'#333331'}`, background:saved[i]?'rgba(29,158,117,0.15)':'transparent', color:saved[i]?'#1D9E75':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
+                <button onClick={() => { toggleSave(i); setShowSaveBanner(true); }} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${saved[i]?'#1D9E75':'#333331'}`, background:saved[i]?'rgba(29,158,117,0.15)':'transparent', color:saved[i]?'#1D9E75':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
                   <span style={{ fontSize:'14px' }}>{saved[i]?'✓':'+'}</span><span>{saved[i]?'Saved':'Save'}</span>
                 </button>
                 <span style={{ marginLeft:'auto', fontSize:'11px', color:'#444441' }}>{(fakeReacts[i]+(fired[i]?1:0)).toLocaleString()} reactions</span>
