@@ -10,6 +10,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const destination = destinations.find((d) => d.slug === params.slug);
+  if (!destination) return { notFound: true };
   const related = destinations.filter((d) => d.region === destination.region && d.slug !== destination.slug).slice(0, 6);
   const videos = (travelVideoData[params.slug] || []).slice(0, 10);
   return { props: { destination, related, videos } };
