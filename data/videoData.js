@@ -3869,6 +3869,47 @@ const videoData = {
       "title": "Attitude | Stand-up Comedy by Ravi Gupta"
     }
   ],
-  "soccer": []
+  "soccer": [
+    {
+      "id": "As9Q2vg0GvY",
+      "title": "Top 10 Best Goals Ever - FIFA World Cup"
+    },
+    {
+      "id": "qMVGFhgwwbk",
+      "title": "Ronaldo vs Messi - Greatest Goals Ever"
+    },
+    {
+      "id": "Z-6Q2xvjB4k",
+      "title": "Best Street Football Skills 2024"
+    },
+    {
+      "id": "GGBvZgwLHSo",
+      "title": "Neymar Best Skills & Goals"
+    },
+    {
+      "id": "yLs7tJE7T8s",
+      "title": "Top 100 Football Skills Ever"
+    },
+    {
+      "id": "XJNDgDMFkPM",
+      "title": "Mbappe Best Goals & Skills"
+    },
+    {
+      "id": "q-FHkMDpPPQ",
+      "title": "Best Football Freestyle Tricks"
+    },
+    {
+      "id": "u2GqFB6N3ZA",
+      "title": "Top 50 Goals in Football History"
+    },
+    {
+      "id": "Y7UmCCFSMqo",
+      "title": "Best Goalkeeper Saves Ever"
+    },
+    {
+      "id": "dN4FKoQ9vuA",
+      "title": "Ultimate Football Skills Compilation"
+    }
+  ]
 };
 export default videoData;
