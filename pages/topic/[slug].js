@@ -171,15 +171,9 @@ export default function TopicPage({ topic, related, videos }) {
         )) : <p style={{ color:'#777672' }}>Videos coming soon!</p>}
 
         {showSaveBanner && !emailSaved && (
-          <div style={{ background:'#0a2218', border:'1px solid #1D9E75', borderRadius:'12px', padding:'20px', marginBottom:'24px' }}>
-            <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'12px' }}>
-              <span style={{ fontSize:'24px' }}>🔖</span>
-              <div>
-                <div style={{ fontSize:'14px', fontWeight:'500', color:'#f0efe9' }}>Save your watchlist</div>
-                <div style={{ fontSize:'12px', color:'#777672' }}>Get notified when rankings change</div>
-              </div>
-            </div>
-            <div style={{ display:'flex', gap:'8px' }}>
+          <div style={{ position:'fixed', bottom:'0', left:'0', right:'0', background:'#0a2218', borderTop:'1px solid #1D9E75', padding:'16px 24px', zIndex:100, display:'flex', alignItems:'center', justifyContent:'center', gap:'16px', flexWrap:'wrap' }}>
+            <div style={{ fontSize:'14px', fontWeight:'500', color:'#f0efe9', whiteSpace:'nowrap' }}>🔖 Save your watchlist</div>
+            <div style={{ display:'flex', gap:'8px', flex:1, maxWidth:'400px' }}>
               <input type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} style={{ flex:1, background:'#111110', border:'1px solid #333331', borderRadius:'8px', padding:'8px 12px', color:'#f0efe9', fontSize:'13px', fontFamily:'DM Sans, sans-serif', outline:'none' }} />
               <button onClick={saveEmail} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'8px', padding:'8px 16px', fontSize:'13px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap' }}>Save free →</button>
             </div>
