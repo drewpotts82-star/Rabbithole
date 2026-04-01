@@ -61,11 +61,21 @@ export default function TopicPage({ topic, related, videos }) {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=https://www.rabbitholevideo.com/topic/${topic.slug}`, '_blank');
   };
 
-  const saveEmail = () => {
+  const saveEmail = async () => {
     if (email) {
-      setEmailSaved(true);
-      setToast("You're in! We'll notify you when rankings change.");
-      setTimeout(() => setToast(''), 3000);
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, topic: topic.slug }),
+        });
+        setEmailSaved(true);
+        setToast("You're in! We'll notify you when rankings change.");
+        setTimeout(() => setToast(''), 3000);
+      } catch(e) {
+        setToast('Something went wrong. Please try again.');
+        setTimeout(() => setToast(''), 3000);
+      }
     }
   };
 
