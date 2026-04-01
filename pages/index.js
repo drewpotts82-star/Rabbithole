@@ -32,7 +32,7 @@ function getWeekLabel() {
   const sunday = new Date(monday);
   sunday.setDate(monday.getDate() + 6);
   const fmt = (d) => d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
-  return `${fmt(monday)} – ${fmt(sunday)}`;
+  return fmt(monday) + ' - ' + fmt(sunday);
 }
 
 export default function Home() {
@@ -66,10 +66,9 @@ export default function Home() {
         <div className={styles.searchWrap}>
           <input className={styles.searchInput} type="text" placeholder="Search 100 topics..." value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
-        <div style={{ display:'flex', alignItems:'center', gap:'8px', flexShrink:0 }}>
-          <Link href="/travel" style={{ fontSize:'12px', color:'#1D9E75', textDecoration:'none', padding:'6px 12px', border:'1px solid #1D9E75', borderRadius:'16px' }}>✈ Travel</Link>
-          <Link href="/pro" className={styles.proBadge}>Pro ✦</Link>
-        </div>
+        <Link href="/travel" style={{ fontSize:'14px', fontWeight:'500', color:'#1D9E75', textDecoration:'none', padding:'8px 18px', border:'1px solid #1D9E75', borderRadius:'20px', flexShrink:0 }}>
+          ✈ Travel
+        </Link>
       </nav>
 
       <section className={styles.hero}>
@@ -87,11 +86,11 @@ export default function Home() {
         </div>
       </section>
 
-      <div style={{ padding:'16px 24px 0' }}>
-        <Link href={`/topic/${featured.slug}`} style={{ textDecoration:'none', display:'block' }}>
-          <div style={{ background:'#1e1e1c', border:'2px solid #EF9F27', borderRadius:'16px', padding:'20px 24px', display:'flex', alignItems:'center', gap:'20px', cursor:'pointer', position:'relative', overflow:'hidden' }}>
+      <div style={{ padding:'0 24px 0' }}>
+        <Link href={'/topic/' + featured.slug} style={{ textDecoration:'none', display:'block' }}>
+          <div style={{ background:'#1e1e1c', border:'2px solid #EF9F27', borderRadius:'16px', padding:'20px 24px', display:'flex', alignItems:'center', gap:'20px', cursor:'pointer', position:'relative' }}>
             <div style={{ position:'absolute', top:'10px', left:'16px', background:'#EF9F27', color:'#412402', fontSize:'10px', fontWeight:'500', padding:'3px 10px', borderRadius:'10px', letterSpacing:'1px' }}>
-              ⭐ FEATURED THIS WEEK · {weekLabel}
+              FEATURED THIS WEEK · {weekLabel}
             </div>
             <div style={{ fontSize:'56px', marginTop:'20px' }}>{featured.emoji}</div>
             <div style={{ flex:1, marginTop:'20px' }}>
@@ -130,15 +129,15 @@ export default function Home() {
       </div>
 
       <div className={styles.gridHeader}>
-        <span className={styles.gridLabel}>{filtered.length === 100 ? 'Showing all 100 topics' : `Showing ${filtered.length} topics`}</span>
+        <span className={styles.gridLabel}>{filtered.length === 100 ? 'Showing all 100 topics' : 'Showing ' + filtered.length + ' topics'}</span>
         <span className={styles.gridCount}>{filtered.length} topics</span>
       </div>
 
       <div className={styles.grid}>
         {filtered.map((t, i) => (
-          <Link key={t.slug} href={'/topic/' + t.slug} className={styles.card} style={{ outline: t.slug === featured.slug ? '2px solid #EF9F2760' : 'none' }}>
+          <Link key={t.slug} href={'/topic/' + t.slug} className={styles.card}>
             <div className={styles.tierDot} style={{ background: tierDot[t.tier] }} />
-            {t.slug === featured.slug && <div className={styles.hotBadge} style={{ background:'rgba(239,159,39,0.2)', color:'#EF9F27' }}>⭐ NOW</div>}
+            {t.slug === featured.slug && <div className={styles.hotBadge} style={{ background:'rgba(239,159,39,0.2)', color:'#EF9F27' }}>THIS WEEK</div>}
             {i < 6 && t.slug !== featured.slug && <div className={styles.hotBadge}>HOT</div>}
             <div className={styles.cardEmoji}>{t.emoji}</div>
             <div className={styles.cardName}>{t.name}</div>
