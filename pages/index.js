@@ -128,6 +128,24 @@ export default function Home() {
         <span className={styles.surpriseArrow}>Feeling lucky? →</span>
       </div>
 
+      
+      {/* Topic of the Day */}
+      {(() => {
+        const dayIndex = Math.floor(Date.now() / 86400000) % topics.length;
+        const tod = topics[(dayIndex + 1) % topics.length];
+        return (
+          <div style={{ margin:'0 0 32px 0', padding:'16px 20px', border:'1px solid #2a2a28', borderRadius:'12px', background:'#0d0d0b', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:'12px' }}>
+            <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+              <span style={{ fontSize:'22px' }}>{tod.emoji}</span>
+              <div>
+                <div style={{ fontSize:'10px', letterSpacing:'0.1em', color:'#777672', textTransform:'uppercase', marginBottom:'2px' }}>📅 Topic of the Day</div>
+                <div style={{ fontSize:'16px', fontWeight:'600', color:'#f0efe9' }}>{tod.name}</div>
+              </div>
+            </div>
+            <Link href={`/topic/${tod.slug}`} style={{ background:'#1D9E75', color:'#fff', textDecoration:'none', padding:'8px 18px', borderRadius:'20px', fontSize:'13px', fontWeight:'500', whiteSpace:'nowrap' }}>Watch today →</Link>
+          </div>
+        );
+      })()}
       <div className={styles.gridHeader}>
         <span className={styles.gridLabel}>{filtered.length === 100 ? 'Showing all 100 topics' : 'Showing ' + filtered.length + ' topics'}</span>
         <span className={styles.gridCount}>{filtered.length} topics</span>
