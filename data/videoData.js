@@ -3871,44 +3871,44 @@ const videoData = {
   ],
   "soccer": [
     {
-      "id": "yk_55rHtNXQ",
-      "title": "Ronaldo Best Goals Ever"
+      "id": "ZJvVihqO1NM",
+      "title": "Football Freestyle Skills"
     },
     {
-      "id": "Z5VBGmGnGes",
-      "title": "Messi Best Goals & Skills"
+      "id": "0h-qf2esEj4",
+      "title": "Best Football Skills"
     },
     {
-      "id": "I1J0vhqXRqo",
-      "title": "Top 10 Football Skills"
+      "id": "_7uW_7T92MU",
+      "title": "Amazing Football Tricks"
     },
     {
-      "id": "HxFRgBVxeAQ",
-      "title": "Best Street Football Brazil"
+      "id": "YjoV7UH_0ZM",
+      "title": "Top Football Freestyle"
     },
     {
-      "id": "Dp0MwSWDxTs",
-      "title": "Neymar Skills & Tricks"
+      "id": "HGGiEQyScFk",
+      "title": "Football Skills Compilation"
     },
     {
-      "id": "pMFpZwQi1ko",
-      "title": "Best Football Freestyle Ever"
+      "id": "ADi1A1dX9wA",
+      "title": "Best Soccer Moments"
     },
     {
-      "id": "SjNMkBQdnis",
-      "title": "Amazing Football Skills HD"
+      "id": "XOXjvSxBpQ",
+      "title": "Football Freestyle Masters"
     },
     {
-      "id": "rEOe9xhRBFg",
-      "title": "Top Football Goals 2024"
+      "id": "Di7G4nbpyDg",
+      "title": "Soccer Skills & Goals"
     },
     {
-      "id": "NiQ5DqRG2G8",
-      "title": "Best Bicycle Kicks Ever"
+      "id": "UeiNdPaQ1IA",
+      "title": "Best Football Tricks Ever"
     },
     {
-      "id": "xMhEQGJNMDY",
-      "title": "Greatest Football Moments"
+      "id": "vwtUVwXWy8Y",
+      "title": "Ultimate Football Skills"
     }
   ]
 };
