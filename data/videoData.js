@@ -3871,44 +3871,44 @@ const videoData = {
   ],
   "soccer": [
     {
-      "id": "As9Q2vg0GvY",
-      "title": "Top 10 Best Goals Ever - FIFA World Cup"
+      "id": "yk_55rHtNXQ",
+      "title": "Ronaldo Best Goals Ever"
     },
     {
-      "id": "qMVGFhgwwbk",
-      "title": "Ronaldo vs Messi - Greatest Goals Ever"
+      "id": "Z5VBGmGnGes",
+      "title": "Messi Best Goals & Skills"
     },
     {
-      "id": "Z-6Q2xvjB4k",
-      "title": "Best Street Football Skills 2024"
+      "id": "I1J0vhqXRqo",
+      "title": "Top 10 Football Skills"
     },
     {
-      "id": "GGBvZgwLHSo",
-      "title": "Neymar Best Skills & Goals"
+      "id": "HxFRgBVxeAQ",
+      "title": "Best Street Football Brazil"
     },
     {
-      "id": "yLs7tJE7T8s",
-      "title": "Top 100 Football Skills Ever"
+      "id": "Dp0MwSWDxTs",
+      "title": "Neymar Skills & Tricks"
     },
     {
-      "id": "XJNDgDMFkPM",
-      "title": "Mbappe Best Goals & Skills"
+      "id": "pMFpZwQi1ko",
+      "title": "Best Football Freestyle Ever"
     },
     {
-      "id": "q-FHkMDpPPQ",
-      "title": "Best Football Freestyle Tricks"
+      "id": "SjNMkBQdnis",
+      "title": "Amazing Football Skills HD"
     },
     {
-      "id": "u2GqFB6N3ZA",
-      "title": "Top 50 Goals in Football History"
+      "id": "rEOe9xhRBFg",
+      "title": "Top Football Goals 2024"
     },
     {
-      "id": "Y7UmCCFSMqo",
-      "title": "Best Goalkeeper Saves Ever"
+      "id": "NiQ5DqRG2G8",
+      "title": "Best Bicycle Kicks Ever"
     },
     {
-      "id": "dN4FKoQ9vuA",
-      "title": "Ultimate Football Skills Compilation"
+      "id": "xMhEQGJNMDY",
+      "title": "Greatest Football Moments"
     }
   ]
 };
