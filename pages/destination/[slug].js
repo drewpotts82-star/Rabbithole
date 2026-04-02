@@ -62,7 +62,7 @@ export default function DestinationPage({ destination: d, related, videos }) {
           <span style={{ fontSize:'12px', fontWeight:'500', color:'#fff' }}>Book Hotels</span>
           <span style={{ fontSize:'10px', color:'rgba(255,255,255,0.7)' }}>via Booking.com</span>
         </a>
-        <a href={d.tourLink} target="_blank" rel="noopener noreferrer" style={{ display:'flex', flexDirection:'column', alignItems:'center', padding:'12px', background:'#FF6B35', borderRadius:'10px', textDecoration:'none', gap:'4px' }}>
+        <a href={d.tourLink} target="_blank" rel="noopener noreferrer" style={{ display:'flex', flexDirection:'column', alignItems:'center', padding:'12px', background:'#1D9E75', borderRadius:'10px', textDecoration:'none', gap:'4px' }}>
           <span style={{ fontSize:'18px' }}>🎟</span>
           <span style={{ fontSize:'12px', fontWeight:'500', color:'#fff' }}>Book Tours</span>
           <span style={{ fontSize:'10px', color:'rgba(255,255,255,0.7)' }}>via GetYourGuide</span>
@@ -122,7 +122,7 @@ export default function DestinationPage({ destination: d, related, videos }) {
           <p style={{ fontSize:'13px', color:'#777672', marginBottom:'20px' }}>Book your hotels, tours and gear right now.</p>
           <div style={{ display:'flex', gap:'10px', justifyContent:'center', flexWrap:'wrap' }}>
             <a href={d.bookingLink} target="_blank" rel="noopener noreferrer" style={{ background:'#003580', color:'#fff', padding:'10px 20px', borderRadius:'20px', fontSize:'13px', fontWeight:'500', textDecoration:'none' }}>🏨 Find hotels</a>
-            <a href={d.tourLink} target="_blank" rel="noopener noreferrer" style={{ background:'#FF6B35', color:'#fff', padding:'10px 20px', borderRadius:'20px', fontSize:'13px', fontWeight:'500', textDecoration:'none' }}>🎟 Book tours</a>
+            <a href={d.tourLink} target="_blank" rel="noopener noreferrer" style={{ background:'#1D9E75', color:'#fff', padding:'10px 20px', borderRadius:'20px', fontSize:'13px', fontWeight:'500', textDecoration:'none' }}>🎟 Book tours</a>
             <a href={d.gearLink} target="_blank" rel="noopener noreferrer" style={{ background:'#232F3E', color:'#fff', padding:'10px 20px', borderRadius:'20px', fontSize:'13px', fontWeight:'500', textDecoration:'none' }}>🎒 Shop gear</a>
           </div>
         </div>
