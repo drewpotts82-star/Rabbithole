@@ -162,7 +162,7 @@ export default function TopicPage({ topic, related, videos }) {
                   <span style={{ fontSize:'14px' }}>🔥</span><span>{fired[i]?'Lit':'Fire'}</span>
                 </button>
                 <button onClick={() => { toggleSave(i); setShowSaveBanner(true); }} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${saved[i]?'#1D9E75':'#333331'}`, background:saved[i]?'rgba(29,158,117,0.15)':'transparent', color:saved[i]?'#1D9E75':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
-                  <span style={{ fontSize:'14px' }}>{saved[i]?'✓':'+'}</span><span>{saved[i]?'Saved':'Save'}</span>
+                  <span style={{ fontSize:'14px' }}>{saved[i]?'✓':'+'}</span><span>{saved[i]?'Following':'Follow'}</span>
                 </button>
                 <span style={{ marginLeft:'auto', fontSize:'11px', color:'#444441' }}>{(fakeReacts[i]+(fired[i]?1:0)).toLocaleString()} reactions</span>
               </div>
@@ -172,10 +172,10 @@ export default function TopicPage({ topic, related, videos }) {
 
         {showSaveBanner && !emailSaved && (
           <div style={{ position:'fixed', bottom:'0', left:'0', right:'0', background:'#0a2218', borderTop:'1px solid #1D9E75', padding:'16px 24px', zIndex:100, display:'flex', alignItems:'center', justifyContent:'center', gap:'16px', flexWrap:'wrap' }}>
-            <div style={{ fontSize:'14px', fontWeight:'500', color:'#f0efe9', whiteSpace:'nowrap' }}>🔖 Save your watchlist</div>
+            <div style={{ fontSize:'14px', fontWeight:'500', color:'#f0efe9', whiteSpace:'nowrap' }}>🔖 Get weekly ranking updates</div>
             <div style={{ display:'flex', gap:'8px', flex:1, maxWidth:'400px' }}>
               <input type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} style={{ flex:1, background:'#111110', border:'1px solid #333331', borderRadius:'8px', padding:'8px 12px', color:'#f0efe9', fontSize:'13px', fontFamily:'DM Sans, sans-serif', outline:'none' }} />
-              <button onClick={saveEmail} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'8px', padding:'8px 16px', fontSize:'13px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap' }}>Save free →</button>
+              <button onClick={saveEmail} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'8px', padding:'8px 16px', fontSize:'13px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap' }}>Notify me →</button>
             </div>
           </div>
         )}
