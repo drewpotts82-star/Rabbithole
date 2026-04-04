@@ -4,6 +4,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSNQJDX916"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-ZSNQJDX916');
+        `}} />
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#111110" />
         <meta name="google-site-verification" content="qrhhnGiuiWrXrTByX288ZcW6Gf87-6bIA7mLfj87J50" />
