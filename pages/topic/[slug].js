@@ -110,6 +110,19 @@ export default function TopicPage({ topic, related, videos }) {
         </div>
       </div>
 
+      
+      {/* Quick topic links */}
+      <div style={{ display:'flex', alignItems:'center', gap:'8px', flexWrap:'wrap', padding:'12px 24px', borderBottom:'1px solid #222220' }}>
+        <span style={{ fontSize:'12px', color:'#777672' }}>Not into {topic.name}? Try:</span>
+        {topics.filter(t => t.slug !== topic.slug).sort(() => 0.5 - Math.random()).slice(0, 4).map(t => (
+          <Link key={t.slug} href={'/topic/' + t.slug} style={{ fontSize:'12px', color:'#1D9E75', textDecoration:'none', padding:'4px 10px', border:'1px solid #1D9E75', borderRadius:'12px' }}>
+            {t.emoji} {t.name}
+          </Link>
+        ))}
+        <Link href={'/'} style={{ fontSize:'12px', color:'#D85A30', textDecoration:'none', padding:'4px 10px', border:'1px solid #D85A30', borderRadius:'12px' }}>
+          🎲 Surprise me
+        </Link>
+      </div>
       <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 24px', background:'#1e1e1c', borderBottom:'1px solid #333331', flexWrap:'wrap', gap:'10px' }}>
         <div>
           <div style={{ fontSize:'13px', fontWeight:'500', color:'#f0efe9' }}>Share the {topic.name} top 10</div>
