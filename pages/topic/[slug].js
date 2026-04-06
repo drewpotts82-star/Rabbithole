@@ -85,6 +85,11 @@ export default function TopicPage({ topic, related, videos }) {
         <title>{`Most Viewed ${topic.name} Videos Of All Time — RabbitHole`}</title>
         <meta name="description" content={`The top 10 most viewed ${topic.name} videos on YouTube of all time, ranked by total worldwide views.`} />
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+        <style>{`
+          .video-thumb { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+          .video-thumb:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+          .video-card:hover .rank-num { color: #1D9E75 !important; }
+        `}</style>
       </Head>
 
       <nav style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 24px', background:'#1e1e1c', borderBottom:'1px solid #333331', position:'sticky', top:0, zIndex:50 }}>
