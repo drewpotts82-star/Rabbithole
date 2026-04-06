@@ -182,6 +182,18 @@ export default function TopicPage({ topic, related, videos }) {
       </div>
 
       <div style={{ margin:'0 24px 24px', maxWidth:'772px', marginLeft:'auto', marginRight:'auto' }}>
+        {/* Quick topic links */}
+        <div style={{ display:'flex', alignItems:'center', gap:'8px', flexWrap:'wrap', marginBottom:'16px' }}>
+          <span style={{ fontSize:'12px', color:'#777672' }}>Not into {topic.name}? Try:</span>
+          {topics.filter(t => t.slug !== topic.slug).sort(() => 0.5 - Math.random()).slice(0, 4).map(t => (
+            <Link key={t.slug} href={'/topic/' + t.slug} style={{ fontSize:'12px', color:'#1D9E75', textDecoration:'none', padding:'4px 10px', border:'1px solid #1D9E75', borderRadius:'12px' }}>
+              {t.emoji} {t.name}
+            </Link>
+          ))}
+          <Link href={'/'} style={{ fontSize:'12px', color:'#D85A30', textDecoration:'none', padding:'4px 10px', border:'1px solid #D85A30', borderRadius:'12px' }}>
+            🎲 Surprise me
+          </Link>
+        </div>
         <div style={{ background:'#1e1e1c', border:'1px solid #333331', borderRadius:'12px', padding:'20px 24px', textAlign:'center' }}>
           <h3 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'24px', color:'#f0efe9', marginBottom:'6px' }}>Love {topic.name}?</h3>
           <p style={{ fontSize:'13px', color:'#777672', marginBottom:'14px' }}>Shop the exact gear from the world's most viewed {topic.name} videos.</p>
