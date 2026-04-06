@@ -208,6 +208,19 @@ export default function TopicPage({ topic, related, videos }) {
         <Link href="/" style={{ display:'inline-block', padding:'10px 24px', border:'1px solid #333331', borderRadius:'24px', color:'#777672', fontSize:'13px', textDecoration:'none' }}>← Back to all 100 topics</Link>
       </div>
 
+      
+      {/* You might also like */}
+      <div style={{ padding:'0 24px 40px', maxWidth:'820px', margin:'0 auto' }}>
+        <div style={{ fontSize:'13px', letterSpacing:'0.1em', color:'#777672', textTransform:'uppercase', marginBottom:'16px' }}>🐇 You might also like</div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(160px, 1fr))', gap:'12px' }}>
+          {topics.filter(t => t.slug !== topic.slug).sort(() => 0.5 - Math.random()).slice(0, 6).map(t => (
+            <Link key={t.slug} href={'/topic/' + t.slug} style={{ display:'flex', alignItems:'center', gap:'10px', padding:'12px', background:'#1a1a18', border:'1px solid #333331', borderRadius:'10px', textDecoration:'none', color:'#f0efe9' }}>
+              <span style={{ fontSize:'20px' }}>{t.emoji}</span>
+              <span style={{ fontSize:'13px', fontWeight:'500' }}>{t.name}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
       <footer style={{ borderTop:'1px solid #333331', padding:'24px', textAlign:'center' }}>
         <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'22px', letterSpacing:'2px', color:'#D85A30', marginBottom:'6px' }}>RABBIT<span style={{ color:'#1D9E75' }}>HOLE</span></div>
         <p style={{ fontSize:'11px', color:'#777672' }}>The world's most viewed videos · 100 topics · updated weekly</p>
