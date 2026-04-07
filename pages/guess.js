@@ -248,6 +248,8 @@ export default function GuessGame() {
         </div>
       </nav>
 
+      <div style={{ maxWidth:'1100px', margin:'0 auto', padding:'24px', display:'grid', gridTemplateColumns:'1fr 240px', gap:'24px', alignItems:'start' }}>
+        <div>
       <div style={{ height:'3px', background:'#222' }}>
         <div style={{ height:'100%', width:`${(current/10)*100}%`, background:'#EF9F27', transition:'width 0.3s' }} />
       </div>
@@ -300,7 +302,28 @@ export default function GuessGame() {
               {current+1 >= shuffled.length ? 'See Results 🏆' : 'Next Topic →'}
             </button>
           )}
+        
         </div>
+        {/* Live Leaderboard Sidebar */}
+        <div style={{ background:'#1a1a18', border:'1px solid #333331', borderRadius:'14px', padding:'16px', position:'sticky', top:'16px', minWidth:'220px' }}>
+          <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'16px', letterSpacing:'2px', color:'#EF9F27', marginBottom:'14px', textAlign:'center' }}>🏆 TOP SCORES</div>
+          {leaderboard.length === 0 ? (
+            <div style={{ color:'#555', fontSize:'12px', textAlign:'center', padding:'20px 0' }}>No scores yet!<br/>Be the first 🐇</div>
+          ) : (
+            leaderboard.slice(0,20).map((e, i) => (
+              <div key={i} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'7px 0', borderBottom: i < leaderboard.length-1 ? '1px solid #222' : 'none', fontSize:'12px' }}>
+                <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
+                  <span style={{ fontWeight:'700', color: i===0?'#EF9F27':i===1?'#B4B2A9':i===2?'#D85A30':'#555', width:'18px' }}>#{i+1}</span>
+                  <span style={{ color:'#f0efe9' }}>{e.name}</span>
+                </div>
+                <span style={{ color:'#1D9E75', fontWeight:'600' }}>{e.score}</span>
+              </div>
+            ))
+          )}
+          <Link href="/" style={{ display:'block', marginTop:'14px', textAlign:'center', fontSize:'12px', color:'#777672', textDecoration:'none', border:'1px solid #333331', borderRadius:'16px', padding:'8px' }}>🏠 Home</Link>
+          <Link href="/play" style={{ display:'block', marginTop:'8px', textAlign:'center', fontSize:'12px', color:'#EF9F27', textDecoration:'none', border:'1px solid #EF9F27', borderRadius:'16px', padding:'8px' }}>🎮 All Games</Link>
+        </div>
+      </div></div>
 
         <div style={{ marginTop:'20px', display:'flex', justifyContent:'center', gap:'8px', flexWrap:'wrap' }}>
           {[{l:'🎯 Perfect',p:'±20%',pts:3},{l:'🔥 Close',p:'±50%',pts:2},{l:'😅 Near',p:'±100%',pts:1},{l:'😬 Miss',p:'>100%',pts:0}].map(s => (
