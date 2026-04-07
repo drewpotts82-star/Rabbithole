@@ -79,9 +79,17 @@ export default function GuessGame() {
   const [confetti, setConfetti] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [results, setResults] = useState([]);
+  const [playerName, setPlayerName] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [leaderboard, setLeaderboard] = useState([]);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   useEffect(() => {
     setShuffled([...topics].sort(() => 0.5 - Math.random()).slice(0, 10));
+    fetch('/api/leaderboard?game=guess')
+      .then(r => r.json())
+      .then(d => { if (d.leaderboard) setLeaderboard(d.leaderboard); })
+      .catch(() => {});
   }, []);
 
   if (!shuffled.length) return null;
@@ -114,6 +122,22 @@ export default function GuessGame() {
     else setCurrent(c => c + 1);
   };
 
+  const submitScore = async () => {
+    if (!playerName.trim()) return;
+    try {
+      await fetch('/api/leaderboard?game=guess', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: playerName.trim(), score, total: 30 })
+      });
+      const r = await fetch('/api/leaderboard?game=guess');
+      const d = await r.json();
+      if (d.leaderboard) setLeaderboard(d.leaderboard);
+    } catch(e) {}
+    setSubmitted(true);
+    setShowLeaderboard(true);
+  };
+
   const shareScore = () => {
     const text = `I scored ${score}/30 on RabbitHole's "Guess The Views" game! 🐇 Can you beat me? rabbitholevideo.com/guess`;
     if (navigator.share) navigator.share({ title: 'RabbitHole', text });
@@ -139,6 +163,24 @@ export default function GuessGame() {
             </div>
           ))}
         </div>
+        {!submitted ? (
+          <div style={{ margin:'16px 0', width:'100%', maxWidth:'320px' }}>
+            <div style={{ fontSize:'13px', color:'#777672', marginBottom:'8px' }}>Enter your name for the leaderboard:</div>
+            <input type="text" placeholder="Your name..." value={playerName} onChange={e => setPlayerName(e.target.value)} onKeyDown={e => e.key==='Enter' && submitScore()} style={{ width:'100%', background:'#1a1a18', border:'1px solid #333331', borderRadius:'10px', padding:'10px 14px', color:'#f0efe9', fontSize:'14px', fontFamily:'DM Sans, sans-serif', outline:'none', boxSizing:'border-box' }} />
+            <button onClick={submitScore} style={{ marginTop:'8px', width:'100%', background:'#EF9F27', color:'#111110', border:'none', borderRadius:'20px', padding:'11px', fontSize:'14px', fontWeight:'600', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>Submit to Leaderboard 🏆</button>
+          </div>
+        ) : <div style={{ color:'#1D9E75', margin:'8px 0', fontSize:'14px' }}>✓ Score submitted!</div>}
+        {showLeaderboard && leaderboard.length > 0 && (
+          <div style={{ width:'100%', maxWidth:'360px', background:'#1a1a18', border:'1px solid #333331', borderRadius:'12px', padding:'16px', margin:'8px 0', textAlign:'left' }}>
+            <div style={{ fontSize:'13px', fontWeight:'600', color:'#EF9F27', marginBottom:'10px', textAlign:'center' }}>🏆 GLOBAL LEADERBOARD</div>
+            {leaderboard.slice(0,10).map((e, i) => (
+              <div key={i} style={{ display:'flex', justifyContent:'space-between', padding:'6px 0', borderBottom: i < 9 ? '1px solid #222' : 'none', fontSize:'13px' }}>
+                <span style={{ color: i===0?'#EF9F27':i===1?'#B4B2A9':i===2?'#D85A30':'#777672' }}>#{i+1} {e.name}</span>
+                <span style={{ color:'#1D9E75' }}>{e.score}/30</span>
+              </div>
+            ))}
+          </div>
+        )}
         <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', justifyContent:'center' }}>
           <button onClick={shareScore} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>📤 Challenge a Friend</button>
           <button onClick={() => window.location.reload()} style={{ background:'transparent', color:'#f0efe9', border:'1px solid #333331', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>🔄 Play Again</button>
