@@ -72,19 +72,25 @@ export default function Game() {
     const p = [];
     for (let i = 0; i < shuffled.length - 1; i += 2) p.push([shuffled[i], shuffled[i+1]]);
     setPairs(p);
-    // Load leaderboard from localStorage
-    try {
-      const saved = JSON.parse(localStorage.getItem('rh_leaderboard') || '[]');
-      setLeaderboard(saved);
-    } catch(e) {}
+    // Load global leaderboard
+    fetch('/api/leaderboard')
+      .then(r => r.json())
+      .then(d => { if (d.leaderboard) setLeaderboard(d.leaderboard); })
+      .catch(() => {});
   }, []);
 
-  const submitScore = () => {
+  const submitScore = async () => {
     if (!playerName.trim()) return;
-    const entry = { name: playerName.trim(), score, total: current, date: new Date().toLocaleDateString() };
-    const updated = [...leaderboard, entry].sort((a,b) => b.score - a.score).slice(0, 10);
-    setLeaderboard(updated);
-    try { localStorage.setItem('rh_leaderboard', JSON.stringify(updated)); } catch(e) {}
+    try {
+      await fetch('/api/leaderboard', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: playerName.trim(), score, total: current })
+      });
+      const r = await fetch('/api/leaderboard');
+      const d = await r.json();
+      if (d.leaderboard) setLeaderboard(d.leaderboard);
+    } catch(e) {}
     setSubmitted(true);
     setShowLeaderboard(true);
   };
