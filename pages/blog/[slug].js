@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { POSTS } from './post';
+import { POSTS } from '../../data/blogPosts';
 
 export async function getStaticPaths() {
   return {
