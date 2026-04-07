@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import topics from '../../data/topics';
@@ -31,6 +31,33 @@ const rankStyle = [
   { color: '#555553', size: '22px', bg: 'transparent' },
   { color: '#555553', size: '22px', bg: 'transparent' },
 ];
+
+
+function LazyVideo({ id, title }) {
+  const [playing, setPlaying] = React.useState(false);
+  if (playing) {
+    return (
+      <iframe
+        src={`https://www.youtube.com/embed/${id}?autoplay=1`}
+        style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', border:'none' }}
+        allowFullScreen
+        title={title}
+      />
+    );
+  }
+  return (
+    <div onClick={() => setPlaying(true)} style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', cursor:'pointer', background:'#000' }}>
+      <img
+        src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+        alt={title}
+        style={{ width:'100%', height:'100%', objectFit:'cover', opacity:0.85 }}
+      />
+      <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'64px', height:'64px', background:'rgba(255,0,0,0.9)', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center' }}>
+        <div style={{ width:0, height:0, borderTop:'12px solid transparent', borderBottom:'12px solid transparent', borderLeft:'20px solid white', marginLeft:'4px' }} />
+      </div>
+    </div>
+  );
+}
 
 export default function TopicPage({ topic, related, videos }) {
   const [fired, setFired] = useState({});
