@@ -182,7 +182,7 @@ function LazyVideo({ id, title }) {
 
 export default function Home() {
   const [search, setSearch] = useState('');
-  const [activeTab, setActiveTab] = useState('motivation');
+  const [activeTab, setActiveTab] = useState('learn');
   const [activeFilter, setActiveFilter] = useState('all');
   const [showAllTopics, setShowAllTopics] = useState(false);
   const featured = getWeeklyFeatured();
@@ -250,7 +250,7 @@ export default function Home() {
         <div style={{ marginBottom:'24px' }}>
           <div style={{ display:'flex', gap:'0', overflowX:'auto', scrollbarWidth:'none', borderBottom:'1px solid #2a2a28', marginBottom:'20px' }}>
             {[
-              { id:'motivation', label:'💪 Motivation', color:'#D85A30' },
+              // { id:'motivation', label:'💪 Motivation', color:'#D85A30' },
               { id:'learn', label:'🎓 Learn', color:'#1D9E75' },
               { id:'fun', label:'🤯 Viral Facts', color:'#EF9F27' },
               { id:'blog', label:'✍️ Blog', color:'#f0efe9' },
