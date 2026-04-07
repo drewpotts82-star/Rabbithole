@@ -294,7 +294,7 @@ export default function Home() {
             </div>
             <div style={{ fontSize:'11px', color:'#555', background:'#1a1a18', padding:'4px 10px', borderRadius:'10px', border:'1px solid #2a2a28' }}>Updates daily</div>
           </div>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'12px' }}>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(180px, 1fr))', gap:'10px' }}>
             {todaysMindless.map((v, i) => (
               <div key={i} style={{ background:'#1a1a18', borderRadius:'12px', overflow:'hidden', border:'1px solid #2a2a28' }}>
                 <div style={{ position:'relative', paddingBottom:'56.25%' }}>
