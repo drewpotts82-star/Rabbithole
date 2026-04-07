@@ -37,27 +37,27 @@ const MINDLESS_VIDEOS = [
   [
     { id:'WFbTtmOKyzo', title:'🤣😂 Laugh Until You Cry -Funny Fails Compilation!' },
     { id:'BNiTVsAlzlc', title:'Best Fails of the Year | Try Not To Laugh🤣🤣' },
-    { id:'vXUZpRRrIBU', title:'Sour Family Sour Gummy Lemon Challenge! 🍋' },
-    { id:'DOvVij2YcVU', title:'Cute and funny animals video compilation 😂😂😂 pa' },
-    { id:'nSJbJs4VbkM', title:'Ranking The Worst Slide Fail Moments' },
-    { id:'p4AGbTnsxs8', title:'#Funny #Animals 😹' },
-    { id:'aHaxTGdg5c8', title:'Another Round at the Range. Fail Compilation Part ' },
     { id:'d51diKTSi2M', title:'Best Fails of the Year | Unhinged Chaos!' },
     { id:'-GJFSmpZjCw', title:'Best Fails of the Year (So Far)' },
-    { id:'aNfGZAqp29M', title:'Had coach stressing hard😂 #gymnastics #gymnastics' },
+    { id:'lNe1D_E3R8E', title:'Best Fails of the Year | Try Not to Laugh' },
+    { id:'w6urQm7Prs4', title:'Best Fails Of The Year | Try Not To Laugh' },
+    { id:'QcHBmZt34E4', title:'Looks Like a Losing Battle 😂 AFV Funniest Water F' },
+    { id:'5iO4nay8rWc', title:'Tasks Failed Successfully!?!?(Part 4) #carsonhocke' },
+    { id:'NVH79ehGfY0', title:'The Best Of The Internet (2022)' },
+    { id:'W_IhSnQTw1A', title:'Super Corgi Fails!' },
   ],
   // Day 2
   [
-    { id:'rs1kUmYJIvY', title:'💔 #cat #cats' },
+    { id:'b7EdOq3vRQI', title:'There was no trace of Sonya&#39;s pranks 🐾 #cat #' },
+    { id:'3bhkYoMWTFE', title:'😹Cats Doing Cat Things😹 (3)' },
     { id:'qolQY2JaKwI', title:'Nika loves to eat chicken #cat #cats' },
-    { id:'7r6H9WdvGEc', title:'Puff’s in the kitchen blending food hacks with art' },
-    { id:'wu4NYMmk8pk', title:'Chipi Chipi Chapa Chapa (Bemax Phonk Remix 2024) E' },
-    { id:'CsgWjqsUPqM', title:'With this Jirpet dryer box we can keep playing... ' },
-    { id:'VZ2cqrV9uB0', title:'Nika ate all my fish🥲 #cat #cats' },
-    { id:'gXxg-VWJXBY', title:'Come and experience what Chinese idioms &quot;rais' },
     { id:'tY4FtT2whtc', title:'Cat Club! #shorts30 #viral #catclub #shorts28' },
-    { id:'Y0Bfl9nIsbs', title:'Thank you for 1 MILLION GIMME SNACK #cat #animatio' },
-    { id:'8LJiqPYj5n0', title:'Where did the exit go?!😾 #cats #catvideos #maze #' },
+    { id:'hY7m5jjJ9mM', title:'CATS will make you LAUGH YOUR HEAD OFF - Funny CAT' },
+    { id:'p4AGbTnsxs8', title:'#Funny #Animals 😹' },
+    { id:'z4OC3pYuOUw', title:'or worse yet, an ELECTRIC EEL 🙀 🎥: pjordan922 (T' },
+    { id:'NdRgBmKPfcc', title:'This cat is really alive! 🥰 #funny #cats #catvide' },
+    { id:'-vzQdTvm2VA', title:'#88 Funny Cat videos 🐱🐱 #meowing #memes #cute' },
+    { id:'kAPjO0u9SIU', title:'The Kitten&#39;s Mess: 🐱💧 Digging Trouble and a ' },
   ],
   // Day 3
   [
@@ -87,16 +87,16 @@ const MINDLESS_VIDEOS = [
   ],
   // Day 5
   [
-    { id:'6U7gV7KDEOI', title:'🥹 #cat  #cats' },
-    { id:'nRDysNZdMvU', title:'Babies Laughing At Pets | The Dodo' },
     { id:'CNv74RWXx9A', title:'Try Not to Laugh #23' },
     { id:'oZFAcp-Qfbs', title:'World&#39;s Most Obedient Cat - Aaron&#39;s Animal' },
     { id:'63IX34q4Us0', title:'funny animals video #shortvideo #shorts' },
     { id:'oqqz3xykhlQ', title:'Try not to Laugh ❗️ | 220' },
     { id:'VZedJx16tIg', title:'I Can&#39;t Believe that Happened 😲 Try Not to La' },
-    { id:'BNiTVsAlzlc', title:'Best Fails of the Year | Try Not To Laugh🤣🤣' },
     { id:'IGaTcA3Y-CY', title:'Try not to LAUGH 😋' },
-    { id:'WRllf9L6mbU', title:'Try not to laugh 😆 🤓 #funny #shots' },
+    { id:'DOvVij2YcVU', title:'Cute and funny animals video compilation 😂😂😂 pa' },
+    { id:'p4AGbTnsxs8', title:'#Funny #Animals 😹' },
+    { id:'FB0JwS_M8kg', title:'Try not to Laugh Game!' },
+    { id:'KvIl8mjMTsE', title:'Extreme Try Not To Laugh Challenge!' },
   ],
   // Day 6
   [
@@ -115,40 +115,47 @@ const MINDLESS_VIDEOS = [
 
 // Educational videos — rotates daily
 const EDU_VIDEOS = [
+  // Day 0
   [
-    { id:'Uti2niW2BRA', title:'Why is the sky blue?', channel:'Veritasium' },
-    { id:'9D05ej8u-gU', title:'The Zipf Mystery', channel:'Vsauce' },
-    { id:'e-P5IFTqB98', title:'How do vaccines work?', channel:'Kurzgesagt' },
+    { id:'isdLel273rQ', title:'The Paradox of an Infinite Universe', channel:'Kurzgesagt – In a Nutshell' },
+    { id:'uhKPtJrbqUM', title:'Mind blowing fact about the movie interstellar you', channel:'Theos and Rem' },
+    { id:'pjaN2WHAHVo', title:'14 Minutes of Mind-Blowing Space Facts! | With Ast', channel:'Astral Curiosity' },
   ],
+  // Day 1
   [
-    { id:'IFKnq9QM6_A', title:'The Banach-Tarski Paradox', channel:'Vsauce' },
-    { id:'UjtYVSyJBSU', title:'Why Earth is a Prison', channel:'Kurzgesagt' },
-    { id:'Qcfuet8Vd5E', title:'How big is the universe?', channel:'Veritasium' },
+    { id:'IVtG8NhY38A', title:'What’s gives fireworks their colors 🤔 #science #s', channel:'Imagination Station Toledo' },
+    { id:'ipbsTRR-a3s', title:'Understanding Bernoulli&#39;s Theorem Walter Lewin', channel:'Science Explained' },
+    { id:'ORxKf1FN3ro', title:'The real science of black holes', channel:'Veritasium' },
   ],
+  // Day 2
   [
-    { id:'IJhgZBn-LHg', title:'The science of sleep', channel:'Kurzgesagt' },
-    { id:'ZBjhp3hDxiA', title:'Is glass actually a liquid?', channel:'Veritasium' },
-    { id:'lmT04FKoHl0', title:'Why don't we all have cancer?', channel:'Kurzgesagt' },
+    { id:'nfxeb9bI6eY', title:'Unseen Animals Amazing Facts #shorts Facts Cloud b', channel:'Akash Parihar' },
+    { id:'jpAhyVvyM_o', title:'Mysterious Indian Mummy |  Keerthi History        ', channel:'Keerthi' },
+    { id:'rpO652J2VnM', title:'Why Is The Mona Lisa So Famous? 😮 (EXPLAINED)', channel:'Zack D. Films' },
   ],
+  // Day 3
   [
-    { id:'MBRqu0YOH14', title:'Mind-blowing ocean facts', channel:'Vsauce' },
-    { id:'B1o-SnmkHoc', title:'How evolution works', channel:'Kurzgesagt' },
-    { id:'GNhlqu0LIEI', title:'What is quantum mechanics?', channel:'Veritasium' },
+    { id:'-hzue8KIS9M', title:'Thermite Balls', channel:'Vsauce' },
+    { id:'inG9yUZ5vY8', title:'the circle dot trick', channel:'Vsauce' },
+    { id:'-UAUiSJP8tU', title:'Is A 2-Sided Polygon Possible?', channel:'Vsauce' },
   ],
+  // Day 4
   [
-    { id:'9D05ej8u-gU', title:'The Fermi Paradox', channel:'Kurzgesagt' },
-    { id:'IFKnq9QM6_A', title:'Why do we dream?', channel:'Vsauce' },
-    { id:'Uti2niW2BRA', title:'How did language evolve?', channel:'Veritasium' },
+    { id:'p0Bq55rfjZw', title:'The Biggest Planet In The Universe #space #planet ', channel:'AstroKobi' },
+    { id:'bshzBEzk_sQ', title:'What Shape Is Our Universe?', channel:'Action Lab Shorts' },
+    { id:'libKVRa01L8', title:'Solar System 101 | National Geographic', channel:'National Geographic' },
   ],
+  // Day 5
   [
-    { id:'UjtYVSyJBSU', title:'The origin of the universe', channel:'Kurzgesagt' },
-    { id:'IJhgZBn-LHg', title:'Why do we get old?', channel:'Vsauce' },
-    { id:'lmT04FKoHl0', title:'How do black holes form?', channel:'Veritasium' },
+    { id:'9gzBj6UzRKk', title:'Mind Blowing Psychological Facts 🤯🧠 Amazing Fact', channel:'Hindi TV India' },
+    { id:'yHVkFiG6S_Y', title:'Mind Blowing Psychological Facts 🤯🧠 Amazing Fact', channel:'Hindi TV India' },
+    { id:'l4tWdTmYZoM', title:'19 Simple Psychological Tricks That Actually Work', channel:'BRIGHT SIDE' },
   ],
+  // Day 6
   [
-    { id:'ZBjhp3hDxiA', title:'The science of getting rich', channel:'Veritasium' },
-    { id:'MBRqu0YOH14', title:'What is dark matter?', channel:'Kurzgesagt' },
-    { id:'B1o-SnmkHoc', title:'How memories are stored', channel:'Vsauce' },
+    { id:'JDTHyTLKAo0', title:'ये Animals दोबारा ज़िंदा हो सकतें हैं 😱 | Animals', channel:'Facts' Mine' },
+    { id:'nfxeb9bI6eY', title:'Unseen Animals Amazing Facts #shorts Facts Cloud b', channel:'Akash Parihar' },
+    { id:'FeJKJ5MoCHY', title:'10 TOP Natural History Moments | BBC Earth', channel:'BBC Earth' },
   ],
 ];
 
