@@ -286,98 +286,116 @@ export default function Home() {
 
       <div style={{ maxWidth:'1200px', margin:'0 auto', padding:'0 24px' }}>
 
-        {/* 🤣 Mindless Fun */}
+        {/* Daily Content Tabs */}
         <div style={{ marginBottom:'24px' }}>
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'16px' }}>
-            <div>
-              <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#f0efe9' }}>🤣 TODAY'S MINDLESS FUN</div>
-              <div style={{ fontSize:'12px', color:'#777672', marginTop:'2px' }}>110 videos to waste your time beautifully — changes every day</div>
-            </div>
-            <div style={{ fontSize:'11px', color:'#555', background:'#1a1a18', padding:'4px 10px', borderRadius:'10px', border:'1px solid #2a2a28' }}>Updates daily</div>
-          </div>
-          <div style={{ display:'flex', gap:'10px', overflowX:'auto', paddingBottom:'8px', scrollbarWidth:'none' }}>
-            {todaysMindless.map((v, i) => (
-              <div key={i} style={{ background:'#1a1a18', borderRadius:'10px', overflow:'hidden', border:'1px solid #2a2a28', flexShrink:0, width:'160px' }}>
-                <div style={{ position:'relative', paddingBottom:'56.25%', width:'160px' }}>
-                  <LazyVideo id={v.id} title={v.title} />
-                </div>
-                <div style={{ padding:'6px 8px', fontSize:'11px', color:'#777672', lineHeight:1.3 }}>{v.title}</div>
-              </div>
+          <div style={{ display:'flex', gap:'0', overflowX:'auto', scrollbarWidth:'none', borderBottom:'1px solid #2a2a28', marginBottom:'20px' }}>
+            {[
+              { id:'fun', label:'🤣 Fun', color:'#EF9F27' },
+              { id:'learn', label:'🎓 Learn', color:'#1D9E75' },
+              { id:'motivation', label:'💪 Motivation', color:'#D85A30' },
+              { id:'blog', label:'✍️ Blog', color:'#f0efe9' },
+              { id:'games', label:'🎮 Games', color:'#EF9F27' },
+            ].map(tab => (
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                style={{ background:'transparent', border:'none', borderBottom: activeTab===tab.id ? '2px solid '+tab.color : '2px solid transparent', color: activeTab===tab.id ? tab.color : '#555553', padding:'12px 20px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap', marginBottom:'-1px', transition:'all 0.2s' }}>
+                {tab.label}
+              </button>
             ))}
           </div>
-        </div>
 
-        {/* 🎓 Learn Something Today */}
-        <div style={{ marginBottom:'24px' }}>
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'16px' }}>
+          {activeTab === 'fun' && (
             <div>
-              <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#f0efe9' }}>🎓 LEARN SOMETHING TODAY</div>
-              <div style={{ fontSize:'12px', color:'#777672', marginTop:'2px' }}>3 mind-blowing videos — science, history, nature and more</div>
+              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'14px' }}>10 videos to waste your time beautifully — changes every day</div>
+              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(180px, 1fr))', gap:'10px' }}>
+                {todaysMindless.map((v, i) => (
+                  <div key={i} style={{ background:'#1a1a18', borderRadius:'10px', overflow:'hidden', border:'1px solid #2a2a28' }}>
+                    <div style={{ position:'relative', paddingBottom:'56.25%' }}>
+                      <LazyVideo id={v.id} title={v.title} />
+                    </div>
+                    <div style={{ padding:'8px', fontSize:'11px', color:'#777672', lineHeight:1.3 }}>{v.title}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div style={{ fontSize:'11px', color:'#555', background:'#1a1a18', padding:'4px 10px', borderRadius:'10px', border:'1px solid #2a2a28' }}>Updates daily</div>
-          </div>
-          <div style={{ display:'flex', gap:'12px', overflowX:'auto', paddingBottom:'8px', scrollbarWidth:'none' }}>
-            {todaysEdu.map((v, i) => (
-              <div key={i} style={{ background:'#1a1a18', borderRadius:'12px', overflow:'hidden', border:'1px solid #1D9E75', flexShrink:0, width:'240px' }}>
-                <div style={{ position:'relative', paddingBottom:'56.25%', width:'240px' }}>
-                  <LazyVideo id={v.id} title={v.title} />
+          )}
+
+          {activeTab === 'learn' && (
+            <div>
+              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'14px' }}>3 mind-blowing videos — science, history, nature and more</div>
+              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'16px' }}>
+                {todaysEdu.map((v, i) => (
+                  <div key={i} style={{ background:'#1a1a18', borderRadius:'12px', overflow:'hidden', border:'1px solid #1D9E75' }}>
+                    <div style={{ position:'relative', paddingBottom:'56.25%' }}>
+                      <LazyVideo id={v.id} title={v.title} />
+                    </div>
+                    <div style={{ padding:'12px' }}>
+                      <div style={{ fontSize:'10px', color:'#1D9E75', textTransform:'uppercase', letterSpacing:'0.1em', marginBottom:'4px' }}>{v.channel}</div>
+                      <div style={{ fontSize:'13px', color:'#f0efe9', fontWeight:'500', lineHeight:1.3 }}>{v.title}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'motivation' && (
+            <div style={{ display:'flex', gap:'24px', alignItems:'center', background:'#1a1a18', border:'1px solid #D85A30', borderRadius:'16px', padding:'24px', flexWrap:'wrap' }}>
+              <div style={{ flexShrink:0, width:'300px', borderRadius:'12px', overflow:'hidden' }}>
+                <div style={{ position:'relative', paddingBottom:'56.25%' }}>
+                  <LazyVideo id={todaysMotivation.id} title={todaysMotivation.title} />
                 </div>
-                <div style={{ padding:'10px' }}>
-                  <div style={{ fontSize:'10px', color:'#1D9E75', textTransform:'uppercase', letterSpacing:'0.1em', marginBottom:'3px' }}>{v.channel}</div>
-                  <div style={{ fontSize:'12px', color:'#f0efe9', fontWeight:'500', lineHeight:1.3 }}>{v.title}</div>
-                </div>
               </div>
-            ))}
-          </div>
-        </div>
+              <div style={{ flex:1, minWidth:'200px' }}>
+                <div style={{ fontSize:'11px', color:'#D85A30', textTransform:'uppercase', letterSpacing:'0.15em', marginBottom:'16px' }}>Today's Quote</div>
+                <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'32px', letterSpacing:'1px', color:'#f0efe9', lineHeight:1.2, marginBottom:'16px' }}>"{todaysMotivation.quote}"</div>
+                <div style={{ fontSize:'14px', color:'#777672' }}>— {todaysMotivation.author}</div>
+              </div>
+            </div>
+          )}
 
-        {/* 💪 Motivation of the Day */}
-        <div style={{ marginBottom:'24px' }}>
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'16px' }}>
+          {activeTab === 'blog' && (
             <div>
-              <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#f0efe9' }}>💪 MOTIVATION OF THE DAY</div>
-              <div style={{ fontSize:'12px', color:'#777672', marginTop:'2px' }}>One video to fuel your day — changes every morning</div>
-            </div>
-            <div style={{ fontSize:'11px', color:'#555', background:'#1a1a18', padding:'4px 10px', borderRadius:'10px', border:'1px solid #2a2a28' }}>Updates daily</div>
-          </div>
-          <div style={{ display:'flex', gap:'16px', alignItems:'center', background:'#1a1a18', border:'1px solid #D85A30', borderRadius:'12px', padding:'16px', flexWrap:'wrap' }}>
-            <div style={{ flexShrink:0, width:'200px', borderRadius:'8px', overflow:'hidden' }}>
-              <div style={{ position:'relative', paddingBottom:'56.25%', width:'200px' }}>
-                <LazyVideo id={todaysMotivation.id} title={todaysMotivation.title} />
+              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>
+                <div style={{ fontSize:'12px', color:'#777672' }}>Stories behind the world's most viewed videos</div>
+                <Link href="/blog" style={{ fontSize:'12px', color:'#1D9E75', textDecoration:'none', border:'1px solid #1D9E75', padding:'4px 12px', borderRadius:'10px' }}>All posts →</Link>
+              </div>
+              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(260px, 1fr))', gap:'12px' }}>
+                {BLOG_POSTS.map((post) => (
+                  <Link key={post.slug} href={'/blog/'+post.slug} style={{ textDecoration:'none', display:'block', background:'#1a1a18', border:'1px solid #2a2a28', borderRadius:'12px', padding:'20px' }}>
+                    <div style={{ fontSize:'11px', color:'#777672', marginBottom:'8px' }}>{post.date}</div>
+                    <div style={{ fontSize:'15px', fontWeight:'600', color:'#f0efe9', marginBottom:'8px', lineHeight:1.3 }}>{post.title}</div>
+                    <div style={{ fontSize:'13px', color:'#777672', lineHeight:1.5 }}>{post.excerpt}</div>
+                    <div style={{ fontSize:'13px', color:'#1D9E75', marginTop:'12px' }}>Read more →</div>
+                  </Link>
+                ))}
               </div>
             </div>
-            <div style={{ flex:1, minWidth:'200px' }}>
-              <div style={{ fontSize:'10px', color:'#D85A30', textTransform:'uppercase', letterSpacing:'0.1em', marginBottom:'8px' }}>Today's Quote</div>
-              <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'22px', letterSpacing:'1px', color:'#f0efe9', lineHeight:1.2, marginBottom:'10px' }}>
-                "{todaysMotivation.quote}"
-              </div>
-              <div style={{ fontSize:'12px', color:'#777672' }}>— {todaysMotivation.author}</div>
-            </div>
-          </div>
-        </div>
+          )}
 
-        {/* ✍️ Latest Blog Posts */}
-        <div style={{ marginBottom:'24px' }}>
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'16px' }}>
+          {activeTab === 'games' && (
             <div>
-              <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#f0efe9' }}>✍️ FROM THE BLOG</div>
-              <div style={{ fontSize:'12px', color:'#777672', marginTop:'2px' }}>Stories behind the world's most viewed videos</div>
+              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'16px' }}>5 free games — test your YouTube knowledge</div>
+              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(200px, 1fr))', gap:'12px' }}>
+                {[
+                  { href:'/game', emoji:'⚔️', title:'Which Has More Views?', desc:'42 rounds · Global leaderboard', color:'#1D9E75' },
+                  { href:'/guess', emoji:'🎯', title:'Guess The Views', desc:'10 rounds · Max 30 points', color:'#EF9F27' },
+                  { href:'/higher-or-lower', emoji:'🔥', title:'Higher or Lower', desc:'Build your streak · One wrong = over', color:'#D85A30' },
+                  { href:'/flag-game', emoji:'🌍', title:'Flag to Destination', desc:'15 rounds · Travel knowledge', color:'#1D9E75' },
+                  { href:'/language-game', emoji:'🗣️', title:'What Does This Mean?', desc:'10 rounds · Untranslatable words', color:'#EF9F27' },
+                ].map(game => (
+                  <Link key={game.href} href={game.href} style={{ textDecoration:'none', background:'#1a1a18', border:'1px solid #2a2a28', borderRadius:'12px', padding:'20px', display:'block' }}>
+                    <div style={{ fontSize:'32px', marginBottom:'10px' }}>{game.emoji}</div>
+                    <div style={{ fontSize:'15px', fontWeight:'600', color:'#f0efe9', marginBottom:'6px' }}>{game.title}</div>
+                    <div style={{ fontSize:'12px', color:'#777672', marginBottom:'14px' }}>{game.desc}</div>
+                    <div style={{ display:'inline-block', background:game.color, color: game.color==='#EF9F27'?'#111110':'#fff', borderRadius:'16px', padding:'6px 16px', fontSize:'12px', fontWeight:'500' }}>Play now →</div>
+                  </Link>
+                ))}
+              </div>
             </div>
-            <Link href="/blog" style={{ fontSize:'12px', color:'#1D9E75', textDecoration:'none', border:'1px solid #1D9E75', padding:'4px 12px', borderRadius:'10px' }}>All posts →</Link>
-          </div>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'12px' }}>
-            {BLOG_POSTS.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration:'none', display:'block', background:'#1a1a18', border:'1px solid #2a2a28', borderRadius:'12px', padding:'20px' }}>
-                <div style={{ fontSize:'11px', color:'#777672', marginBottom:'8px' }}>{post.date}</div>
-                <div style={{ fontSize:'15px', fontWeight:'600', color:'#f0efe9', marginBottom:'8px', lineHeight:1.3 }}>{post.title}</div>
-                <div style={{ fontSize:'13px', color:'#777672', lineHeight:1.5 }}>{post.excerpt}</div>
-                <div style={{ fontSize:'12px', color:'#1D9E75', marginTop:'12px' }}>Read more →</div>
-              </Link>
-            ))}
-          </div>
+          )}
         </div>
 
-        {/* ⭐ Featured This Week */}
+                {/* ⭐ Featured This Week */}
         <div style={{ marginBottom:'24px' }}>
           <Link href={'/topic/' + featured.slug} style={{ textDecoration:'none', display:'block' }}>
             <div style={{ background:'#1e1e1c', border:'2px solid #EF9F27', borderRadius:'16px', padding:'20px 24px', display:'flex', alignItems:'center', gap:'20px', cursor:'pointer', position:'relative' }}>
