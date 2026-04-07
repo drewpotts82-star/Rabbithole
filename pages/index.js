@@ -100,16 +100,16 @@ const EDU_VIDEOS = [
 
 // Motivational videos — rotates daily
 const MOTIVATION_VIDEOS = [
-  { id:'mgmVOuLgFB0', title:'Steve Jobs — Stay Hungry Stay Foolish', quote:'Stay hungry. Stay foolish.', author:'Steve Jobs' },
-  { id:'_75eHOdFhMI', title:'Matthew McConaughey — This Is Why You\re Not Happy', quote:'Life is not easy. It is not. And if you have any of those two things going for you, that\'s fine, embrace them.', author:'Matthew McConaughey' },
-  { id:'pqFO3Vm6zLk', title:'Denzel Washington — Fall Forward', quote:'Fall forward. Every failed experiment is one step closer to success.', author:'Denzel Washington' },
-  { id:'4vl6wCqFbVk', title:'Will Smith — Greatness', quote:'The separation of talent and skill is one of the greatest misunderstood concepts.', author:'Will Smith' },
-  { id:'TQMbvJNRpLE', title:'Arnold Schwarzenegger — 6 Rules of Success', quote:'Work your butt off. No matter what you do in life, dig deep and work hard.', author:'Arnold Schwarzenegger' },
-  { id:'ROwan_-sFaI', title:'David Goggins — You Are Not Done', quote:'We all have the ability to come from nothing and become something extraordinary.', author:'David Goggins' },
-  { id:'lsSC2vx7zFQ', title:'Jim Carrey — Commencement Speech', quote:'You can fail at what you don\'t want, so you might as well take a chance on doing what you love.', author:'Jim Carrey' },
-  { id:'BmSHgCMCW5A', title:'Kobe Bryant — Mamba Mentality', quote:'The most important thing is to try and inspire people so that they can be great in whatever they want to do.', author:'Kobe Bryant' },
-  { id:'yBLa6mCaRSQ', title:'Shia LaBeouf — Just Do It', quote:'Yesterday you said tomorrow. Just do it.', author:'Shia LaBeouf' },
-  { id:'qHnkjOo_VrA', title:'Admiral McRaven — Make Your Bed', quote:'If you want to change the world, start off by making your bed.', author:'Admiral McRaven' },
+  { id:'mgmVOuLgFB0', title:'Steve Jobs Stanford Commencement Speech', quote:'Stay hungry. Stay foolish.', author:'Steve Jobs' },
+  { id:'pqFO3Vm6zLk', title:'Denzel Washington Fall Forward', quote:'Fall forward. Every failed experiment is one step closer to success.', author:'Denzel Washington' },
+  { id:'4vl6wCqFbVk', title:'Will Smith on Greatness', quote:'The separation of talent and skill is one of the greatest misunderstood concepts.', author:'Will Smith' },
+  { id:'TQMbvJNRpLE', title:'Arnold Schwarzenegger 6 Rules of Success', quote:'Work your butt off. No matter what you do in life, dig deep and work hard.', author:'Arnold Schwarzenegger' },
+  { id:'lsSC2vx7zFQ', title:'Jim Carrey Commencement Speech', quote:'You can fail at what you dont want, so you might as well take a chance on doing what you love.', author:'Jim Carrey' },
+  { id:'qHnkjOo_VrA', title:'Admiral McRaven Make Your Bed', quote:'If you want to change the world, start off by making your bed.', author:'Admiral McRaven' },
+  { id:'ROwan_-sFaI', title:'David Goggins You Are Not Done', quote:'We all have the ability to come from nothing and become something extraordinary.', author:'David Goggins' },
+  { id:'BmSHgCMCW5A', title:'Kobe Bryant Mamba Mentality', quote:'The most important thing is to try and inspire people so that they can be great.', author:'Kobe Bryant' },
+  { id:'_75eHOdFhMI', title:'Matthew McConaughey This Is Why Youre Not Happy', quote:'Life is not easy. It is not. And if you have any of those two things going for you embrace them.', author:'Matthew McConaughey' },
+  { id:'yBLa6mCaRSQ', title:'Shia LaBeouf Just Do It', quote:'Yesterday you said tomorrow. Just do it.', author:'Shia LaBeouf' },
 ];
 
 // Blog posts — add new ones here
