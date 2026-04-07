@@ -297,7 +297,7 @@ export default function Home() {
               { id:'games', label:'🎮 Games', color:'#EF9F27' },
             ].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                style={{ background:'transparent', border:'none', borderBottom: activeTab===tab.id ? '2px solid '+tab.color : '2px solid transparent', color: activeTab===tab.id ? tab.color : '#555553', padding:'12px 20px', fontSize:'16px', fontWeight:'600', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap', marginBottom:'-1px', transition:'all 0.2s' }}>
+                style={{ background:'transparent', border:'none', borderBottom: activeTab===tab.id ? '2px solid '+tab.color : '2px solid transparent', color: activeTab===tab.id ? tab.color : '#a0a09a', padding:'12px 20px', fontSize:'16px', fontWeight:'600', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap', marginBottom:'-1px', transition:'all 0.2s' }}>
                 {tab.label}
               </button>
             ))}
