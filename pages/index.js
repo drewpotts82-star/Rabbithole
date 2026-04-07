@@ -209,7 +209,7 @@ function LazyVideo({ id, title }) {
   return (
     <div onClick={() => setPlaying(true)} style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', cursor:'pointer', background:'#000' }}>
       <img
-        src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+        src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}
         alt={title}
         style={{ width:'100%', height:'100%', objectFit:'cover', opacity:0.85 }}
       />
