@@ -182,7 +182,7 @@ function LazyVideo({ id, title }) {
 
 export default function Home() {
   const [search, setSearch] = useState('');
-  const [activeTab, setActiveTab] = useState('fun');
+  const [activeTab, setActiveTab] = useState('motivation');
   const [activeFilter, setActiveFilter] = useState('all');
   const [showAllTopics, setShowAllTopics] = useState(false);
   const featured = getWeeklyFeatured();
@@ -250,9 +250,9 @@ export default function Home() {
         <div style={{ marginBottom:'24px' }}>
           <div style={{ display:'flex', gap:'0', overflowX:'auto', scrollbarWidth:'none', borderBottom:'1px solid #2a2a28', marginBottom:'20px' }}>
             {[
-              { id:'fun', label:'🤯 Viral Facts', color:'#EF9F27' },
-              { id:'learn', label:'🎓 Learn', color:'#1D9E75' },
               { id:'motivation', label:'💪 Motivation', color:'#D85A30' },
+              { id:'learn', label:'🎓 Learn', color:'#1D9E75' },
+              { id:'fun', label:'🤯 Viral Facts', color:'#EF9F27' },
               { id:'blog', label:'✍️ Blog', color:'#f0efe9' },
               { id:'games', label:'🎮 Games', color:'#EF9F27' },
             ].map(tab => (
@@ -267,7 +267,7 @@ export default function Home() {
             <div>
               <div style={{ fontSize:'12px', color:'#777672', marginBottom:'16px' }}>Mind-blowing YouTube facts — did you know these? 🤯</div>
               <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'12px' }}>
-                {VIRAL_FACTS.slice(0, 9).map((fact, i) => (
+                {VIRAL_FACTS.slice(0, 3).map((fact, i) => (
                   <a key={i} href={fact.link} style={{ textDecoration:'none', display:'block', background:'#1a1a18', border:'1px solid #2a2a28', borderRadius:'12px', padding:'20px', transition:'border-color 0.2s' }}>
                     <div style={{ fontSize:'36px', marginBottom:'10px' }}>{fact.emoji}</div>
                     <div style={{ fontSize:'14px', color:'#f0efe9', lineHeight:1.5, marginBottom:'12px' }}>{fact.fact}</div>
@@ -298,16 +298,20 @@ export default function Home() {
           )}
 
           {activeTab === 'motivation' && (
-            <div style={{ display:'flex', gap:'24px', alignItems:'center', background:'#1a1a18', border:'1px solid #D85A30', borderRadius:'16px', padding:'24px', flexWrap:'wrap' }}>
-              <div style={{ flexShrink:0, width:'300px', borderRadius:'12px', overflow:'hidden' }}>
-                <div style={{ position:'relative', paddingBottom:'56.25%' }}>
-                  <LazyVideo id={todaysMotivation.id} title={todaysMotivation.title} />
-                </div>
-              </div>
-              <div style={{ flex:1, minWidth:'200px' }}>
-                <div style={{ fontSize:'11px', color:'#D85A30', textTransform:'uppercase', letterSpacing:'0.15em', marginBottom:'16px' }}>Today's Quote</div>
-                <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'32px', letterSpacing:'1px', color:'#f0efe9', lineHeight:1.2, marginBottom:'16px' }}>"{todaysMotivation.quote}"</div>
-                <div style={{ fontSize:'14px', color:'#777672' }}>— {todaysMotivation.author}</div>
+            <div>
+              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'16px' }}>3 videos to fuel your day — changes every morning</div>
+              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'16px', marginBottom:'20px' }}>
+                {MOTIVATION_VIDEOS.slice(dayIndex % MOTIVATION_VIDEOS.length, (dayIndex % MOTIVATION_VIDEOS.length) + 3).map((v, i) => (
+                  <div key={i} style={{ background:'#1a1a18', borderRadius:'12px', overflow:'hidden', border:'1px solid #D85A30' }}>
+                    <div style={{ position:'relative', paddingBottom:'56.25%' }}>
+                      <LazyVideo id={v.id} title={v.title} />
+                    </div>
+                    <div style={{ padding:'12px' }}>
+                      <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'16px', letterSpacing:'1px', color:'#f0efe9', marginBottom:'6px' }}>"{v.quote}"</div>
+                      <div style={{ fontSize:'12px', color:'#D85A30' }}>— {v.author}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
