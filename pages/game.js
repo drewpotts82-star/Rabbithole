@@ -205,6 +205,12 @@ export default function Game() {
 
   const progress = ((current) / pairs.length) * 100;
 
+  const quickShare = () => {
+    const text = `I'm playing "Which Has More Views?" on RabbitHole 🐇 Can you beat me? rabbitholevideo.com/game`;
+    if (navigator.share) navigator.share({ title: 'RabbitHole Game', text });
+    else { navigator.clipboard.writeText('rabbitholevideo.com/game'); alert('Link copied! Share with friends 🐇'); }
+  };
+
   return (
     <div style={{ background:'#111110', minHeight:'100vh', color:'#f0efe9', fontFamily:'DM Sans, sans-serif' }}>
       <Confetti active={confetti} />
@@ -212,62 +218,88 @@ export default function Game() {
         <title>Which Has More Views? — RabbitHole Game</title>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
       </Head>
-      <nav style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 24px', background:'#1e1e1c', borderBottom:'1px solid #333331' }}>
+      <nav style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 24px', background:'#1e1e1c', borderBottom:'1px solid #333331', flexWrap:'wrap', gap:'8px' }}>
         <Link href="/" style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'24px', letterSpacing:'2px', color:'#D85A30', textDecoration:'none' }}>RABBIT<span style={{ color:'#1D9E75' }}>HOLE</span></Link>
-        <div style={{ display:'flex', gap:'16px', fontSize:'13px', alignItems:'center' }}>
+        <div style={{ display:'flex', gap:'12px', fontSize:'13px', alignItems:'center' }}>
           <span>Score: <strong style={{ color:'#1D9E75' }}>{score}</strong></span>
           <span style={{ color:'#EF9F27' }}>🔥 {streak}</span>
           <span style={{ color:'#777672' }}>{current+1}/{pairs.length}</span>
+          <button onClick={quickShare} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'16px', padding:'6px 14px', fontSize:'12px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>📤 Challenge a Friend</button>
         </div>
       </nav>
 
-      <div style={{ height:'3px', background:'#222', position:'relative' }}>
+      <div style={{ height:'3px', background:'#222' }}>
         <div style={{ height:'100%', width:`${progress}%`, background:'#1D9E75', transition:'width 0.3s' }} />
       </div>
 
-      <div style={{ maxWidth:'560px', margin:'0 auto', padding:'32px 24px' }}>
-        <div style={{ textAlign:'center', marginBottom:'28px' }}>
-          <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'28px', letterSpacing:'2px' }}>WHICH HAS MORE VIEWS?</div>
-          <div style={{ fontSize:'12px', color:'#777672', marginTop:'4px' }}>Pick the topic with more combined YouTube views</div>
-        </div>
+      <div style={{ maxWidth:'1100px', margin:'0 auto', padding:'24px', display:'grid', gridTemplateColumns:'1fr 280px', gap:'24px', alignItems:'start' }}>
+        
+        {/* Game area */}
+        <div>
+          <div style={{ textAlign:'center', marginBottom:'24px' }}>
+            <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'28px', letterSpacing:'2px' }}>WHICH HAS MORE VIEWS?</div>
+            <div style={{ fontSize:'12px', color:'#777672', marginTop:'4px' }}>Pick the topic with more combined YouTube views</div>
+          </div>
 
-        <div style={{ display:'flex', gap:'14px', marginBottom:'20px' }}>
-          {[['a', a], ['b', b]].map(([side, topic]) => (
-            <div key={side} style={getCardStyle(side)} onClick={() => handleChoice(side)}>
-              <div style={{ fontSize:'44px', marginBottom:'10px' }}>{topic.emoji}</div>
-              <div style={{ fontSize:'17px', fontWeight:'600', marginBottom:'6px' }}>{topic.name}</div>
-              {answered && (
-                <>
-                  <div style={{ fontSize:'20px', fontWeight:'700', color: side===correct ? '#1D9E75' : '#555', marginTop:'8px' }}>{topic.views}</div>
-                  <div style={{ fontSize:'11px', marginTop:'4px', color: side===correct ? '#1D9E75' : '#D85A30' }}>
-                    {side===correct ? '✓ More views!' : chosen===side ? '✗ Wrong' : ''}
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div style={{ textAlign:'center', minHeight:'60px', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center' }}>
-          {!answered && <div style={{ color:'#777672', fontSize:'13px' }}>👆 Tap to guess</div>}
-          {answered && (
-            <>
-              <div style={{ fontSize:'18px', fontWeight:'600', color: chosen===correct ? '#1D9E75' : '#D85A30', marginBottom:'14px' }}>
-                {chosen===correct ? `✓ Correct! 🔥 Streak: ${streak}` : '✗ Not quite!'}
+          <div style={{ display:'flex', gap:'14px', marginBottom:'20px' }}>
+            {[['a', a], ['b', b]].map(([side, topic]) => (
+              <div key={side} style={getCardStyle(side)} onClick={() => handleChoice(side)}>
+                <div style={{ fontSize:'44px', marginBottom:'10px' }}>{topic.emoji}</div>
+                <div style={{ fontSize:'17px', fontWeight:'600', marginBottom:'6px' }}>{topic.name}</div>
+                {answered && (
+                  <>
+                    <div style={{ fontSize:'20px', fontWeight:'700', color: side===correct ? '#1D9E75' : '#555', marginTop:'8px' }}>{topic.views}</div>
+                    <div style={{ fontSize:'11px', marginTop:'4px', color: side===correct ? '#1D9E75' : '#D85A30' }}>
+                      {side===correct ? '✓ More views!' : chosen===side ? '✗ Wrong' : ''}
+                    </div>
+                  </>
+                )}
               </div>
-              <button onClick={() => { setAnswered(false); setChosen(null); if (current+1 >= pairs.length) setGameOver(true); else setCurrent(c => c+1); }}
-                style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'20px', padding:'11px 28px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
-                {current+1 >= pairs.length ? 'See Results 🏆' : 'Next →'}
-              </button>
-            </>
+            ))}
+          </div>
+
+          <div style={{ textAlign:'center', minHeight:'60px', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center' }}>
+            {!answered && <div style={{ color:'#777672', fontSize:'13px' }}>👆 Tap to guess</div>}
+            {answered && (
+              <>
+                <div style={{ fontSize:'18px', fontWeight:'600', color: chosen===correct ? '#1D9E75' : '#D85A30', marginBottom:'14px' }}>
+                  {chosen===correct ? `✓ Correct! 🔥 Streak: ${streak}` : '✗ Not quite!'}
+                </div>
+                <button onClick={() => { setAnswered(false); setChosen(null); if (current+1 >= pairs.length) setGameOver(true); else setCurrent(c => c+1); }}
+                  style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'20px', padding:'11px 28px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
+                  {current+1 >= pairs.length ? 'See Results 🏆' : 'Next →'}
+                </button>
+              </>
+            )}
+          </div>
+
+          {streak >= 3 && !answered && (
+            <div style={{ textAlign:'center', marginTop:'12px', fontSize:'13px', color:'#EF9F27' }}>
+              🔥 {streak} in a row! Keep going!
+            </div>
           )}
         </div>
 
-        {streak >= 3 && !answered && (
-          <div style={{ textAlign:'center', marginTop:'16px', fontSize:'13px', color:'#EF9F27' }}>
-            🔥 {streak} in a row! Keep going!
-          </div>
-        )}
+        {/* Live Leaderboard sidebar */}
+        <div style={{ background:'#1a1a18', border:'1px solid #333331', borderRadius:'14px', padding:'16px', position:'sticky', top:'16px' }}>
+          <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'18px', letterSpacing:'2px', color:'#EF9F27', marginBottom:'14px', textAlign:'center' }}>🏆 TOP 20 ALL TIME</div>
+          {leaderboard.length === 0 ? (
+            <div style={{ color:'#555', fontSize:'12px', textAlign:'center', padding:'20px 0' }}>No scores yet — be first!</div>
+          ) : (
+            leaderboard.slice(0,20).map((e, i) => (
+              <div key={i} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'7px 0', borderBottom: i < leaderboard.length-1 ? '1px solid #222' : 'none', fontSize:'13px' }}>
+                <div style={{ display:'flex', alignItems:'center', gap:'8px' }}>
+                  <span style={{ fontWeight:'700', color: i===0?'#EF9F27': i===1?'#B4B2A9': i===2?'#D85A30':'#555', width:'20px' }}>#{i+1}</span>
+                  <span style={{ color:'#f0efe9' }}>{e.name}</span>
+                </div>
+                <span style={{ color:'#1D9E75', fontWeight:'600' }}>{e.score}/{e.total}</span>
+              </div>
+            ))
+          )}
+          <button onClick={quickShare} style={{ marginTop:'14px', width:'100%', background:'transparent', color:'#1D9E75', border:'1px solid #1D9E75', borderRadius:'16px', padding:'8px', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
+            📤 Challenge a Friend
+          </button>
+        </div>
       </div>
     </div>
   );
