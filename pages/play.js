@@ -39,6 +39,12 @@ export default function Play() {
             <div style={{ fontSize:'13px', color:'#777672', marginTop:'4px' }}>See a flag — pick the right destination. 15 rounds, how well do you know the world?</div>
             <div style={{ marginTop:'16px', display:'inline-block', background:'#1D9E75', color:'#fff', borderRadius:'20px', padding:'8px 20px', fontSize:'13px', fontWeight:'500' }}>Play now →</div>
           </Link>
+          <Link href="/language-game" style={{ background:'#1a1a18', border:'1px solid #EF9F27', borderRadius:'16px', padding:'28px 24px', textDecoration:'none', color:'#f0efe9', textAlign:'left', display:'block' }}>
+            <div style={{ fontSize:'32px', marginBottom:'8px' }}>🗣️</div>
+            <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#EF9F27' }}>WHAT DOES THIS MEAN?</div>
+            <div style={{ fontSize:'13px', color:'#777672', marginTop:'4px' }}>Untranslatable words from around the world — 10 rounds, how many do you know?</div>
+            <div style={{ marginTop:'16px', display:'inline-block', background:'#EF9F27', color:'#111110', borderRadius:'20px', padding:'8px 20px', fontSize:'13px', fontWeight:'600' }}>Play now →</div>
+          </Link>
           <Link href="/" style={{ display:'block', marginTop:'24px', fontSize:'13px', color:'#555', textDecoration:'none', textAlign:'center' }}>← Back to topics</Link>
       </div>
     </div>
