@@ -63,7 +63,7 @@ const EDU_VIDEOS = [
   // Day 1
   [
     { id:'IVtG8NhY38A', title:'What’s gives fireworks their colors 🤔 #science #s', channel:'Imagination Station Toledo' },
-    { id:'ipbsTRR-a3s', title:'Understanding Bernoulli's Theorem Walter Lewin', channel:'Science Explained' },
+    { id:'ipbsTRR-a3s', title:'Understanding Bernoullis Theorem Walter Lewin', channel:'Science Explained' },
     { id:'ORxKf1FN3ro', title:'The real science of black holes', channel:'Veritasium' },
   ],
   // Day 2
@@ -101,7 +101,7 @@ const EDU_VIDEOS = [
 // Motivational videos — rotates daily
 const MOTIVATION_VIDEOS = [
   { id:'mgmVOuLgFB0', title:'Steve Jobs — Stay Hungry Stay Foolish', quote:'Stay hungry. Stay foolish.', author:'Steve Jobs' },
-  { id:'_75eHOdFhMI', title:'Matthew McConaughey — This Is Why You\'re Not Happy', quote:'Life is not easy. It is not. And if you have any of those two things going for you, that\'s fine, embrace them.', author:'Matthew McConaughey' },
+  { id:'_75eHOdFhMI', title:'Matthew McConaughey — This Is Why You\re Not Happy', quote:'Life is not easy. It is not. And if you have any of those two things going for you, that\'s fine, embrace them.', author:'Matthew McConaughey' },
   { id:'pqFO3Vm6zLk', title:'Denzel Washington — Fall Forward', quote:'Fall forward. Every failed experiment is one step closer to success.', author:'Denzel Washington' },
   { id:'4vl6wCqFbVk', title:'Will Smith — Greatness', quote:'The separation of talent and skill is one of the greatest misunderstood concepts.', author:'Will Smith' },
   { id:'TQMbvJNRpLE', title:'Arnold Schwarzenegger — 6 Rules of Success', quote:'Work your butt off. No matter what you do in life, dig deep and work hard.', author:'Arnold Schwarzenegger' },
@@ -211,7 +211,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Head>
-        <title>RabbitHole — The World's Most Viewed Videos, By Topic</title>
+        <title>RabbitHole — The Worlds Most Viewed Videos, By Topic</title>
         <meta name="description" content="See the most viewed YouTube videos of all time across 100 topics — fishing, gaming, cooking, golf and more. Ranked by total views worldwide." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
