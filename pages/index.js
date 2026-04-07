@@ -22,6 +22,103 @@ const tierDot = { gold: '#EF9F27', silver: '#B4B2A9', bronze: '#D85A30' };
 const MINDLESS_VIDEOS = [
   // Day 0
   [
+    { id:'BNiTVsAlzlc', title:'Funny video 1' },
+    { id:'0stEzx7LRLo', title:'Funny video 2' },
+    { id:'oKl8JoWyfSQ', title:'Funny video 3' },
+    { id:'ZwQqkuUS1Nk', title:'Funny video 4' },
+    { id:'7TVTti7Aqw8', title:'Funny video 5' },
+    { id:'a1Y2hubh7S4', title:'Funny video 6' },
+    { id:'JxdBVXIpwF8', title:'Funny video 7' },
+    { id:'T1kdVaxHy4M', title:'Funny video 8' },
+    { id:'aDBwEVLphdg', title:'Funny video 9' },
+    { id:'vuUTdevYRF4', title:'Funny video 10' },
+  ],
+  // Day 1
+  [
+    { id:'BNiTVsAlzlc', title:'Funny video 1' },
+    { id:'0stEzx7LRLo', title:'Funny video 2' },
+    { id:'oKl8JoWyfSQ', title:'Funny video 3' },
+    { id:'ZwQqkuUS1Nk', title:'Funny video 4' },
+    { id:'7TVTti7Aqw8', title:'Funny video 5' },
+    { id:'a1Y2hubh7S4', title:'Funny video 6' },
+    { id:'JxdBVXIpwF8', title:'Funny video 7' },
+    { id:'T1kdVaxHy4M', title:'Funny video 8' },
+    { id:'aDBwEVLphdg', title:'Funny video 9' },
+    { id:'vuUTdevYRF4', title:'Funny video 10' },
+  ],
+  // Day 2
+  [
+    { id:'vuUTdevYRF4', title:'Funny video 1' },
+    { id:'aDBwEVLphdg', title:'Funny video 2' },
+    { id:'T1kdVaxHy4M', title:'Funny video 3' },
+    { id:'JxdBVXIpwF8', title:'Funny video 4' },
+    { id:'a1Y2hubh7S4', title:'Funny video 5' },
+    { id:'7TVTti7Aqw8', title:'Funny video 6' },
+    { id:'ZwQqkuUS1Nk', title:'Funny video 7' },
+    { id:'oKl8JoWyfSQ', title:'Funny video 8' },
+    { id:'0stEzx7LRLo', title:'Funny video 9' },
+    { id:'BNiTVsAlzlc', title:'Funny video 10' },
+  ],
+  // Day 3
+  [
+    { id:'T1kdVaxHy4M', title:'Funny video 1' },
+    { id:'BNiTVsAlzlc', title:'Funny video 2' },
+    { id:'vuUTdevYRF4', title:'Funny video 3' },
+    { id:'0stEzx7LRLo', title:'Funny video 4' },
+    { id:'aDBwEVLphdg', title:'Funny video 5' },
+    { id:'oKl8JoWyfSQ', title:'Funny video 6' },
+    { id:'JxdBVXIpwF8', title:'Funny video 7' },
+    { id:'ZwQqkuUS1Nk', title:'Funny video 8' },
+    { id:'7TVTti7Aqw8', title:'Funny video 9' },
+    { id:'a1Y2hubh7S4', title:'Funny video 10' },
+  ],
+  // Day 4
+  [
+    { id:'a1Y2hubh7S4', title:'Funny video 1' },
+    { id:'7TVTti7Aqw8', title:'Funny video 2' },
+    { id:'ZwQqkuUS1Nk', title:'Funny video 3' },
+    { id:'JxdBVXIpwF8', title:'Funny video 4' },
+    { id:'oKl8JoWyfSQ', title:'Funny video 5' },
+    { id:'aDBwEVLphdg', title:'Funny video 6' },
+    { id:'0stEzx7LRLo', title:'Funny video 7' },
+    { id:'vuUTdevYRF4', title:'Funny video 8' },
+    { id:'BNiTVsAlzlc', title:'Funny video 9' },
+    { id:'T1kdVaxHy4M', title:'Funny video 10' },
+  ],
+  // Day 5
+  [
+    { id:'JxdBVXIpwF8', title:'Funny video 1' },
+    { id:'oKl8JoWyfSQ', title:'Funny video 2' },
+    { id:'a1Y2hubh7S4', title:'Funny video 3' },
+    { id:'BNiTVsAlzlc', title:'Funny video 4' },
+    { id:'T1kdVaxHy4M', title:'Funny video 5' },
+    { id:'ZwQqkuUS1Nk', title:'Funny video 6' },
+    { id:'vuUTdevYRF4', title:'Funny video 7' },
+    { id:'7TVTti7Aqw8', title:'Funny video 8' },
+    { id:'0stEzx7LRLo', title:'Funny video 9' },
+    { id:'aDBwEVLphdg', title:'Funny video 10' },
+  ],
+  // Day 6
+  [
+    { id:'0stEzx7LRLo', title:'Funny video 1' },
+    { id:'vuUTdevYRF4', title:'Funny video 2' },
+    { id:'aDBwEVLphdg', title:'Funny video 3' },
+    { id:'T1kdVaxHy4M', title:'Funny video 4' },
+    { id:'a1Y2hubh7S4', title:'Funny video 5' },
+    { id:'BNiTVsAlzlc', title:'Funny video 6' },
+    { id:'7TVTti7Aqw8', title:'Funny video 7' },
+    { id:'oKl8JoWyfSQ', title:'Funny video 8' },
+    { id:'JxdBVXIpwF8', title:'Funny video 9' },
+    { id:'ZwQqkuUS1Nk', title:'Funny video 10' },
+  ],
+];
+
+const tierDot = { gold: '#EF9F27', silver: '#B4B2A9', bronze: '#D85A30' };
+
+// 30 days of mindless fun — 10 videos per day
+const MINDLESS_VIDEOS = [
+  // Day 0
+  [
     { id:'9bZkp7q19f0', title:'PSY - Gangnam Style' },
     { id:'dQw4w9WgXcQ', title:'Rick Astley - Never Gonna Give You Up' },
     { id:'QH2-TGUlwu4', title:'Nyan Cat' },
