@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import topics from '../data/topics';
@@ -51,6 +51,62 @@ function Confetti({ active }) {
   return <canvas id="hol-confetti" style={{ position:'fixed', top:0, left:0, pointerEvents:'none', zIndex:999 }} />;
 }
 
+
+function ShareModal({ score, total, gameName, gameUrl, onClose }) {
+  const text = encodeURIComponent(`I scored ${score}/${total} on RabbitHole's ${gameName}! 🐇 Can you beat me?`);
+  const url = encodeURIComponent(`https://rabbitholevideo.com/${gameUrl}`);
+  const fullText = encodeURIComponent(`I scored ${score}/${total} on RabbitHole's ${gameName}! 🐇 Can you beat me? https://rabbitholevideo.com/${gameUrl}`);
+
+  const platforms = [
+    { name:'Facebook', color:'#1877F2', emoji:'📘', link:`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}` },
+    { name:'WhatsApp', color:'#25D366', emoji:'💬', link:`https://wa.me/?text=${fullText}` },
+    { name:'Twitter/X', color:'#000', emoji:'🐦', link:`https://twitter.com/intent/tweet?text=${fullText}` },
+    { name:'Copy Link', color:'#333331', emoji:'🔗', link:null },
+  ];
+
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(`https://rabbitholevideo.com/${gameUrl}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.8)', zIndex:1000, display:'flex', alignItems:'center', justifyContent:'center', padding:'24px' }} onClick={onClose}>
+      <div style={{ background:'#1a1a18', border:'1px solid #333331', borderRadius:'20px', padding:'28px', maxWidth:'360px', width:'100%' }} onClick={e => e.stopPropagation()}>
+        <div style={{ textAlign:'center', marginBottom:'20px' }}>
+          <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'24px', letterSpacing:'2px', color:'#EF9F27' }}>SHARE YOUR SCORE</div>
+          <div style={{ fontSize:'32px', fontWeight:'700', color:'#1D9E75', margin:'8px 0' }}>{score}/{total}</div>
+          <div style={{ fontSize:'13px', color:'#777672' }}>{gameName}</div>
+        </div>
+
+        <div style={{ display:'flex', flexDirection:'column', gap:'10px', marginBottom:'16px' }}>
+          {platforms.map(p => (
+            p.link ? (
+              <a key={p.name} href={p.link} target="_blank" rel="noopener noreferrer"
+                style={{ display:'flex', alignItems:'center', gap:'12px', background:p.color, color:'#fff', borderRadius:'12px', padding:'13px 18px', textDecoration:'none', fontSize:'14px', fontWeight:'500' }}>
+                <span style={{ fontSize:'20px' }}>{p.emoji}</span>
+                Share on {p.name}
+              </a>
+            ) : (
+              <button key={p.name} onClick={handleCopy}
+                style={{ display:'flex', alignItems:'center', gap:'12px', background: copied ? '#1D9E75' : p.color, color:'#f0efe9', border:'1px solid #444', borderRadius:'12px', padding:'13px 18px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', width:'100%' }}>
+                <span style={{ fontSize:'20px' }}>{copied ? '✓' : p.emoji}</span>
+                {copied ? 'Copied!' : 'Copy Link'}
+              </button>
+            )
+          ))}
+        </div>
+
+        <button onClick={onClose} style={{ width:'100%', background:'transparent', color:'#777672', border:'1px solid #333331', borderRadius:'12px', padding:'11px', fontSize:'13px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
+          Close
+        </button>
+      {showShare && <ShareModal score={score} total={bestStreak} gameName="Higher or Lower" gameUrl="higher-or-lower" onClose={() => setShowShare(false)} />}
+    </div>
+  );
+}
+
 export default function HigherOrLower() {
   const [shuffled, setShuffled] = useState([]);
   const [current, setCurrent] = useState(1);
@@ -62,6 +118,7 @@ export default function HigherOrLower() {
   const [confetti, setConfetti] = useState(false);
   const [playerName, setPlayerName] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [showShare, setShowShare] = useState(false);
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
@@ -174,7 +231,7 @@ export default function HigherOrLower() {
         )}
 
         <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', justifyContent:'center', marginTop:'16px' }}>
-          <button onClick={shareScore} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>📤 Challenge a Friend</button>
+          <button onClick={() => setShowShare(true)} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>📤 Share My Score</button>
           <button onClick={() => window.location.reload()} style={{ background:'transparent', color:'#f0efe9', border:'1px solid #333331', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>🔄 Play Again</button>
           <Link href="/play" style={{ background:'transparent', color:'#EF9F27', border:'1px solid #EF9F27', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', textDecoration:'none' }}>🎮 All Games</Link>
         </div>
