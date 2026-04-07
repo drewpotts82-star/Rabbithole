@@ -87,16 +87,16 @@ const MINDLESS_VIDEOS = [
   ],
   // Day 5
   [
-    { id:'JxdBVXIpwF8', title:'Click to watch 🎬' },
-    { id:'oKl8JoWyfSQ', title:'Click to watch 🎬' },
-    { id:'a1Y2hubh7S4', title:'Click to watch 🎬' },
     { id:'BNiTVsAlzlc', title:'Click to watch 🎬' },
-    { id:'T1kdVaxHy4M', title:'Click to watch 🎬' },
-    { id:'ZwQqkuUS1Nk', title:'Click to watch 🎬' },
-    { id:'vuUTdevYRF4', title:'Click to watch 🎬' },
-    { id:'7TVTti7Aqw8', title:'Click to watch 🎬' },
     { id:'0stEzx7LRLo', title:'Click to watch 🎬' },
+    { id:'oKl8JoWyfSQ', title:'Click to watch 🎬' },
+    { id:'ZwQqkuUS1Nk', title:'Click to watch 🎬' },
+    { id:'7TVTti7Aqw8', title:'Click to watch 🎬' },
+    { id:'a1Y2hubh7S4', title:'Click to watch 🎬' },
+    { id:'JxdBVXIpwF8', title:'Click to watch 🎬' },
+    { id:'T1kdVaxHy4M', title:'Click to watch 🎬' },
     { id:'aDBwEVLphdg', title:'Click to watch 🎬' },
+    { id:'vuUTdevYRF4', title:'Click to watch 🎬' },
   ],
   // Day 6
   [
