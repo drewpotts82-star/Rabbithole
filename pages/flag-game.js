@@ -332,7 +332,7 @@ export default function FlagGame() {
           {/* Flag display */}
           <div style={{ background:'#1a1a18', border:'1px solid #333331', borderRadius:'16px', padding:'40px 24px', textAlign:'center', marginBottom:'24px' }}>
             <div style={{ fontSize:'120px', lineHeight:1, marginBottom:'16px' }}>{round.correct.flag}</div>
-            <div style={{ fontSize:'13px', color:'#555', fontStyle:'italic' }}>"{round.correct.hint}"</div>
+            <div style={{ fontSize:'12px', color:'#555', fontStyle:'italic', marginTop:'8px' }}>Hint: {round.correct.hint}</div>
           </div>
 
           {/* Options */}
@@ -354,7 +354,6 @@ export default function FlagGame() {
                 >
                   <div style={{ fontSize:'28px', marginBottom:'6px' }}>{option.emoji}</div>
                   <div style={{ fontSize:'15px', fontWeight:'600', color }}>{option.name}</div>
-                  <div style={{ fontSize:'11px', color:'#777672', marginTop:'2px' }}>{option.country}</div>
                   {answered && isCorrect && <div style={{ fontSize:'11px', color:'#1D9E75', marginTop:'4px' }}>✓ Correct!</div>}
                   {answered && isChosen && !isCorrect && <div style={{ fontSize:'11px', color:'#D85A30', marginTop:'4px' }}>✗ Wrong!</div>}
                 </button>
