@@ -109,25 +109,12 @@ function buildRound(pool, usedSlugs) {
 }
 
 
+
 function ShareModal({ score, total, gameName, gameUrl, onClose }) {
-  const text = encodeURIComponent(`I scored ${score}/${total} on RabbitHole's ${gameName}! 🐇 Can you beat me?`);
-  const url = encodeURIComponent(`https://rabbitholevideo.com/${gameUrl}`);
-  const fullText = encodeURIComponent(`I scored ${score}/${total} on RabbitHole's ${gameName}! 🐇 Can you beat me? https://rabbitholevideo.com/${gameUrl}`);
-
-  const platforms = [
-    { name:'Facebook', color:'#1877F2', emoji:'📘', link:`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}` },
-    { name:'WhatsApp', color:'#25D366', emoji:'💬', link:`https://wa.me/?text=${fullText}` },
-    { name:'Twitter/X', color:'#000', emoji:'🐦', link:`https://twitter.com/intent/tweet?text=${fullText}` },
-    { name:'Copy Link', color:'#333331', emoji:'🔗', link:null },
-  ];
-
   const [copied, setCopied] = React.useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(`https://rabbitholevideo.com/${gameUrl}`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const text = encodeURIComponent('I scored ' + score + '/' + total + ' on RabbitHole\'s ' + gameName + '! Can you beat me?');
+  const url = encodeURIComponent('https://rabbitholevideo.com/' + gameUrl);
+  const fullText = encodeURIComponent('I scored ' + score + '/' + total + ' on RabbitHole\'s ' + gameName + '! Can you beat me? https://rabbitholevideo.com/' + gameUrl);
 
   return (
     <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.8)', zIndex:1000, display:'flex', alignItems:'center', justifyContent:'center', padding:'24px' }} onClick={onClose}>
@@ -137,29 +124,26 @@ function ShareModal({ score, total, gameName, gameUrl, onClose }) {
           <div style={{ fontSize:'32px', fontWeight:'700', color:'#1D9E75', margin:'8px 0' }}>{score}/{total}</div>
           <div style={{ fontSize:'13px', color:'#777672' }}>{gameName}</div>
         </div>
-
         <div style={{ display:'flex', flexDirection:'column', gap:'10px', marginBottom:'16px' }}>
-          {platforms.map(p => (
-            p.link ? (
-              <a key={p.name} href={p.link} target="_blank" rel="noopener noreferrer"
-                style={{ display:'flex', alignItems:'center', gap:'12px', background:p.color, color:'#fff', borderRadius:'12px', padding:'13px 18px', textDecoration:'none', fontSize:'14px', fontWeight:'500' }}>
-                <span style={{ fontSize:'20px' }}>{p.emoji}</span>
-                Share on {p.name}
-              </a>
-            ) : (
-              <button key={p.name} onClick={handleCopy}
-                style={{ display:'flex', alignItems:'center', gap:'12px', background: copied ? '#1D9E75' : p.color, color:'#f0efe9', border:'1px solid #444', borderRadius:'12px', padding:'13px 18px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', width:'100%' }}>
-                <span style={{ fontSize:'20px' }}>{copied ? '✓' : p.emoji}</span>
-                {copied ? 'Copied!' : 'Copy Link'}
-              </button>
-            )
-          ))}
+          <a href={'https://www.facebook.com/sharer/sharer.php?u=' + url + '&quote=' + text} target="_blank" rel="noopener noreferrer" style={{ display:'flex', alignItems:'center', gap:'12px', background:'#1877F2', color:'#fff', borderRadius:'12px', padding:'13px 18px', textDecoration:'none', fontSize:'14px', fontWeight:'500' }}>
+            <span style={{ fontSize:'20px' }}>📘</span> Share on Facebook
+          </a>
+          <a href={'https://wa.me/?text=' + fullText} target="_blank" rel="noopener noreferrer" style={{ display:'flex', alignItems:'center', gap:'12px', background:'#25D366', color:'#fff', borderRadius:'12px', padding:'13px 18px', textDecoration:'none', fontSize:'14px', fontWeight:'500' }}>
+            <span style={{ fontSize:'20px' }}>💬</span> Share on WhatsApp
+          </a>
+          <a href={'https://twitter.com/intent/tweet?text=' + fullText} target="_blank" rel="noopener noreferrer" style={{ display:'flex', alignItems:'center', gap:'12px', background:'#000', color:'#fff', borderRadius:'12px', padding:'13px 18px', textDecoration:'none', fontSize:'14px', fontWeight:'500' }}>
+            <span style={{ fontSize:'20px' }}>🐦</span> Share on Twitter/X
+          </a>
+          <button onClick={() => { navigator.clipboard.writeText('https://rabbitholevideo.com/' + gameUrl); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
+            style={{ display:'flex', alignItems:'center', gap:'12px', background: copied ? '#1D9E75' : '#333331', color:'#f0efe9', border:'none', borderRadius:'12px', padding:'13px 18px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', width:'100%' }}>
+            <span style={{ fontSize:'20px' }}>{copied ? '✓' : '🔗'}</span>
+            {copied ? 'Copied!' : 'Copy Link'}
+          </button>
         </div>
-
         <button onClick={onClose} style={{ width:'100%', background:'transparent', color:'#777672', border:'1px solid #333331', borderRadius:'12px', padding:'11px', fontSize:'13px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
           Close
         </button>
-      {showShare && <ShareModal score={score} total={15} gameName="Flag to Destination" gameUrl="flag-game" onClose={() => setShowShare(false)} />}
+      </div>
     </div>
   );
 }
