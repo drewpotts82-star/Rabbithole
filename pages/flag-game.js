@@ -330,8 +330,7 @@ export default function FlagGame() {
 
           {/* Flag display */}
           <div style={{ background:'#1a1a18', border:'1px solid #333331', borderRadius:'16px', padding:'40px 24px', textAlign:'center', marginBottom:'24px' }}>
-            <div style={{ fontSize:'100px', lineHeight:1, marginBottom:'16px' }}>{round.correct.flag}</div>
-            <div style={{ fontSize:'16px', fontWeight:'600', color:'#f0efe9', marginBottom:'6px' }}>{round.correct.country}</div>
+            <div style={{ fontSize:'120px', lineHeight:1, marginBottom:'16px' }}>{round.correct.flag}</div>
             <div style={{ fontSize:'13px', color:'#555', fontStyle:'italic' }}>"{round.correct.hint}"</div>
           </div>
 
