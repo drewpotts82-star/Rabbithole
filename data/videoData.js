@@ -3871,44 +3871,44 @@ const videoData = {
   ],
   "soccer": [
     {
-      "id": "ZJvVihqO1NM",
-      "title": "Football Freestyle Skills"
+      "id": "JHPMRf1xy64",
+      "title": "The god Maradona 😳✨🔥"
     },
     {
-      "id": "0h-qf2esEj4",
-      "title": "Best Football Skills"
+      "id": "JbBwaT9jaBw",
+      "title": "Lewandowski is UNSTOPPABLE 🤯"
     },
     {
-      "id": "_7uW_7T92MU",
-      "title": "Amazing Football Tricks"
+      "id": "xktdFsBcUQY",
+      "title": "Neymar made that look TOO EASY 🔥"
     },
     {
-      "id": "YjoV7UH_0ZM",
-      "title": "Top Football Freestyle"
+      "id": "8EIJJ38j9ac",
+      "title": "The Greatest Freekick of All Time! | Roberto Carlo"
     },
     {
-      "id": "HGGiEQyScFk",
-      "title": "Football Skills Compilation"
+      "id": "3GZLM600mqY",
+      "title": "Top 8 Soccer Trick Shots EVER"
     },
     {
-      "id": "ADi1A1dX9wA",
-      "title": "Best Soccer Moments"
+      "id": "53wd6vhHXas",
+      "title": "Zlatan comes in clutch against Liverpool!"
     },
     {
-      "id": "XOXjvSxBpQ",
-      "title": "Football Freestyle Masters"
+      "id": "-o10OCr1a1c",
+      "title": "Funny Soccer Football Vines 2018 ● Goals l Skills "
     },
     {
-      "id": "Di7G4nbpyDg",
-      "title": "Soccer Skills & Goals"
+      "id": "jTHHsGze_DM",
+      "title": "FUNNY FOOTBALL SKILLS 🤣"
     },
     {
-      "id": "UeiNdPaQ1IA",
-      "title": "Best Football Tricks Ever"
+      "id": "kyJznElJesA",
+      "title": "Ronaldo loves scoring against Inter ⚽💥"
     },
     {
-      "id": "vwtUVwXWy8Y",
-      "title": "Ultimate Football Skills"
+      "id": "S3B7Bvidrjo",
+      "title": "10 MOST POWERFUL GOALS IN FOOTBALL"
     }
   ]
 };
