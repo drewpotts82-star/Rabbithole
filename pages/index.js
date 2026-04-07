@@ -19,98 +19,37 @@ const FILTERS = [
 const tierDot = { gold: '#EF9F27', silver: '#B4B2A9', bronze: '#D85A30' };
 
 // 30 days of mindless fun — 10 videos per day
-const MINDLESS_VIDEOS = [
-  // Day 0
-  [
-    { id:'q-Ko7wdglqo', title:'Kiddo Wants to Share Whipped Cream with Corgi || V' },
-    { id:'63IX34q4Us0', title:'Funny Animals' },
-    { id:'DOvVij2YcVU', title:'Cute and funny animals video compilation 😂😂😂 pa' },
-    { id:'hY7m5jjJ9mM', title:'CATS will make you LAUGH YOUR HEAD OFF - Funny CAT' },
-    { id:'p4AGbTnsxs8', title:'Funny Animals 😹' },
-    { id:'-GJFSmpZjCw', title:'Best Fails of the Year (So Far)' },
-    { id:'z4OC3pYuOUw', title:'or worse yet, an ELECTRIC EEL 🙀 🎥: pjordan922 (T' },
-    { id:'rqTGuA7RFRw', title:'Dog's Hilarious Reaction to Human Fart. Funny ' },
-    { id:'kavObaGABHM', title:'Ranking Best Animal Actors Everr #animalvideos #an' },
-    { id:'-vzQdTvm2VA', title:'#88 Funny Cat videos 🐱🐱 #meowing #memes #cute' },
-  ],
-  // Day 1
-  [
-    { id:'WFbTtmOKyzo', title:'🤣😂 Laugh Until You Cry -Funny Fails Compilation!' },
-    { id:'BNiTVsAlzlc', title:'Best Fails of the Year | Try Not To Laugh🤣🤣' },
-    { id:'d51diKTSi2M', title:'Best Fails of the Year | Unhinged Chaos!' },
-    { id:'-GJFSmpZjCw', title:'Best Fails of the Year (So Far)' },
-    { id:'lNe1D_E3R8E', title:'Best Fails of the Year | Try Not to Laugh' },
-    { id:'w6urQm7Prs4', title:'Best Fails Of The Year | Try Not To Laugh' },
-    { id:'QcHBmZt34E4', title:'Looks Like a Losing Battle 😂 AFV Funniest Water F' },
-    { id:'5iO4nay8rWc', title:'Tasks Failed Successfully!?!?(Part 4) #carsonhocke' },
-    { id:'NVH79ehGfY0', title:'The Best Of The Internet (2022)' },
-    { id:'W_IhSnQTw1A', title:'Super Corgi Fails!' },
-  ],
-  // Day 2
-  [
-    { id:'b7EdOq3vRQI', title:'There was no trace of Sonya's pranks 🐾 #cat #' },
-    { id:'3bhkYoMWTFE', title:'😹Cats Doing Cat Things😹 (3)' },
-    { id:'qolQY2JaKwI', title:'Nika loves to eat chicken #cat #cats' },
-    { id:'tY4FtT2whtc', title:'Cat Club! #shorts30 #viral #catclub #shorts28' },
-    { id:'hY7m5jjJ9mM', title:'CATS will make you LAUGH YOUR HEAD OFF - Funny CAT' },
-    { id:'p4AGbTnsxs8', title:'Funny Animals 😹' },
-    { id:'z4OC3pYuOUw', title:'or worse yet, an ELECTRIC EEL 🙀 🎥: pjordan922 (T' },
-    { id:'NdRgBmKPfcc', title:'This cat is really alive! 🥰 #funny #cats #catvide' },
-    { id:'-vzQdTvm2VA', title:'#88 Funny Cat videos 🐱🐱 #meowing #memes #cute' },
-    { id:'kAPjO0u9SIU', title:'The Kitten's Mess: 🐱💧 Digging Trouble and a ' },
-  ],
-  // Day 3
-  [
-    { id:'c2OTHeCKsBE', title:'Dogs' Epic Shopping Cart Voyage: Funny Dogs Ma' },
-    { id:'q-Ko7wdglqo', title:'Kiddo Wants to Share Whipped Cream with Corgi || V' },
-    { id:'9biWC3pKzE0', title:'My Dog Has a Pure Heart 🥺 #shorts #dog' },
-    { id:'x0iC-8ZnNwM', title:'Laugh Out Loud at These Funny Dog Moments! 😄' },
-    { id:'63IX34q4Us0', title:'Funny Animals' },
-    { id:'F14JuOJSyPg', title:'Funny Dogs reaction to being frightened 🐶🐶 #funn' },
-    { id:'p4AGbTnsxs8', title:'Funny Animals 😹' },
-    { id:'z4OC3pYuOUw', title:'or worse yet, an ELECTRIC EEL 🙀 🎥: pjordan922 (T' },
-    { id:'rqTGuA7RFRw', title:'Dog's Hilarious Reaction to Human Fart. Funny ' },
-    { id:'1tojp2IwOXA', title:'Talking Dog Thinks He is a TOMATO! #shorts #corgi' },
-  ],
-  // Day 4
-  [
-    { id:'39Jq2Pgn4R0', title:'Cute baby enjoying in slide 🛝 #viral #shorts #you' },
-    { id:'n_6YPvWcFLA', title:'Funny baby reaction on the beach || #shorts' },
-    { id:'NI1PLcZzJkQ', title:'🐮Can you Moooo like a cow?! #kidsfun #kidlearning' },
-    { id:'UiFjZcOrMO0', title:'Kaboochi | Dance Song For Kids | Baby Songs For Ch' },
-    { id:'nRDysNZdMvU', title:'Babies Laughing At Pets | The Dodo' },
-    { id:'drju_rfFEeU', title:'Diana pretend play with Baby Doll Funny videos com' },
-    { id:'oeAdpUrkPA0', title:'Wheels on the bus +Baby Shark & More Popular @' },
-    { id:'ysh7VCWjEyI', title:'funny baby laughing ||| funniest baby video ||' },
-    { id:'WBzp8qTbU08', title:'Funny Kids Song' },
-    { id:'WRllf9L6mbU', title:'Try Not To Laugh 😆' },
-  ],
-  // Day 5
-  [
-    { id:'CNv74RWXx9A', title:'Try Not to Laugh #23' },
-    { id:'oZFAcp-Qfbs', title:'World's Most Obedient Cat - Aaron's Animal' },
-    { id:'63IX34q4Us0', title:'Funny Animals' },
-    { id:'oqqz3xykhlQ', title:'Try not to Laugh ❗️ | 220' },
-    { id:'VZedJx16tIg', title:'I Can't Believe that Happened 😲 Try Not to La' },
-    { id:'IGaTcA3Y-CY', title:'Try not to LAUGH 😋' },
-    { id:'DOvVij2YcVU', title:'Cute and funny animals video compilation 😂😂😂 pa' },
-    { id:'p4AGbTnsxs8', title:'Funny Animals 😹' },
-    { id:'FB0JwS_M8kg', title:'Try not to Laugh Game!' },
-    { id:'KvIl8mjMTsE', title:'Extreme Try Not To Laugh Challenge!' },
-  ],
-  // Day 6
-  [
-    { id:'EIlBlzJByKg', title:'Sagawa1gou funny video 😂😂😂 | SAGAWA Best Shorts' },
-    { id:'BNiTVsAlzlc', title:'Best Fails of the Year | Try Not To Laugh🤣🤣' },
-    { id:'sxmTTS4qros', title:'Trying not to laugh! 🤣🤣 (4k memes) #shorts.  cli' },
-    { id:'DOvVij2YcVU', title:'Cute and funny animals video compilation 😂😂😂 pa' },
-    { id:'hY7m5jjJ9mM', title:'CATS will make you LAUGH YOUR HEAD OFF - Funny CAT' },
-    { id:'xuRlNJ-7VEc', title:'Jun Jun World funny video😂😂😂best TikTok2024#sho' },
-    { id:'-GJFSmpZjCw', title:'Best Fails of the Year (So Far)' },
-    { id:'z4OC3pYuOUw', title:'or worse yet, an ELECTRIC EEL 🙀 🎥: pjordan922 (T' },
-    { id:'qcoQZqRxNfY', title:'junya1gou funny video 😂😂😂' },
-    { id:'GOysW6WYWoE', title:'Try Not To Laugh or Grin While Watching Funny Kids' },
-  ],
+const VIRAL_FACTS = [
+  { emoji:'🎵', fact:'Baby Shark has been watched over 13 billion times — making it the most viewed video in YouTube history', link:'https://www.youtube.com/watch?v=XqZsoesa55w', label:'Watch Baby Shark' },
+  { emoji:'🎤', fact:'PSY\'s Gangnam Style was the first YouTube video to reach 1 billion views — in 2012', link:'https://www.youtube.com/watch?v=9bZkp7q19f0', label:'Watch Gangnam Style' },
+  { emoji:'🐠', fact:'The most viewed fishing video has been watched over 500 million times by people who have never held a fishing rod', link:'/topic/fishing', label:'See fishing rankings' },
+  { emoji:'⛳', fact:'Golf trick shot videos have accumulated more views than the entire population of North America has people', link:'/topic/golf', label:'See golf rankings' },
+  { emoji:'🍳', fact:'Gordon Ramsay\'s most viewed cooking video has been watched more times than there are people in Europe', link:'/topic/cooking', label:'See cooking rankings' },
+  { emoji:'🐝', fact:'Beekeeping videos get millions of views from people who are terrified of bees — it\'s one of YouTube\'s most relaxing genres', link:'/topic/beekeeping', label:'See beekeeping rankings' },
+  { emoji:'🚐', fact:'Van life videos have inspired thousands of people to quit their jobs and live on the road — an entire movement born on YouTube', link:'/topic/van-life', label:'See van life rankings' },
+  { emoji:'🎸', fact:'The most viewed guitar video has been watched by more people than live in Australia — over 30 million times', link:'/topic/guitar', label:'See guitar rankings' },
+  { emoji:'🏋️', fact:'Gym motivation videos collectively have over 10 billion views — more people watch gym videos than actually go to the gym', link:'/topic/gym', label:'See gym rankings' },
+  { emoji:'🌴', fact:'Bali travel videos have been watched over 8 billion times — making it the most viewed travel destination on YouTube', link:'/destination/bali', label:'See Bali videos' },
+  { emoji:'🎮', fact:'Gaming is the single biggest category on YouTube — the top 10 gaming videos alone have over 50 billion combined views', link:'/topic/gaming', label:'See gaming rankings' },
+  { emoji:'🐕', fact:'Dog training videos outsell cat videos 3 to 1 on YouTube — turns out people really want their dogs to behave', link:'/topic/dog-training', label:'See dog training rankings' },
+  { emoji:'🎯', fact:'The most viewed darts video has more views than there are darts players in the entire world', link:'/topic/archery', label:'See archery rankings' },
+  { emoji:'🌊', fact:'Surfing wipeout videos get 10x more views than perfect wave videos — humans love watching things go wrong', link:'/topic/surfing', label:'See surfing rankings' },
+  { emoji:'🔥', fact:'BBQ videos peak in views every Friday afternoon worldwide — people plan their weekends around what they watch on YouTube', link:'/topic/bbq', label:'See BBQ rankings' },
+  { emoji:'🎻', fact:'Classical violin videos get more views than most pop music videos — YouTube has made classical music cool again', link:'/topic/violin', label:'See violin rankings' },
+  { emoji:'🧘', fact:'Yoga is one of the fastest growing topics on YouTube — the top 10 yoga videos have over 2 billion combined views', link:'/topic/yoga', label:'See yoga rankings' },
+  { emoji:'📸', fact:'Photography tutorial videos have more combined views than the entire population of China has watched them', link:'/topic/photography', label:'See photography rankings' },
+  { emoji:'🏔️', fact:'Iceland travel videos get more views per capita than any other country — 370,000 people inspire billions of views', link:'/destination/iceland', label:'See Iceland videos' },
+  { emoji:'🗣️', fact:`The word "Schadenfreude" means pleasure derived from someone else\'s misfortune — Germans have a word for everything`, link:'/language-game', label:'Play the language game' },
+  { emoji:'🌍', fact:'The flag game on RabbitHole reveals that most people can\'t identify the flags of countries they\'ve visited', link:'/flag-game', label:'Test your flag knowledge' },
+  { emoji:'🎯', fact:'The average person scores 6/10 on the RabbitHole "Which Has More Views?" game — the results always surprise people', link:'/game', label:'Play the game' },
+  { emoji:'🐇', fact:'RabbitHole has 100 topics covering over 500 billion combined YouTube views — enough video to watch for 40,000 years', link:'/', label:'Explore all topics' },
+  { emoji:'✈️', fact:'Tokyo is the most searched travel destination on YouTube — more people want to visit Japan than any other country', link:'/destination/tokyo', label:'See Tokyo videos' },
+  { emoji:'🍜', fact:'Street food videos from Thailand get more views than street food videos from France — pad thai beats croissants', link:'/topic/street-food', label:'See street food rankings' },
+  { emoji:'🎪', fact:'Magic trick reveal videos get twice as many views as magic trick performance videos — people love knowing the secret', link:'/topic/magic', label:'See magic rankings' },
+  { emoji:'🦅', fact:'Birdwatching videos are one of the fastest growing niches on YouTube — it\'s not just for retired people anymore', link:'/topic/birdwatching', label:'See birdwatching rankings' },
+  { emoji:'🏊', fact:'Swimming tutorial videos peak every December in Australia and every June in the UK — seasonal YouTube is a real thing', link:'/topic/swimming', label:'See swimming rankings' },
+  { emoji:'🎲', fact:'Board game review videos have more views than most Hollywood movie trailers — tabletop gaming is huge on YouTube', link:'/topic/board-games', label:'See board game rankings' },
+  { emoji:'🔭', fact:'Astrophotography is one of the most visually stunning topics on YouTube — the night sky never gets old', link:'/topic/astrophotography', label:'See astrophotography rankings' },
 ];
 
 // Educational videos — rotates daily
@@ -250,7 +189,7 @@ export default function Home() {
   const weekLabel = getWeekLabel();
   const dayIndex = getDayIndex();
 
-  const todaysMindless = MINDLESS_VIDEOS[dayIndex % MINDLESS_VIDEOS.length];
+  const todaysFacts = VIRAL_FACTS;
   const todaysEdu = EDU_VIDEOS[dayIndex % EDU_VIDEOS.length];
   const todaysMotivation = MOTIVATION_VIDEOS[dayIndex % MOTIVATION_VIDEOS.length];
 
@@ -311,7 +250,7 @@ export default function Home() {
         <div style={{ marginBottom:'24px' }}>
           <div style={{ display:'flex', gap:'0', overflowX:'auto', scrollbarWidth:'none', borderBottom:'1px solid #2a2a28', marginBottom:'20px' }}>
             {[
-              { id:'fun', label:'🤣 Fun', color:'#EF9F27' },
+              { id:'fun', label:'🤯 Viral Facts', color:'#EF9F27' },
               { id:'learn', label:'🎓 Learn', color:'#1D9E75' },
               { id:'motivation', label:'💪 Motivation', color:'#D85A30' },
               { id:'blog', label:'✍️ Blog', color:'#f0efe9' },
@@ -326,15 +265,14 @@ export default function Home() {
 
           {activeTab === 'fun' && (
             <div>
-              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'14px' }}>10 videos to waste your time beautifully — changes every day</div>
-              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(180px, 1fr))', gap:'10px' }}>
-                {todaysMindless.map((v, i) => (
-                  <div key={i} style={{ background:'#1a1a18', borderRadius:'10px', overflow:'hidden', border:'1px solid #2a2a28' }}>
-                    <div style={{ position:'relative', paddingBottom:'56.25%' }}>
-                      <LazyVideo id={v.id} title={v.title} />
-                    </div>
-                    <div style={{ padding:'8px', fontSize:'11px', color:'#777672', lineHeight:1.3 }}>{v.title}</div>
-                  </div>
+              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'16px' }}>Mind-blowing YouTube facts — did you know these? 🤯</div>
+              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'12px' }}>
+                {VIRAL_FACTS.slice(0, 9).map((fact, i) => (
+                  <a key={i} href={fact.link} style={{ textDecoration:'none', display:'block', background:'#1a1a18', border:'1px solid #2a2a28', borderRadius:'12px', padding:'20px', transition:'border-color 0.2s' }}>
+                    <div style={{ fontSize:'36px', marginBottom:'10px' }}>{fact.emoji}</div>
+                    <div style={{ fontSize:'14px', color:'#f0efe9', lineHeight:1.5, marginBottom:'12px' }}>{fact.fact}</div>
+                    <div style={{ fontSize:'12px', color:'#1D9E75' }}>{fact.label} →</div>
+                  </a>
                 ))}
               </div>
             </div>
