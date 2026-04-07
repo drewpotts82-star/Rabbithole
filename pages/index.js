@@ -297,7 +297,7 @@ export default function Home() {
               { id:'games', label:'🎮 Games', color:'#EF9F27' },
             ].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                style={{ background:'transparent', border:'none', borderBottom: activeTab===tab.id ? '2px solid '+tab.color : '2px solid transparent', color: activeTab===tab.id ? tab.color : '#555553', padding:'12px 20px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap', marginBottom:'-1px', transition:'all 0.2s' }}>
+                style={{ background:'transparent', border:'none', borderBottom: activeTab===tab.id ? '2px solid '+tab.color : '2px solid transparent', color: activeTab===tab.id ? tab.color : '#555553', padding:'12px 20px', fontSize:'16px', fontWeight:'600', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap', marginBottom:'-1px', transition:'all 0.2s' }}>
                 {tab.label}
               </button>
             ))}
@@ -398,20 +398,14 @@ export default function Home() {
                 {/* ⭐ Featured This Week */}
         <div style={{ marginBottom:'24px' }}>
           <Link href={'/topic/' + featured.slug} style={{ textDecoration:'none', display:'block' }}>
-            <div style={{ background:'#1e1e1c', border:'2px solid #EF9F27', borderRadius:'16px', padding:'20px 24px', display:'flex', alignItems:'center', gap:'20px', cursor:'pointer', position:'relative' }}>
-              <div style={{ position:'absolute', top:'10px', left:'16px', background:'#EF9F27', color:'#412402', fontSize:'10px', fontWeight:'500', padding:'3px 10px', borderRadius:'10px', letterSpacing:'1px' }}>
-                FEATURED THIS WEEK · {weekLabel}
+            <div style={{ background:'#1e1e1c', border:'1px solid #EF9F27', borderRadius:'12px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'12px', cursor:'pointer' }}>
+              <div style={{ fontSize:'28px', flexShrink:0 }}>{featured.emoji}</div>
+              <div style={{ flex:1 }}>
+                <div style={{ fontSize:'10px', color:'#EF9F27', letterSpacing:'0.1em', textTransform:'uppercase', marginBottom:'2px' }}>⭐ Featured This Week · {weekLabel}</div>
+                <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'20px', letterSpacing:'2px', color:'#f0efe9', lineHeight:1 }}>{featured.name}</div>
+                <div style={{ fontSize:'12px', color:'#1D9E75', marginTop:'2px' }}>{featured.views} combined views</div>
               </div>
-              <div style={{ fontSize:'56px', marginTop:'20px' }}>{featured.emoji}</div>
-              <div style={{ flex:1, marginTop:'20px' }}>
-                <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'30px', letterSpacing:'2px', color:'#f0efe9', lineHeight:1 }}>{featured.name}</div>
-                <div style={{ fontSize:'13px', color:'#777672', marginTop:'4px' }}>Top 10 most viewed {featured.name} videos of all time</div>
-                <div style={{ fontSize:'15px', fontWeight:'500', color:'#1D9E75', marginTop:'6px' }}>{featured.views} combined views</div>
-              </div>
-              <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', marginTop:'20px', flexShrink:0 }}>
-                <div style={{ background:'#EF9F27', color:'#412402', padding:'8px 20px', borderRadius:'20px', fontSize:'13px', fontWeight:'500', whiteSpace:'nowrap' }}>Explore now →</div>
-                <div style={{ fontSize:'10px', color:'#777672' }}>Changes every Monday</div>
-              </div>
+              <div style={{ background:'#EF9F27', color:'#412402', padding:'6px 14px', borderRadius:'16px', fontSize:'12px', fontWeight:'600', whiteSpace:'nowrap', flexShrink:0 }}>Explore →</div>
             </div>
           </Link>
         </div>
