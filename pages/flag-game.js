@@ -105,7 +105,10 @@ function buildRound(pool, usedSlugs) {
   const correct = shuffled[0];
   const wrong = shuffled.slice(1, 4);
   const options = [...wrong, correct].sort(() => 0.5 - Math.random());
-  return { correct, options };
+  // Strip country from options to avoid giving away answer
+  const cleanOptions = options.map(o => ({ ...o, country: undefined }));
+  const cleanCorrect = { ...correct, country: undefined };
+  return { correct: cleanCorrect, options: cleanOptions };
 }
 
 
@@ -354,6 +357,7 @@ export default function FlagGame() {
                 >
                   <div style={{ fontSize:'28px', marginBottom:'6px' }}>{option.emoji}</div>
                   <div style={{ fontSize:'15px', fontWeight:'600', color }}>{option.name}</div>
+                  <div style={{ fontSize:'11px', color:'#333', marginTop:'2px' }}>{option.desc || ''}</div>
                   {answered && isCorrect && <div style={{ fontSize:'11px', color:'#1D9E75', marginTop:'4px' }}>✓ Correct!</div>}
                   {answered && isChosen && !isCorrect && <div style={{ fontSize:'11px', color:'#D85A30', marginTop:'4px' }}>✗ Wrong!</div>}
                 </button>
