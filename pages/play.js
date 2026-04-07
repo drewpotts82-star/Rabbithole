@@ -33,6 +33,12 @@ export default function Play() {
             <div style={{ fontSize:'13px', color:'#777672', marginTop:'4px' }}>Does the next topic have more or fewer views? Build your streak — one wrong answer and it's over!</div>
             <div style={{ marginTop:'16px', display:'inline-block', background:'#D85A30', color:'#fff', borderRadius:'20px', padding:'8px 20px', fontSize:'13px', fontWeight:'500' }}>Play now →</div>
           </Link>
+          <Link href="/flag-game" style={{ background:'#1a1a18', border:'1px solid #1D9E75', borderRadius:'16px', padding:'28px 24px', textDecoration:'none', color:'#f0efe9', textAlign:'left', display:'block' }}>
+            <div style={{ fontSize:'32px', marginBottom:'8px' }}>🌍</div>
+            <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#1D9E75' }}>FLAG TO DESTINATION</div>
+            <div style={{ fontSize:'13px', color:'#777672', marginTop:'4px' }}>See a flag — pick the right destination. 15 rounds, how well do you know the world?</div>
+            <div style={{ marginTop:'16px', display:'inline-block', background:'#1D9E75', color:'#fff', borderRadius:'20px', padding:'8px 20px', fontSize:'13px', fontWeight:'500' }}>Play now →</div>
+          </Link>
           <Link href="/" style={{ display:'block', marginTop:'24px', fontSize:'13px', color:'#555', textDecoration:'none', textAlign:'center' }}>← Back to topics</Link>
       </div>
     </div>
