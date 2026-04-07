@@ -92,7 +92,7 @@ const EDU_VIDEOS = [
   ],
   // Day 6
   [
-    { id:'JDTHyTLKAo0', title:'ये Animals दोबारा ज़िंदा हो सकतें हैं 😱 | Animals', channel:'Facts' Mine' },
+    { id:'JDTHyTLKAo0', title:'ये Animals दोबारा ज़िंदा हो सकतें हैं 😱 | Animals', channel:'Facts Mine' },
     { id:'nfxeb9bI6eY', title:'Unseen Animals Amazing Facts #shorts Facts Cloud b', channel:'Akash Parihar' },
     { id:'FeJKJ5MoCHY', title:'10 TOP Natural History Moments | BBC Earth', channel:'BBC Earth' },
   ],
