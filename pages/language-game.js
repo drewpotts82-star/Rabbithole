@@ -237,6 +237,7 @@ export default function LanguageGame() {
           <button onClick={() => setShowShare(true)} style={{ background:'#1D9E75', color:'#fff', border:'none', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>📤 Share My Score</button>
           <button onClick={() => window.location.reload()} style={{ background:'transparent', color:'#f0efe9', border:'1px solid #333331', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>🔄 Play Again</button>
           <Link href="/play" style={{ background:'transparent', color:'#EF9F27', border:'1px solid #EF9F27', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', textDecoration:'none' }}>🎮 All Games</Link>
+          <Link href="/" style={{ background:'transparent', color:'#777672', border:'1px solid #333331', borderRadius:'20px', padding:'12px 24px', fontSize:'14px', textDecoration:'none' }}>🏠 Home</Link>
         </div>
       </div>
     );
