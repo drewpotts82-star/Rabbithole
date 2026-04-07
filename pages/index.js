@@ -290,7 +290,7 @@ export default function Home() {
           <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'16px' }}>
             <div>
               <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#f0efe9' }}>🤣 TODAY'S MINDLESS FUN</div>
-              <div style={{ fontSize:'12px', color:'#777672', marginTop:'2px' }}>10 videos to waste your time beautifully — changes every day</div>
+              <div style={{ fontSize:'12px', color:'#777672', marginTop:'2px' }}>110 videos to waste your time beautifully — changes every day</div>
             </div>
             <div style={{ fontSize:'11px', color:'#555', background:'#1a1a18', padding:'4px 10px', borderRadius:'10px', border:'1px solid #2a2a28' }}>Updates daily</div>
           </div>
