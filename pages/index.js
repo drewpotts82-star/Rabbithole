@@ -293,6 +293,7 @@ function getDayIndex() {
 
 function LazyVideo({ id, title }) {
   const [playing, setPlaying] = useState(false);
+  const [thumbErr, setThumbErr] = useState(false);
   if (playing) {
     return (
       <iframe
@@ -304,13 +305,20 @@ function LazyVideo({ id, title }) {
     );
   }
   return (
-    <div onClick={() => setPlaying(true)} style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', cursor:'pointer', background:'#000' }}>
-      <img
-        src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}
-        alt={title}
-        style={{ width:'100%', height:'100%', objectFit:'cover', opacity:0.85 }}
-      />
-      <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'52px', height:'52px', background:'rgba(255,0,0,0.9)', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center' }}>
+    <div onClick={() => setPlaying(true)} style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', cursor:'pointer', background:'#1a1a18', display:'flex', alignItems:'center', justifyContent:'center' }}>
+      {!thumbErr ? (
+        <img
+          src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+          alt={title}
+          onError={() => setThumbErr(true)}
+          style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', opacity:0.85 }}
+        />
+      ) : (
+        <div style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', background:'linear-gradient(135deg, #1a1a18 0%, #2a2a28 100%)', display:'flex', alignItems:'center', justifyContent:'center' }}>
+          <span style={{ fontSize:'32px' }}>▶️</span>
+        </div>
+      )}
+      <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'52px', height:'52px', background:'rgba(255,0,0,0.9)', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', zIndex:2 }}>
         <div style={{ width:0, height:0, borderTop:'10px solid transparent', borderBottom:'10px solid transparent', borderLeft:'18px solid white', marginLeft:'4px' }} />
       </div>
     </div>
