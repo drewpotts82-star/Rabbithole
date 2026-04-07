@@ -218,7 +218,7 @@ function LazyVideo({ id, title }) {
     <div onClick={() => setPlaying(true)} style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', cursor:'pointer', background:'#1a1a18', display:'flex', alignItems:'center', justifyContent:'center' }}>
       {!thumbErr ? (
         <img
-          src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+          src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
           alt={title}
           onError={(e) => { e.target.style.display='none'; setThumbErr(true); }}
           style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', opacity:0.85 }}
