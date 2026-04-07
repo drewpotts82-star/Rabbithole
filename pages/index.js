@@ -222,6 +222,7 @@ function LazyVideo({ id, title }) {
 
 export default function Home() {
   const [search, setSearch] = useState('');
+  const [activeTab, setActiveTab] = useState('fun');
   const [activeFilter, setActiveFilter] = useState('all');
   const [showAllTopics, setShowAllTopics] = useState(false);
   const featured = getWeeklyFeatured();
@@ -414,14 +415,7 @@ export default function Home() {
           );
         })()}
 
-        {/* 🎮 Games Hub */}
-        <div style={{ margin:'0 0 32px 0', background:'#1a1a18', border:'1px solid #EF9F27', borderRadius:'16px', padding:'20px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:'12px' }}>
-          <div>
-            <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'22px', letterSpacing:'2px', color:'#EF9F27' }}>🎮 PLAY 5 GAMES</div>
-            <div style={{ fontSize:'12px', color:'#777672', marginTop:'2px' }}>Which Has More Views · Guess The Views · Higher or Lower · Flag Game · Language Game</div>
-          </div>
-          <Link href="/play" style={{ background:'#EF9F27', color:'#111110', textDecoration:'none', padding:'10px 24px', borderRadius:'20px', fontSize:'14px', fontWeight:'600', whiteSpace:'nowrap' }}>Play now →</Link>
-        </div>
+
 
         {/* Surprise Me */}
         <div className={styles.surpriseBtn} onClick={surprise}>
