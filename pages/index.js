@@ -203,7 +203,13 @@ function getDayIndex() {
 
 function LazyVideo({ id, title }) {
   const [playing, setPlaying] = useState(false);
-  const [thumbErr, setThumbErr] = useState(false);
+  const [thumbQuality, setThumbQuality] = useState(0);
+  const thumbErr = thumbQuality >= 3;
+  const thumbUrls = [
+    `https://img.youtube.com/vi/${id}/maxresdefault.jpg`,
+    `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+    `https://img.youtube.com/vi/${id}/mqdefault.jpg`,
+  ];
   if (playing) {
     return (
       <iframe
