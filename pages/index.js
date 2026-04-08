@@ -208,7 +208,7 @@ function ProBanner() {
 
 export default function Home() {
   const [search, setSearch] = useState('');
-  const [activeTab, setActiveTab] = useState('learn');
+  const [activeTab, setActiveTab] = useState('gear');
   const [activeFilter, setActiveFilter] = useState('all');
   const [showAllTopics, setShowAllTopics] = useState(false);
   const featured = getWeeklyFeatured();
@@ -292,6 +292,7 @@ export default function Home() {
         <div style={{ marginBottom:'24px' }}>
           <div style={{ display:'flex', gap:'0', overflowX:'auto', scrollbarWidth:'none', borderBottom:'1px solid #2a2a28', marginBottom:'20px' }}>
             {[
+              { id:'gear', label:'🛒 Top Gear', color:'#D85A30' },
               { id:'learn', label:'🎓 Learn', color:'#1D9E75' },
               { id:'fun', label:'🤯 Viral Facts', color:'#EF9F27' },
               { id:'blog', label:'✍️ Blog', color:'#f0efe9' },
@@ -316,6 +317,44 @@ export default function Home() {
                   </a>
                 ))}
               </div>
+            </div>
+          )}
+
+          {activeTab === 'gear' && (
+            <div>
+              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'16px' }}>The exact gear used in the world's most viewed videos — shop direct on Amazon 🛒</div>
+              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(260px, 1fr))', gap:'12px' }}>
+                {[
+                  { topic:'🎣 Fishing', name:'Penn Battle IV Spinning Rod & Reel', price:'AUD $360', tag:'Best seller', link:'https://amzn.to/4tEpl3V', color:'#0a2218' },
+                  { topic:'🎣 Fishing', name:'Savage Gear Mixed Lure Kit — 35 Pieces', price:'Shop now', tag:'Top rated', link:'https://amzn.to/4vks1VT', color:'#0a2218' },
+                  { topic:'🏍️ Motorcycles', name:'Shark Spartan GT Carbon Fibre Helmet', price:'£299.99', tag:"Editor's choice", link:'https://amzn.to/4tEpl3V', color:'#1a1008' },
+                  { topic:'🏍️ Motorcycles', name:'Oxford Lifetime Motorcycle Chain Lock', price:'£34.99', tag:'Essential security', link:'https://amzn.to/4tEpl3V', color:'#1a1008' },
+                  { topic:'💪 Gym & Lifting', name:'Mirafit 20kg Adjustable Dumbbell Set', price:'£79.99', tag:'Home gym essential', link:'https://amzn.to/4tEpl3V', color:'#0d1a0d' },
+                  { topic:'💪 Gym & Lifting', name:'Optimum Nutrition Gold Standard Whey 2kg', price:'£54.99', tag:'Top rated protein', link:'https://amzn.to/4tEpl3V', color:'#0d1a0d' },
+                  { topic:'🌿 Gardening', name:'Raised Bed Garden Kit — 4x4ft', price:'Shop now', tag:'Best seller', link:'https://amzn.to/4tEpl3V', color:'#0a180a' },
+                  { topic:'🏠 Home Renovation', name:'Dewalt 20V Cordless Drill Combo Kit', price:'Shop now', tag:'Most viewed tool', link:'https://amzn.to/4tEpl3V', color:'#1a1200' },
+                  { topic:'🌸 Perfume', name:'Dior Sauvage Eau de Parfum 100ml', price:'£89.99', tag:'Most viewed fragrance', link:'https://amzn.to/4tEpl3V', color:'#1a0818' },
+                  { topic:'⚽ Soccer', name:'Nike Premier League Match Football', price:'£29.99', tag:'Official ball', link:'https://amzn.to/4tEpl3V', color:'#0a1020' },
+                  { topic:'🎣 Fishing', name:'Fishing Tackle Box & Storage', price:'Shop now', tag:'As seen in videos', link:'https://amzn.to/48ygEQg', color:'#0a2218' },
+                  { topic:'🎣 Fishing', name:'Beginner Fishing Rod Combo', price:'Shop now', tag:'Beginner pick', link:'https://amzn.to/4tzykTK', color:'#0a2218' },
+                ].map((item, i) => (
+                  <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', display:'block', background:item.color, border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', padding:'16px', transition:'all 0.2s' }}
+                    onMouseEnter={e => e.currentTarget.style.borderColor='rgba(255,255,255,0.2)'}
+                    onMouseLeave={e => e.currentTarget.style.borderColor='rgba(255,255,255,0.08)'}
+                  >
+                    <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'8px' }}>
+                      <span style={{ fontSize:'11px', color:'#777672', fontWeight:'500' }}>{item.topic}</span>
+                      <span style={{ fontSize:'9px', fontWeight:'700', padding:'2px 8px', borderRadius:'99px', background:'rgba(245,197,24,0.12)', color:'#f5c518', textTransform:'uppercase' }}>{item.tag}</span>
+                    </div>
+                    <div style={{ fontSize:'13px', fontWeight:'500', color:'#f0efe9', marginBottom:'10px', lineHeight:1.4 }}>{item.name}</div>
+                    <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+                      <span style={{ fontSize:'16px', fontWeight:'700', color:'#1D9E75' }}>{item.price}</span>
+                      <span style={{ fontSize:'10px', fontWeight:'700', padding:'5px 12px', borderRadius:'99px', background:'#D85A30', color:'#fff' }}>View on Amazon →</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <p style={{ textAlign:'center', fontSize:'11px', color:'#444441', marginTop:'16px' }}>As an Amazon Associate we earn from qualifying purchases — at no extra cost to you.</p>
             </div>
           )}
 
