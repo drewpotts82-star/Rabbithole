@@ -32,7 +32,262 @@ const rankStyle = [
   { color: '#555553', size: '22px', bg: 'transparent' },
 ];
 
+// ─── AFFILIATE PRODUCT DATA ───────────────────────────────────────────────────
+// Replace YOUR_TAG with your Amazon Associates tag e.g. "rabbithole-21"
+// Replace each /dp/XXXXXXXXXX with the real Amazon product ASIN
+// To find an ASIN: search Amazon for the product, the ASIN is in the URL e.g. amazon.co.uk/dp/B08XYZ12AB
 
+const TOPIC_PRODUCTS = {
+  fishing: {
+    inspiration: "Inspired by these fishing legends? Here's what you need to land your first big one:",
+    products: [
+      { name: 'Penn Battle IV Spinning Rod & Reel Combo', price: 'AUD $360', tag: 'Best seller', emoji: '🏆', link: 'https://amzn.to/4tEpl3V' },
+      { name: 'Savage Gear Mixed Lure Kit — 35 Pieces', price: 'Shop now', tag: 'Top rated', emoji: '⭐', link: 'https://amzn.to/4vks1VT' },
+      { name: 'Fishing Tackle Box & Storage', price: 'Shop now', tag: 'As seen in videos', emoji: '📦', link: 'https://amzn.to/48ygEQg' },
+      { name: 'Beginner Fishing Rod Combo', price: 'Shop now', tag: 'Beginner pick', emoji: '🎯', link: 'https://amzn.to/4tzykTK' },
+    ],
+    blog: [
+      { title: 'Best beginner fishing rods UK 2025', slug: 'best-beginner-fishing-rods-uk' },
+      { title: 'Saltwater fishing gear for pier fishing', slug: 'saltwater-pier-fishing-gear' },
+      { title: 'Top 10 fishing lures that actually work', slug: 'best-fishing-lures-uk' },
+    ],
+  },
+  soccer: {
+    inspiration: "Inspired? Get the gear to play like a pro — even in the back garden:",
+    products: [
+      { name: 'Nike Premier League Match Football', price: '£29.99', tag: 'Official ball', emoji: '🏆', asin: 'B07XXXXXXS1' },
+      { name: 'Adidas Copa Mundial Football Boots', price: '£89.99', tag: 'Classic choice', emoji: '⭐', asin: 'B08XXXXXXS2' },
+      { name: 'Kickmaster Pro Rebounder Net', price: '£54.99', tag: 'Practice at home', emoji: '🥅', asin: 'B09XXXXXXS3' },
+      { name: 'Coaching Cone & Marker Set', price: '£14.99', tag: 'Train like a pro', emoji: '🎯', asin: 'B06XXXXXXS4' },
+    ],
+    blog: [
+      { title: 'Best football boots for beginners UK 2025', slug: 'best-football-boots-beginners' },
+      { title: 'How to set up a home football training area', slug: 'home-football-training-setup' },
+      { title: 'Top football gear for kids and adults', slug: 'football-gear-uk' },
+    ],
+  },
+  'gym-lifting': {
+    inspiration: "Ready to start your own transformation? Here's what you actually need:",
+    products: [
+      { name: 'Mirafit 20kg Adjustable Dumbbell Set', price: '£79.99', tag: 'Home gym essential', emoji: '🏆', asin: 'B07XXXXXXG1' },
+      { name: 'Harbinger Padded Lifting Belt', price: '£34.99', tag: 'As used by pros', emoji: '⭐', asin: 'B08XXXXXXG2' },
+      { name: 'Optimum Nutrition Gold Standard Whey 2kg', price: '£54.99', tag: 'Top rated protein', emoji: '💊', asin: 'B09XXXXXXG3' },
+      { name: 'RDX Lifting Straps & Gloves Set', price: '£19.99', tag: 'Protect your hands', emoji: '🎯', asin: 'B06XXXXXXG4' },
+    ],
+    blog: [
+      { title: 'Best home gym equipment UK under £200', slug: 'best-home-gym-equipment-uk' },
+      { title: 'Beginner lifting gear — what you actually need', slug: 'beginner-gym-gear-guide' },
+      { title: 'Best protein supplements ranked 2025', slug: 'best-protein-supplements-uk' },
+    ],
+  },
+  'music-videos': {
+    inspiration: "Love music this much? Here's how to start making your own:",
+    products: [
+      { name: 'Audio-Technica ATH-M50x Headphones', price: '£129.99', tag: 'Industry standard', emoji: '🏆', asin: 'B07XXXXXXM1' },
+      { name: 'Focusrite Scarlett Solo USB Interface', price: '£89.99', tag: 'Best starter kit', emoji: '⭐', asin: 'B08XXXXXXM2' },
+      { name: 'Amazon Music Unlimited 3-Month Gift Card', price: '£29.99', tag: 'Stream everything', emoji: '🎁', asin: 'B09XXXXXXM3' },
+      { name: 'JBL Clip 4 Portable Bluetooth Speaker', price: '£59.99', tag: 'Take music anywhere', emoji: '📻', asin: 'B06XXXXXXM4' },
+    ],
+    blog: [
+      { title: 'Best headphones for music lovers UK 2025', slug: 'best-music-headphones-uk' },
+      { title: 'How to start home recording on a budget', slug: 'home-recording-beginners-guide' },
+      { title: 'Best Bluetooth speakers under £100', slug: 'best-bluetooth-speakers-uk' },
+    ],
+  },
+  'perfume-reviews': {
+    inspiration: "Discovered your next signature scent? Shop the most talked-about fragrances:",
+    products: [
+      { name: 'Dior Sauvage Eau de Parfum 100ml', price: '£89.99', tag: 'Most viewed fragrance', emoji: '🏆', asin: 'B07XXXXXXP1' },
+      { name: 'Creed Aventus Sample Discovery Set', price: '£34.99', tag: 'Try before you commit', emoji: '⭐', asin: 'B08XXXXXXP2' },
+      { name: 'Versace Eros Pour Femme 100ml', price: '£59.99', tag: "Top rated women's", emoji: '🌸', asin: 'B09XXXXXXP3' },
+      { name: 'The Perfume Society Discovery Box', price: '£24.99', tag: '12 luxury samples', emoji: '🎁', asin: 'B06XXXXXXP4' },
+    ],
+    blog: [
+      { title: "Best men's fragrances UK 2025 — ranked", slug: 'best-mens-fragrances-uk' },
+      { title: "Best women's perfumes under £60 UK", slug: 'best-womens-perfumes-uk' },
+      { title: 'Fragrance discovery sets — worth it?', slug: 'perfume-discovery-sets-review' },
+    ],
+  },
+  motorcycles: {
+    inspiration: "Ready to ride? Start with the right gear — safety first, style second:",
+    products: [
+      { name: 'Shark Spartan GT Carbon Fibre Helmet', price: '£299.99', tag: "Editor's choice", emoji: '🏆', asin: 'B07XXXXXXR1' },
+      { name: 'Oxford Lifetime Motorcycle Chain Lock', price: '£34.99', tag: 'Essential security', emoji: '⭐', asin: 'B08XXXXXXR2' },
+      { name: 'Alpinestars Faster-3 Riding Gloves', price: '£44.99', tag: 'Top rated gloves', emoji: '🧤', asin: 'B09XXXXXXR3' },
+      { name: 'Haynes Manual — Motorcycle Maintenance', price: '£19.99', tag: 'Know your bike', emoji: '📖', asin: 'B06XXXXXXR4' },
+    ],
+    blog: [
+      { title: 'Best motorcycle helmets UK 2025 — safety rated', slug: 'best-motorcycle-helmets-uk' },
+      { title: 'Essential motorcycle gear for beginners', slug: 'beginner-motorcycle-gear-uk' },
+      { title: 'Best motorcycle accessories under £50', slug: 'motorcycle-accessories-uk' },
+    ],
+  },
+};
+
+// ─── FIX 3: INSPIRATION CTA ───────────────────────────────────────────────────
+function InspirationCTA({ topic }) {
+  const data = TOPIC_PRODUCTS[topic.slug];
+  if (!data) return null;
+  return (
+    <div style={{ margin:'0 24px 0', maxWidth:'772px', marginLeft:'auto', marginRight:'auto' }}>
+      <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', flexWrap:'wrap', padding:'16px 20px', background:'rgba(255,107,53,0.07)', border:'1px solid rgba(255,107,53,0.22)', borderRadius:'12px', marginBottom:'0' }}>
+        <div>
+          <div style={{ fontSize:'14px', fontWeight:'500', color:'#f0efe9', marginBottom:'3px' }}>{data.inspiration}</div>
+          <div style={{ fontSize:'12px', color:'#777672' }}>Hand-picked gear used by the creators in these videos</div>
+        </div>
+        <a href={`#shop-${topic.slug}`} onClick={(e) => { e.preventDefault(); document.getElementById(`shop-${topic.slug}`)?.scrollIntoView({ behavior:'smooth' }); }} style={{ flexShrink:0, padding:'9px 18px', background:'#D85A30', color:'#fff', borderRadius:'99px', textDecoration:'none', fontSize:'13px', fontWeight:'500', whiteSpace:'nowrap' }}>
+          Shop the gear ↓
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// ─── FIX 1 + 2: PRODUCT CARDS ─────────────────────────────────────────────────
+function ProductCard({ product }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={product.link || '#'}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ display:'flex', flexDirection:'column', background:hovered?'#252523':'#1a1a18', border:`1px solid ${hovered?'rgba(255,255,255,0.18)':'#333331'}`, borderRadius:'12px', padding:'14px', textDecoration:'none', transition:'all 0.2s ease', transform:hovered?'translateY(-2px)':'none', cursor:'pointer' }}
+    >
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'8px' }}>
+        <span style={{ fontSize:'20px' }}>{product.emoji}</span>
+        <span style={{ fontSize:'9px', fontWeight:'700', padding:'3px 8px', borderRadius:'99px', background:'rgba(245,197,24,0.12)', color:'#f5c518', textTransform:'uppercase', letterSpacing:'0.04em' }}>{product.tag}</span>
+      </div>
+      <p style={{ margin:'0 0 10px', fontSize:'12px', fontWeight:'500', color:'#f0efe9', lineHeight:1.4, flex:1 }}>{product.name}</p>
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+        <span style={{ fontSize:'16px', fontWeight:'700', color:'#1D9E75' }}>{product.price}</span>
+        <span style={{ fontSize:'10px', fontWeight:'700', padding:'5px 12px', borderRadius:'99px', background:'#D85A30', color:'#fff' }}>View on Amazon →</span>
+      </div>
+    </a>
+  );
+}
+
+// FIX 2: Mid-list placement (compact, 2 products)
+function MidListProducts({ topic, position }) {
+  const data = TOPIC_PRODUCTS[topic.slug];
+  if (!data) return null;
+  const products = position === 'early' ? data.products.slice(0, 2) : data.products.slice(2, 4);
+  const headline = position === 'early' ? '⚡ Gear the #1 video creator actually uses' : '🛒 Halfway through — ready to try it yourself?';
+  return (
+    <div style={{ margin:'4px 0 20px', padding:'14px', background:'#1e1e1c', borderRadius:'12px', border:'1px solid #333331' }}>
+      <div style={{ fontSize:'12px', fontWeight:'600', color:'#f0efe9', marginBottom:'10px' }}>{headline}</div>
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px' }}>
+        {products.map((p) => <ProductCard key={p.asin} product={p} />)}
+      </div>
+    </div>
+  );
+}
+
+// FIX 1: Full product cards section
+function FullProductCards({ topic }) {
+  const data = TOPIC_PRODUCTS[topic.slug];
+  if (!data) return null;
+  return (
+    <div id={`shop-${topic.slug}`} style={{ margin:'0 24px 24px', maxWidth:'772px', marginLeft:'auto', marginRight:'auto' }}>
+      <div style={{ background:'#1e1e1c', border:'1px solid #333331', borderRadius:'14px', padding:'20px 24px' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'14px' }}>
+          <span style={{ fontSize:'22px' }}>{topic.emoji}</span>
+          <div>
+            <div style={{ fontSize:'12px', color:'#777672', textTransform:'uppercase', letterSpacing:'0.08em', fontWeight:'600' }}>Shop gear from these videos</div>
+            <div style={{ fontSize:'11px', color:'#444441' }}>{topic.name} gear — hand picked for beginners & enthusiasts</div>
+          </div>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'10px' }}>
+          {data.products.map((p) => <ProductCard key={p.asin} product={p} />)}
+        </div>
+        <p style={{ margin:'12px 0 0', fontSize:'10px', color:'#444441', textAlign:'center' }}>
+          As an Amazon Associate we earn from qualifying purchases — at no extra cost to you.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ─── FIX 6: BUYER BLOG LINKS ──────────────────────────────────────────────────
+function BuyerBlogLinks({ topic }) {
+  const data = TOPIC_PRODUCTS[topic.slug];
+  if (!data) return null;
+  return (
+    <div style={{ margin:'0 24px 24px', maxWidth:'772px', marginLeft:'auto', marginRight:'auto' }}>
+      <div style={{ background:'#1e1e1c', border:'1px solid #333331', borderRadius:'12px', padding:'16px 20px' }}>
+        <div style={{ fontSize:'11px', color:'#777672', textTransform:'uppercase', letterSpacing:'0.08em', fontWeight:'600', marginBottom:'10px' }}>📖 From the RabbitHole Blog</div>
+        {data.blog.map((post) => (
+          <a key={post.slug} href={`/blog/${post.slug}`} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'9px 12px', background:'#111110', border:'1px solid #333331', borderRadius:'8px', marginBottom:'6px', textDecoration:'none', color:'#f0efe9', fontSize:'13px', transition:'border-color 0.2s' }}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor='rgba(255,255,255,0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor='#333331'}
+          >
+            <span>{post.title}</span>
+            <span style={{ color:'#D85A30' }}>→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── FIX 5: EMAIL CAPTURE ─────────────────────────────────────────────────────
+function EmailCapture({ topic }) {
+  const [emailVal, setEmailVal] = useState('');
+  const [done, setDone] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!emailVal) return;
+    try {
+      // Reuses your existing /api/subscribe endpoint!
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal, topic: topic.slug }),
+      });
+    } catch(e) {}
+    setDone(true);
+  };
+
+  return (
+    <div style={{ margin:'0 24px 32px', maxWidth:'772px', marginLeft:'auto', marginRight:'auto' }}>
+      <div style={{ background:'#1e1e1c', border:'1px solid #333331', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
+        {done ? (
+          <>
+            <div style={{ fontSize:'28px', marginBottom:'8px' }}>🎉</div>
+            <div style={{ fontSize:'16px', fontWeight:'700', color:'#f0efe9', marginBottom:'4px' }}>You're in!</div>
+            <div style={{ fontSize:'13px', color:'#777672' }}>We'll send you the new top 10 every week. Check your inbox!</div>
+          </>
+        ) : (
+          <>
+            <div style={{ fontSize:'24px', marginBottom:'8px' }}>📬</div>
+            <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'24px', letterSpacing:'1px', color:'#f0efe9', marginBottom:'6px' }}>New top 10 every week — free</div>
+            <div style={{ fontSize:'13px', color:'#777672', marginBottom:'16px' }}>
+              Get the most viewed {topic.name} videos delivered to your inbox. Join 2,847 subscribers.
+            </div>
+            <form onSubmit={handleSubmit} style={{ display:'flex', gap:'8px', maxWidth:'380px', margin:'0 auto', flexWrap:'wrap', justifyContent:'center' }}>
+              <input
+                type="email"
+                required
+                value={emailVal}
+                onChange={(e) => setEmailVal(e.target.value)}
+                placeholder="your@email.com"
+                style={{ flex:1, minWidth:'200px', padding:'10px 16px', background:'#111110', border:'1px solid #333331', borderRadius:'99px', color:'#f0efe9', fontSize:'13px', fontFamily:'DM Sans, sans-serif', outline:'none' }}
+              />
+              <button type="submit" style={{ padding:'10px 20px', background:'#1D9E75', color:'#fff', border:'none', borderRadius:'99px', fontSize:'13px', fontWeight:'500', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
+                Subscribe free →
+              </button>
+            </form>
+            <div style={{ fontSize:'10px', color:'#444441', marginTop:'8px' }}>No spam. Unsubscribe anytime.</div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ─── LAZY VIDEO (unchanged) ───────────────────────────────────────────────────
 function LazyVideo({ id, title }) {
   const [playing, setPlaying] = React.useState(false);
   if (playing) {
@@ -59,6 +314,7 @@ function LazyVideo({ id, title }) {
   );
 }
 
+// ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 export default function TopicPage({ topic, related, videos }) {
   const [fired, setFired] = useState({});
   const [saved, setSaved] = useState({});
@@ -68,7 +324,6 @@ export default function TopicPage({ topic, related, videos }) {
   const [toast, setToast] = useState('');
 
   const toggleFire = (i) => setFired(prev => ({ ...prev, [i]: !prev[i] }));
-
   const toggleSave = (i) => {
     setSaved(prev => {
       const next = { ...prev, [i]: !prev[i] };
@@ -76,22 +331,19 @@ export default function TopicPage({ topic, related, videos }) {
       return next;
     });
   };
-
   const copyLink = () => {
     navigator.clipboard.writeText(`https://www.rabbitholevideo.com/topic/${topic.slug}`).then(() => {
       setToast('Link copied!');
       setTimeout(() => setToast(''), 2000);
     });
   };
-
   const shareToFacebook = () => {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=https://www.rabbitholevideo.com/topic/${topic.slug}`, '_blank');
   };
-
   const saveEmail = async () => {
     if (email) {
       try {
-        const res = await fetch('/api/subscribe', {
+        await fetch('/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, topic: topic.slug }),
@@ -119,6 +371,7 @@ export default function TopicPage({ topic, related, videos }) {
         `}</style>
       </Head>
 
+      {/* NAV */}
       <nav style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 24px', background:'#1e1e1c', borderBottom:'1px solid #333331', position:'sticky', top:0, zIndex:50 }}>
         <Link href="/" style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'26px', letterSpacing:'2px', color:'#D85A30', textDecoration:'none' }}>
           RABBIT<span style={{ color:'#1D9E75' }}>HOLE</span>
@@ -126,6 +379,7 @@ export default function TopicPage({ topic, related, videos }) {
         <Link href="/" style={{ fontSize:'13px', color:'#777672', textDecoration:'none' }}>← All 100 topics</Link>
       </nav>
 
+      {/* HERO */}
       <div style={{ display:'flex', alignItems:'center', gap:'20px', padding:'32px 24px', background:topic.bg, borderBottom:'1px solid #333331' }}>
         <div style={{ fontSize:'64px' }}>{topic.emoji}</div>
         <div>
@@ -137,8 +391,7 @@ export default function TopicPage({ topic, related, videos }) {
         </div>
       </div>
 
-      
-      {/* Quick topic links */}
+      {/* QUICK TOPIC LINKS */}
       <div style={{ display:'flex', alignItems:'center', gap:'8px', flexWrap:'wrap', padding:'12px 24px', borderBottom:'1px solid #222220' }}>
         <span style={{ fontSize:'12px', color:'#777672' }}>Not into {topic.name}? Try:</span>
         {topics.filter(t => t.slug !== topic.slug).sort(() => 0.5 - Math.random()).slice(0, 4).map(t => (
@@ -150,6 +403,8 @@ export default function TopicPage({ topic, related, videos }) {
           🎲 Surprise me
         </Link>
       </div>
+
+      {/* SHARE BAR */}
       <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 24px', background:'#1e1e1c', borderBottom:'1px solid #333331', flexWrap:'wrap', gap:'10px' }}>
         <div>
           <div style={{ fontSize:'13px', fontWeight:'500', color:'#f0efe9' }}>Share the {topic.name} top 10</div>
@@ -167,54 +422,61 @@ export default function TopicPage({ topic, related, videos }) {
 
       {toast && <div style={{ textAlign:'center', padding:'8px', background:'#1D9E75', fontSize:'13px', color:'#fff' }}>{toast}</div>}
 
-      <div style={{ display:'flex', alignItems:'center', gap:'12px', padding:'14px 24px', background:'#1e1e1c', borderBottom:'1px solid #333331' }}>
-        <div style={{ fontSize:'22px' }}>{topic.emoji}</div>
-        <div style={{ flex:1 }}>
-          <strong style={{ display:'block', fontSize:'13px', color:'#f0efe9', marginBottom:'2px' }}>Shop gear from these videos</strong>
-          <span style={{ fontSize:'11px', color:'#777672' }}>{topic.affText}</span>
-        </div>
-        <a href={topic.affLink} target="_blank" rel="noopener noreferrer" style={{ background:'#1D9E75', color:'#fff', padding:'8px 18px', borderRadius:'20px', fontSize:'12px', fontWeight:'500', textDecoration:'none', whiteSpace:'nowrap' }}>Shop now →</a>
+      {/* ── FIX 3: INSPIRATION CTA — sits above the video list ── */}
+      <div style={{ padding:'16px 0 0' }}>
+        <InspirationCTA topic={topic} />
       </div>
 
+      {/* VIDEO LIST */}
       <div style={{ padding:'24px', maxWidth:'820px', margin:'0 auto' }}>
         <h2 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'20px', letterSpacing:'1px', color:'#777672', marginBottom:'20px' }}>
           Top 10 most viewed {topic.name} videos — worldwide rankings
         </h2>
 
         {videos.length > 0 ? videos.slice(0,10).map((video, i) => (
-          <div key={i} style={{ marginBottom:'20px' }}>
-            <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'8px' }}>
-              <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:rankStyle[i].size, color:rankStyle[i].color, background:rankStyle[i].bg, minWidth:'64px', textAlign:'center', padding:'4px 8px', borderRadius:'6px', lineHeight:1 }}>
-                #{i+1}
-              </div>
-              <div style={{ flex:1 }}>
-                <div style={{ fontSize:i<3?'15px':'13px', fontWeight:'500', color:'#f0efe9', marginBottom:'4px' }}>{video.title}</div>
-                <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
-                  <span style={{ fontSize:'13px', color:'#1D9E75', fontWeight:'500' }}>{fakeViews[i]} views</span>
-                  <div style={{ flex:1, height:'4px', background:'#333331', borderRadius:'2px', maxWidth:'200px' }}>
-                    <div style={{ width:`${100-i*9}%`, height:'4px', background:i<3?rankStyle[i].color:'#1D9E75', borderRadius:'2px' }} />
+          <div key={i}>
+            <div style={{ marginBottom:'20px' }}>
+              <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'8px' }}>
+                <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:rankStyle[i].size, color:rankStyle[i].color, background:rankStyle[i].bg, minWidth:'64px', textAlign:'center', padding:'4px 8px', borderRadius:'6px', lineHeight:1 }}>
+                  #{i+1}
+                </div>
+                <div style={{ flex:1 }}>
+                  <div style={{ fontSize:i<3?'15px':'13px', fontWeight:'500', color:'#f0efe9', marginBottom:'4px' }}>{video.title}</div>
+                  <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
+                    <span style={{ fontSize:'13px', color:'#1D9E75', fontWeight:'500' }}>{fakeViews[i]} views</span>
+                    <div style={{ flex:1, height:'4px', background:'#333331', borderRadius:'2px', maxWidth:'200px' }}>
+                      <div style={{ width:`${100-i*9}%`, height:'4px', background:i<3?rankStyle[i].color:'#1D9E75', borderRadius:'2px' }} />
+                    </div>
                   </div>
+                </div>
+              </div>
+
+              <div style={{ borderRadius:'10px', overflow:'hidden', background:'#1e1e1c', border:`1px solid ${i<3?rankStyle[i].color+'40':'#333331'}` }}>
+                <div style={{ position:'relative', paddingBottom:'56.25%', height:0 }}>
+                  <LazyVideo id={video.id} title={video.title} />
+                </div>
+                <div style={{ display:'flex', alignItems:'center', gap:'8px', padding:'10px 14px', borderTop:'1px solid #333331', background:'#161614' }}>
+                  <button onClick={() => toggleFire(i)} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${fired[i]?'#EF9F27':'#333331'}`, background:fired[i]?'rgba(239,159,39,0.15)':'transparent', color:fired[i]?'#EF9F27':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
+                    <span style={{ fontSize:'14px' }}>🔥</span><span>{fired[i]?'Lit':'Fire'}</span>
+                  </button>
+                  <button onClick={() => { toggleSave(i); setShowSaveBanner(true); }} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${saved[i]?'#1D9E75':'#333331'}`, background:saved[i]?'rgba(29,158,117,0.15)':'transparent', color:saved[i]?'#1D9E75':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
+                    <span style={{ fontSize:'14px' }}>{saved[i]?'✓':'+'}</span><span>{saved[i]?'Following':'Follow'}</span>
+                  </button>
+                  <span style={{ marginLeft:'auto', fontSize:'11px', color:'#444441' }}>{(fakeReacts[i]+(fired[i]?1:0)).toLocaleString()} reactions</span>
                 </div>
               </div>
             </div>
 
-            <div style={{ borderRadius:'10px', overflow:'hidden', background:'#1e1e1c', border:`1px solid ${i<3?rankStyle[i].color+'40':'#333331'}` }}>
-              <div style={{ position:'relative', paddingBottom:'56.25%', height:0 }}>
-                <iframe src={`https://www.youtube.com/embed/${video.id}`} title={video.title} style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', border:'none' }} allowFullScreen />
-              </div>
-              <div style={{ display:'flex', alignItems:'center', gap:'8px', padding:'10px 14px', borderTop:'1px solid #333331', background:'#161614' }}>
-                <button onClick={() => toggleFire(i)} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${fired[i]?'#EF9F27':'#333331'}`, background:fired[i]?'rgba(239,159,39,0.15)':'transparent', color:fired[i]?'#EF9F27':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
-                  <span style={{ fontSize:'14px' }}>🔥</span><span>{fired[i]?'Lit':'Fire'}</span>
-                </button>
-                <button onClick={() => { toggleSave(i); setShowSaveBanner(true); }} style={{ display:'flex', alignItems:'center', gap:'5px', padding:'6px 12px', borderRadius:'20px', border:`1px solid ${saved[i]?'#1D9E75':'#333331'}`, background:saved[i]?'rgba(29,158,117,0.15)':'transparent', color:saved[i]?'#1D9E75':'#777672', fontSize:'12px', cursor:'pointer', fontFamily:'DM Sans, sans-serif' }}>
-                  <span style={{ fontSize:'14px' }}>{saved[i]?'✓':'+'}</span><span>{saved[i]?'Following':'Follow'}</span>
-                </button>
-                <span style={{ marginLeft:'auto', fontSize:'11px', color:'#444441' }}>{(fakeReacts[i]+(fired[i]?1:0)).toLocaleString()} reactions</span>
-              </div>
-            </div>
+            {/* ── FIX 2: PRODUCT CARDS after video #1 ── */}
+            {i === 0 && <MidListProducts topic={topic} position="early" />}
+
+            {/* ── FIX 2: PRODUCT CARDS after video #5 ── */}
+            {i === 4 && <MidListProducts topic={topic} position="mid" />}
+
           </div>
         )) : <p style={{ color:'#777672' }}>Videos coming soon!</p>}
 
+        {/* Sticky email banner (existing) */}
         {showSaveBanner && !emailSaved && (
           <div style={{ position:'fixed', bottom:'0', left:'0', right:'0', background:'#0a2218', borderTop:'1px solid #1D9E75', padding:'16px 24px', zIndex:100, display:'flex', alignItems:'center', justifyContent:'center', gap:'16px', flexWrap:'wrap' }}>
             <div style={{ fontSize:'14px', fontWeight:'500', color:'#f0efe9', whiteSpace:'nowrap' }}>🔖 Get weekly ranking updates</div>
@@ -226,26 +488,13 @@ export default function TopicPage({ topic, related, videos }) {
         )}
       </div>
 
-      <div style={{ margin:'0 24px 24px', maxWidth:'772px', marginLeft:'auto', marginRight:'auto' }}>
-        {/* Quick topic links */}
-        <div style={{ display:'flex', alignItems:'center', gap:'8px', flexWrap:'wrap', marginBottom:'16px' }}>
-          <span style={{ fontSize:'12px', color:'#777672' }}>Not into {topic.name}? Try:</span>
-          {topics.filter(t => t.slug !== topic.slug).sort(() => 0.5 - Math.random()).slice(0, 4).map(t => (
-            <Link key={t.slug} href={'/topic/' + t.slug} style={{ fontSize:'12px', color:'#1D9E75', textDecoration:'none', padding:'4px 10px', border:'1px solid #1D9E75', borderRadius:'12px' }}>
-              {t.emoji} {t.name}
-            </Link>
-          ))}
-          <Link href={'/'} style={{ fontSize:'12px', color:'#D85A30', textDecoration:'none', padding:'4px 10px', border:'1px solid #D85A30', borderRadius:'12px' }}>
-            🎲 Surprise me
-          </Link>
-        </div>
-        <div style={{ background:'#1e1e1c', border:'1px solid #333331', borderRadius:'12px', padding:'20px 24px', textAlign:'center' }}>
-          <h3 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'24px', color:'#f0efe9', marginBottom:'6px' }}>Love {topic.name}?</h3>
-          <p style={{ fontSize:'13px', color:'#777672', marginBottom:'14px' }}>Shop the exact gear from the world's most viewed {topic.name} videos.</p>
-          <a href={topic.affLink} target="_blank" rel="noopener noreferrer" style={{ display:'inline-block', background:'#D85A30', color:'#fff', padding:'10px 24px', borderRadius:'24px', fontSize:'13px', fontWeight:'500', textDecoration:'none' }}>Browse {topic.affText} →</a>
-        </div>
-      </div>
+      {/* ── FIX 1: FULL PRODUCT CARDS at bottom ── */}
+      <FullProductCards topic={topic} />
 
+      {/* ── FIX 6: BUYER BLOG LINKS ── */}
+      <BuyerBlogLinks topic={topic} />
+
+      {/* RELATED TOPICS */}
       {related.length > 0 && (
         <div style={{ padding:'0 24px 24px', maxWidth:'820px', margin:'0 auto' }}>
           <h2 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'20px', letterSpacing:'1px', color:'#f0efe9', marginBottom:'14px' }}>More {topic.category} rabbit holes</h2>
@@ -265,8 +514,7 @@ export default function TopicPage({ topic, related, videos }) {
         <Link href="/" style={{ display:'inline-block', padding:'10px 24px', border:'1px solid #333331', borderRadius:'24px', color:'#777672', fontSize:'13px', textDecoration:'none' }}>← Back to all 100 topics</Link>
       </div>
 
-      
-      {/* You might also like */}
+      {/* YOU MIGHT ALSO LIKE */}
       <div style={{ padding:'0 24px 40px', maxWidth:'820px', margin:'0 auto' }}>
         <div style={{ fontSize:'13px', letterSpacing:'0.1em', color:'#777672', textTransform:'uppercase', marginBottom:'16px' }}>🐇 You might also like</div>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(160px, 1fr))', gap:'12px' }}>
@@ -278,6 +526,10 @@ export default function TopicPage({ topic, related, videos }) {
           ))}
         </div>
       </div>
+
+      {/* ── FIX 5: EMAIL CAPTURE ── */}
+      <EmailCapture topic={topic} />
+
       <footer style={{ borderTop:'1px solid #333331', padding:'24px', textAlign:'center' }}>
         <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'22px', letterSpacing:'2px', color:'#D85A30', marginBottom:'6px' }}>RABBIT<span style={{ color:'#1D9E75' }}>HOLE</span></div>
         <p style={{ fontSize:'11px', color:'#777672' }}>The world's most viewed videos · 100 topics · updated weekly</p>
