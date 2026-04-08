@@ -16,9 +16,15 @@ const FILTERS = [
   { label: 'Top earners', value: 'gold' },
 ];
 
+// Topics ranked by affiliate potential (not views)
+const TOP_EARNER_SLUGS = [
+  'fishing', 'woodworking', 'motorcycles', 'gym-lifting', 'gardening',
+  'home-renovation', 'astrophotography', 'guitar', 'dog-training',
+  'camping', 'cycling', 'perfume-reviews', 'cooking', 'soccer', 'golf'
+];
+
 const tierDot = { gold: '#EF9F27', silver: '#B4B2A9', bronze: '#D85A30' };
 
-// 30 days of mindless fun — 10 videos per day
 const VIRAL_FACTS = [
   { emoji:'🎵', fact:'Baby Shark has been watched over 13 billion times — making it the most viewed video in YouTube history', link:'https://www.youtube.com/watch?v=XqZsoesa55w', label:'Watch Baby Shark' },
   { emoji:'🎤', fact:'PSY\'s Gangnam Style was the first YouTube video to reach 1 billion views — in 2012', link:'https://www.youtube.com/watch?v=9bZkp7q19f0', label:'Watch Gangnam Style' },
@@ -30,89 +36,52 @@ const VIRAL_FACTS = [
   { emoji:'🎸', fact:'The most viewed guitar video has been watched by more people than live in Australia — over 30 million times', link:'/topic/guitar', label:'See guitar rankings' },
   { emoji:'🏋️', fact:'Gym motivation videos collectively have over 10 billion views — more people watch gym videos than actually go to the gym', link:'/topic/gym', label:'See gym rankings' },
   { emoji:'🌴', fact:'Bali travel videos have been watched over 8 billion times — making it the most viewed travel destination on YouTube', link:'/destination/bali', label:'See Bali videos' },
-  { emoji:'🎮', fact:'Gaming is the single biggest category on YouTube — the top 10 gaming videos alone have over 50 billion combined views', link:'/topic/gaming', label:'See gaming rankings' },
-  { emoji:'🐕', fact:'Dog training videos outsell cat videos 3 to 1 on YouTube — turns out people really want their dogs to behave', link:'/topic/dog-training', label:'See dog training rankings' },
-  { emoji:'🎯', fact:'The most viewed darts video has more views than there are darts players in the entire world', link:'/topic/archery', label:'See archery rankings' },
-  { emoji:'🌊', fact:'Surfing wipeout videos get 10x more views than perfect wave videos — humans love watching things go wrong', link:'/topic/surfing', label:'See surfing rankings' },
-  { emoji:'🔥', fact:'BBQ videos peak in views every Friday afternoon worldwide — people plan their weekends around what they watch on YouTube', link:'/topic/bbq', label:'See BBQ rankings' },
-  { emoji:'🎻', fact:'Classical violin videos get more views than most pop music videos — YouTube has made classical music cool again', link:'/topic/violin', label:'See violin rankings' },
-  { emoji:'🧘', fact:'Yoga is one of the fastest growing topics on YouTube — the top 10 yoga videos have over 2 billion combined views', link:'/topic/yoga', label:'See yoga rankings' },
-  { emoji:'📸', fact:'Photography tutorial videos have more combined views than the entire population of China has watched them', link:'/topic/photography', label:'See photography rankings' },
-  { emoji:'🏔️', fact:'Iceland travel videos get more views per capita than any other country — 370,000 people inspire billions of views', link:'/destination/iceland', label:'See Iceland videos' },
-  { emoji:'🗣️', fact:`The word "Schadenfreude" means pleasure derived from someone else\'s misfortune — Germans have a word for everything`, link:'/language-game', label:'Play the language game' },
-  { emoji:'🌍', fact:'The flag game on RabbitHole reveals that most people can\'t identify the flags of countries they\'ve visited', link:'/flag-game', label:'Test your flag knowledge' },
-  { emoji:'🎯', fact:'The average person scores 6/10 on the RabbitHole "Which Has More Views?" game — the results always surprise people', link:'/game', label:'Play the game' },
-  { emoji:'🐇', fact:'RabbitHole has 100 topics covering over 500 billion combined YouTube views — enough video to watch for 40,000 years', link:'/', label:'Explore all topics' },
-  { emoji:'✈️', fact:'Tokyo is the most searched travel destination on YouTube — more people want to visit Japan than any other country', link:'/destination/tokyo', label:'See Tokyo videos' },
-  { emoji:'🍜', fact:'Street food videos from Thailand get more views than street food videos from France — pad thai beats croissants', link:'/topic/street-food', label:'See street food rankings' },
-  { emoji:'🎪', fact:'Magic trick reveal videos get twice as many views as magic trick performance videos — people love knowing the secret', link:'/topic/magic', label:'See magic rankings' },
-  { emoji:'🦅', fact:'Birdwatching videos are one of the fastest growing niches on YouTube — it\'s not just for retired people anymore', link:'/topic/birdwatching', label:'See birdwatching rankings' },
-  { emoji:'🏊', fact:'Swimming tutorial videos peak every December in Australia and every June in the UK — seasonal YouTube is a real thing', link:'/topic/swimming', label:'See swimming rankings' },
-  { emoji:'🎲', fact:'Board game review videos have more views than most Hollywood movie trailers — tabletop gaming is huge on YouTube', link:'/topic/board-games', label:'See board game rankings' },
-  { emoji:'🔭', fact:'Astrophotography is one of the most visually stunning topics on YouTube — the night sky never gets old', link:'/topic/astrophotography', label:'See astrophotography rankings' },
 ];
 
-// Educational videos — rotates daily
 const EDU_VIDEOS = [
-  // Day 0
   [
     { id:'isdLel273rQ', title:'The Paradox of an Infinite Universe', channel:'Kurzgesagt – In a Nutshell' },
-    { id:'uhKPtJrbqUM', title:'Mind blowing fact about the movie interstellar you', channel:'Theos and Rem' },
-    { id:'pjaN2WHAHVo', title:'14 Minutes of Mind-Blowing Space Facts! | With Ast', channel:'Astral Curiosity' },
+    { id:'uhKPtJrbqUM', title:'Mind blowing fact about the movie interstellar', channel:'Theos and Rem' },
+    { id:'pjaN2WHAHVo', title:'14 Minutes of Mind-Blowing Space Facts!', channel:'Astral Curiosity' },
   ],
-  // Day 1
   [
-    { id:'IVtG8NhY38A', title:'What’s gives fireworks their colors 🤔 #science #s', channel:'Imagination Station Toledo' },
-    { id:'ipbsTRR-a3s', title:'Understanding Bernoullis Theorem Walter Lewin', channel:'Science Explained' },
+    { id:'IVtG8NhY38A', title:'What gives fireworks their colors 🤔', channel:'Imagination Station Toledo' },
+    { id:'ipbsTRR-a3s', title:'Understanding Bernoullis Theorem', channel:'Science Explained' },
     { id:'ORxKf1FN3ro', title:'The real science of black holes', channel:'Veritasium' },
   ],
-  // Day 2
   [
-    { id:'nfxeb9bI6eY', title:'Unseen Animals Amazing Facts #shorts Facts Cloud b', channel:'Akash Parihar' },
-    { id:'jpAhyVvyM_o', title:'Mysterious Indian Mummy |  Keerthi History        ', channel:'Keerthi' },
-    { id:'rpO652J2VnM', title:'Why Is The Mona Lisa So Famous? 😮 (EXPLAINED)', channel:'Zack D. Films' },
+    { id:'nfxeb9bI6eY', title:'Unseen Animals Amazing Facts', channel:'Akash Parihar' },
+    { id:'jpAhyVvyM_o', title:'Mysterious Indian Mummy', channel:'Keerthi' },
+    { id:'rpO652J2VnM', title:'Why Is The Mona Lisa So Famous?', channel:'Zack D. Films' },
   ],
-  // Day 3
   [
     { id:'-hzue8KIS9M', title:'Thermite Balls', channel:'Vsauce' },
-    { id:'inG9yUZ5vY8', title:'the circle dot trick', channel:'Vsauce' },
+    { id:'inG9yUZ5vY8', title:'The circle dot trick', channel:'Vsauce' },
     { id:'-UAUiSJP8tU', title:'Is A 2-Sided Polygon Possible?', channel:'Vsauce' },
   ],
-  // Day 4
   [
-    { id:'p0Bq55rfjZw', title:'The Biggest Planet In The Universe #space #planet ', channel:'AstroKobi' },
+    { id:'p0Bq55rfjZw', title:'The Biggest Planet In The Universe', channel:'AstroKobi' },
     { id:'bshzBEzk_sQ', title:'What Shape Is Our Universe?', channel:'Action Lab Shorts' },
     { id:'libKVRa01L8', title:'Solar System 101 | National Geographic', channel:'National Geographic' },
   ],
-  // Day 5
   [
-    { id:'9gzBj6UzRKk', title:'Mind Blowing Psychological Facts 🤯🧠 Amazing Fact', channel:'Hindi TV India' },
-    { id:'yHVkFiG6S_Y', title:'Mind Blowing Psychological Facts 🤯🧠 Amazing Fact', channel:'Hindi TV India' },
+    { id:'9gzBj6UzRKk', title:'Mind Blowing Psychological Facts', channel:'Hindi TV India' },
+    { id:'yHVkFiG6S_Y', title:'Mind Blowing Psychological Facts 2', channel:'Hindi TV India' },
     { id:'l4tWdTmYZoM', title:'19 Simple Psychological Tricks That Actually Work', channel:'BRIGHT SIDE' },
   ],
-  // Day 6
   [
-    { id:'JDTHyTLKAo0', title:'ये Animals दोबारा ज़िंदा हो सकतें हैं 😱 | Animals', channel:'Facts Mine' },
-    { id:'nfxeb9bI6eY', title:'Unseen Animals Amazing Facts #shorts Facts Cloud b', channel:'Akash Parihar' },
+    { id:'JDTHyTLKAo0', title:'Animals that can come back to life', channel:'Facts Mine' },
+    { id:'nfxeb9bI6eY', title:'Unseen Animals Amazing Facts', channel:'Akash Parihar' },
     { id:'FeJKJ5MoCHY', title:'10 TOP Natural History Moments | BBC Earth', channel:'BBC Earth' },
   ],
 ];
 
-// Motivational videos — rotates daily
 const MOTIVATION_VIDEOS = [
   { id:'mgmVOuLgFB0', title:'Steve Jobs Stanford Commencement Speech', quote:'Stay hungry. Stay foolish.', author:'Steve Jobs' },
   { id:'pqFO3Vm6zLk', title:'Denzel Washington Fall Forward', quote:'Fall forward. Every failed experiment is one step closer to success.', author:'Denzel Washington' },
   { id:'4vl6wCqFbVk', title:'Will Smith on Greatness', quote:'The separation of talent and skill is one of the greatest misunderstood concepts.', author:'Will Smith' },
-  { id:'TQMbvJNRpLE', title:'Arnold Schwarzenegger 6 Rules of Success', quote:'Work your butt off. No matter what you do in life, dig deep and work hard.', author:'Arnold Schwarzenegger' },
-  { id:'lsSC2vx7zFQ', title:'Jim Carrey Commencement Speech', quote:'You can fail at what you dont want, so you might as well take a chance on doing what you love.', author:'Jim Carrey' },
-  { id:'qHnkjOo_VrA', title:'Admiral McRaven Make Your Bed', quote:'If you want to change the world, start off by making your bed.', author:'Admiral McRaven' },
-  { id:'ROwan_-sFaI', title:'David Goggins You Are Not Done', quote:'We all have the ability to come from nothing and become something extraordinary.', author:'David Goggins' },
-  { id:'BmSHgCMCW5A', title:'Kobe Bryant Mamba Mentality', quote:'The most important thing is to try and inspire people so that they can be great.', author:'Kobe Bryant' },
-  { id:'_75eHOdFhMI', title:'Matthew McConaughey This Is Why Youre Not Happy', quote:'Life is not easy. It is not. And if you have any of those two things going for you embrace them.', author:'Matthew McConaughey' },
-  { id:'yBLa6mCaRSQ', title:'Shia LaBeouf Just Do It', quote:'Yesterday you said tomorrow. Just do it.', author:'Shia LaBeouf' },
 ];
 
-// Blog posts — add new ones here
 const BLOG_POSTS = [
   { slug:'most-viewed-fishing-video', title:'The story behind the most viewed fishing video of all time', date:'7 Apr 2026', excerpt:'One fishing video has been watched over 500 million times. Here\'s why the world couldn\'t stop watching.' },
   { slug:'why-golf-dominates-youtube', title:'Why golf dominates YouTube more than any other sport', date:'6 Apr 2026', excerpt:'The numbers are staggering. The top 10 golf videos have a combined view count bigger than most countries\' populations.' },
@@ -123,7 +92,10 @@ function getWeeklyFeatured() {
   const now = new Date();
   const startOfYear = new Date(now.getFullYear(), 0, 1);
   const weekNumber = Math.floor((now - startOfYear) / (7 * 24 * 60 * 60 * 1000));
-  return topics[weekNumber % topics.length];
+  // Always feature a high-affiliate topic
+  const featuredSlugs = ['fishing', 'woodworking', 'motorcycles', 'gym-lifting', 'gardening', 'home-renovation', 'guitar', 'dog-training', 'astrophotography', 'golf', 'cooking', 'cycling'];
+  const slug = featuredSlugs[weekNumber % featuredSlugs.length];
+  return topics.find(t => t.slug === slug) || topics[weekNumber % topics.length];
 }
 
 function getWeekLabel() {
@@ -142,13 +114,7 @@ function getDayIndex() {
 
 function LazyVideo({ id, title }) {
   const [playing, setPlaying] = useState(false);
-  const [thumbQuality, setThumbQuality] = useState(0);
-  const thumbErr = thumbQuality >= 3;
-  const thumbUrls = [
-    `https://img.youtube.com/vi/${id}/maxresdefault.jpg`,
-    `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
-    `https://img.youtube.com/vi/${id}/mqdefault.jpg`,
-  ];
+  const [thumbErr, setThumbErr] = useState(false);
   if (playing) {
     return (
       <iframe
@@ -165,7 +131,7 @@ function LazyVideo({ id, title }) {
         <img
           src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
           alt={title}
-          onError={(e) => { e.target.style.display='none'; setThumbErr(true); }}
+          onError={() => setThumbErr(true)}
           style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', opacity:0.85 }}
         />
       ) : (
@@ -180,6 +146,66 @@ function LazyVideo({ id, title }) {
   );
 }
 
+// Pro signup banner component
+function ProBanner() {
+  const [email, setEmail] = useState('');
+  const [done, setDone] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    try {
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, topic: 'pro' }),
+      });
+    } catch(e) {}
+    setDone(true);
+  };
+
+  return (
+    <div style={{ margin:'0 0 24px', padding:'24px', background:'linear-gradient(135deg, rgba(239,159,39,0.08) 0%, rgba(29,158,117,0.08) 100%)', border:'1px solid rgba(239,159,39,0.25)', borderRadius:'16px' }}>
+      {done ? (
+        <div style={{ textAlign:'center' }}>
+          <div style={{ fontSize:'28px', marginBottom:'8px' }}>🎉</div>
+          <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'24px', letterSpacing:'1px', color:'#f0efe9', marginBottom:'4px' }}>You're in!</div>
+          <div style={{ fontSize:'13px', color:'#777672' }}>Your first gear guide lands in your inbox shortly.</div>
+        </div>
+      ) : (
+        <div style={{ display:'flex', alignItems:'center', gap:'20px', flexWrap:'wrap' }}>
+          <div style={{ flex:1, minWidth:'200px' }}>
+            <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'6px' }}>
+              <span style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'22px', letterSpacing:'2px', color:'#f0efe9' }}>RABBITHOLE</span>
+              <span style={{ background:'linear-gradient(135deg, #EF9F27, #f5c518)', color:'#1a1400', fontSize:'10px', fontWeight:'700', padding:'2px 8px', borderRadius:'99px' }}>PRO</span>
+              <span style={{ fontSize:'12px', color:'#1D9E75', fontWeight:'600' }}>— Free forever</span>
+            </div>
+            <div style={{ fontSize:'14px', color:'#f0efe9', fontWeight:'500', marginBottom:'4px' }}>
+              Unlock gear guides for all 100 topics
+            </div>
+            <div style={{ fontSize:'12px', color:'#777672' }}>
+              Every week we send you the exact gear the world's best creators use. Curated. Clickable. Free.
+            </div>
+          </div>
+          <form onSubmit={handleSubmit} style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              style={{ padding:'10px 16px', background:'#111110', border:'1px solid #333331', borderRadius:'99px', color:'#f0efe9', fontSize:'13px', fontFamily:'DM Sans, sans-serif', outline:'none', minWidth:'200px' }}
+            />
+            <button type="submit" style={{ padding:'10px 20px', background:'#EF9F27', color:'#1a1400', border:'none', borderRadius:'99px', fontSize:'13px', fontWeight:'700', cursor:'pointer', fontFamily:'DM Sans, sans-serif', whiteSpace:'nowrap' }}>
+              Unlock free →
+            </button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('learn');
@@ -189,15 +215,28 @@ export default function Home() {
   const weekLabel = getWeekLabel();
   const dayIndex = getDayIndex();
 
-  const todaysFacts = VIRAL_FACTS;
   const todaysEdu = EDU_VIDEOS[dayIndex % EDU_VIDEOS.length];
   const todaysMotivation = MOTIVATION_VIDEOS[dayIndex % MOTIVATION_VIDEOS.length];
 
-  const filtered = topics.filter((t) => {
-    const matchFilter = activeFilter === 'all' || activeFilter === t.tier || activeFilter === t.category;
-    const matchSearch = !search || t.name.toLowerCase().includes(search.toLowerCase());
-    return matchFilter && matchSearch;
-  });
+  const filtered = (() => {
+    let list = [...topics];
+    // For Top Earners tab, sort by affiliate potential
+    if (activeFilter === 'gold') {
+      list = list.sort((a, b) => {
+        const ai = TOP_EARNER_SLUGS.indexOf(a.slug);
+        const bi = TOP_EARNER_SLUGS.indexOf(b.slug);
+        if (ai === -1 && bi === -1) return 0;
+        if (ai === -1) return 1;
+        if (bi === -1) return -1;
+        return ai - bi;
+      });
+    }
+    return list.filter((t) => {
+      const matchFilter = activeFilter === 'all' || activeFilter === t.tier || activeFilter === t.category;
+      const matchSearch = !search || t.name.toLowerCase().includes(search.toLowerCase());
+      return matchFilter && matchSearch;
+    });
+  })();
 
   const displayedTopics = showAllTopics || search || activeFilter !== 'all'
     ? filtered
@@ -211,8 +250,8 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Head>
-        <title>RabbitHole — The Worlds Most Viewed Videos, By Topic</title>
-        <meta name="description" content="See the most viewed YouTube videos of all time across 100 topics — fishing, gaming, cooking, golf and more. Ranked by total views worldwide." />
+        <title>RabbitHole — Learn From The World's Best</title>
+        <meta name="description" content="Watch how the world's best do it — then get the gear to do it yourself. RabbitHole ranks the top 10 most viewed YouTube videos across 100 topics." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
       </Head>
@@ -228,13 +267,13 @@ export default function Home() {
         <Link href="/blog" style={{ fontSize:'14px', fontWeight:'500', color:'#f0efe9', textDecoration:'none', padding:'8px 18px', border:'1px solid #333331', borderRadius:'20px', flexShrink:0 }}>✍️ Blog</Link>
       </nav>
 
-      {/* Hero */}
+      {/* Hero — new messaging */}
       <section className={styles.hero}>
-        <div className={styles.heroEyebrow}>🌍 The world's most viewed videos — ranked</div>
-        <h1 className={styles.heroTitle}>100 TOPICS.<br /><em>BILLIONS</em> OF VIEWS.</h1>
+        <div className={styles.heroEyebrow}>🌍 Learn from the world's best creators</div>
+        <h1 className={styles.heroTitle}>WATCH HOW THE<br /><em>WORLD'S BEST</em> DO IT.</h1>
         <p className={styles.heroSub}>
-          What are the most watched fishing videos of all time? The most viewed cooking videos on earth?
-          RabbitHole ranks the top 10 most viewed YouTube videos across 100 topics — updated weekly.
+          The most watched fishing videos. The most viewed woodworking. The best of everything — ranked.
+          Watch how the world's best do it, then get the gear to do it yourself.
         </p>
         <div className={styles.statsRow}>
           <div className={styles.stat}><div className={styles.statN}>100</div><div className={styles.statL}>topics</div></div>
@@ -246,11 +285,13 @@ export default function Home() {
 
       <div style={{ maxWidth:'1200px', margin:'0 auto', padding:'0 24px' }}>
 
+        {/* PRO BANNER */}
+        <ProBanner />
+
         {/* Daily Content Tabs */}
         <div style={{ marginBottom:'24px' }}>
           <div style={{ display:'flex', gap:'0', overflowX:'auto', scrollbarWidth:'none', borderBottom:'1px solid #2a2a28', marginBottom:'20px' }}>
             {[
-              // { id:'motivation', label:'💪 Motivation', color:'#D85A30' },
               { id:'learn', label:'🎓 Learn', color:'#1D9E75' },
               { id:'fun', label:'🤯 Viral Facts', color:'#EF9F27' },
               { id:'blog', label:'✍️ Blog', color:'#f0efe9' },
@@ -290,25 +331,6 @@ export default function Home() {
                     <div style={{ padding:'12px' }}>
                       <div style={{ fontSize:'10px', color:'#1D9E75', textTransform:'uppercase', letterSpacing:'0.1em', marginBottom:'4px' }}>{v.channel}</div>
                       <div style={{ fontSize:'13px', color:'#f0efe9', fontWeight:'500', lineHeight:1.3 }}>{v.title}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'motivation' && (
-            <div>
-              <div style={{ fontSize:'12px', color:'#777672', marginBottom:'16px' }}>3 videos to fuel your day — changes every morning</div>
-              <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'16px', marginBottom:'20px' }}>
-                {MOTIVATION_VIDEOS.slice(dayIndex % MOTIVATION_VIDEOS.length, (dayIndex % MOTIVATION_VIDEOS.length) + 3).map((v, i) => (
-                  <div key={i} style={{ background:'#1a1a18', borderRadius:'12px', overflow:'hidden', border:'1px solid #D85A30' }}>
-                    <div style={{ position:'relative', paddingBottom:'56.25%' }}>
-                      <LazyVideo id={v.id} title={v.title} />
-                    </div>
-                    <div style={{ padding:'12px' }}>
-                      <div style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'16px', letterSpacing:'1px', color:'#f0efe9', marginBottom:'6px' }}>"{v.quote}"</div>
-                      <div style={{ fontSize:'12px', color:'#D85A30' }}>— {v.author}</div>
                     </div>
                   </div>
                 ))}
@@ -358,7 +380,7 @@ export default function Home() {
           )}
         </div>
 
-                {/* ⭐ Featured This Week */}
+        {/* Featured This Week */}
         <div style={{ marginBottom:'24px' }}>
           <Link href={'/topic/' + featured.slug} style={{ textDecoration:'none', display:'block' }}>
             <div style={{ background:'#1e1e1c', border:'1px solid #EF9F27', borderRadius:'12px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'12px', cursor:'pointer' }}>
@@ -373,7 +395,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* 📅 Topic of the Day */}
+        {/* Topic of the Day */}
         {(() => {
           const tod = topics[(dayIndex + 1) % topics.length];
           return (
@@ -389,8 +411,6 @@ export default function Home() {
             </div>
           );
         })()}
-
-
 
         {/* Surprise Me */}
         <div className={styles.surpriseBtn} onClick={surprise}>
@@ -408,23 +428,37 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Topic Grid */}
+        {/* Top Earners info bar */}
+        {activeFilter === 'gold' && (
+          <div style={{ padding:'10px 16px', background:'rgba(239,159,39,0.08)', border:'1px solid rgba(239,159,39,0.2)', borderRadius:'10px', marginBottom:'16px', fontSize:'12px', color:'#EF9F27' }}>
+            ⭐ Sorted by affiliate potential — these topics have the best gear to shop on Amazon
+          </div>
+        )}
+
+        {/* Topic Grid Header */}
         <div className={styles.gridHeader}>
           <span className={styles.gridLabel}>{search || activeFilter !== 'all' ? `Showing ${filtered.length} topics` : showAllTopics ? 'Showing all 100 topics' : 'Showing top 12 topics'}</span>
           <span className={styles.gridCount}>{filtered.length} topics</span>
         </div>
 
+        {/* Topic Grid — with "Get the gear" link */}
         <div className={styles.grid}>
           {displayedTopics.map((t, i) => (
-            <Link key={t.slug} href={'/topic/' + t.slug} className={styles.card}>
-              <div className={styles.tierDot} style={{ background: tierDot[t.tier] }} />
-              {t.slug === featured.slug && <div className={styles.hotBadge} style={{ background:'rgba(239,159,39,0.2)', color:'#EF9F27' }}>THIS WEEK</div>}
-              {i < 6 && t.slug !== featured.slug && <div className={styles.hotBadge}>HOT</div>}
-              <div className={styles.cardEmoji}>{t.emoji}</div>
-              <div className={styles.cardName}>{t.name}</div>
-              <div className={styles.cardCat}>{t.category}</div>
-              <div className={styles.cardViews}>{t.views} total views</div>
-            </Link>
+            <div key={t.slug} style={{ position:'relative', display:'flex', flexDirection:'column' }}>
+              <Link href={'/topic/' + t.slug} className={styles.card} style={{ flex:1 }}>
+                <div className={styles.tierDot} style={{ background: tierDot[t.tier] }} />
+                {t.slug === featured.slug && <div className={styles.hotBadge} style={{ background:'rgba(239,159,39,0.2)', color:'#EF9F27' }}>THIS WEEK</div>}
+                {i < 6 && t.slug !== featured.slug && <div className={styles.hotBadge}>HOT</div>}
+                <div className={styles.cardEmoji}>{t.emoji}</div>
+                <div className={styles.cardName}>{t.name}</div>
+                <div className={styles.cardCat}>{t.category}</div>
+                <div className={styles.cardViews}>{t.views} total views</div>
+              </Link>
+              {/* Get the gear link */}
+              <Link href={'/topic/' + t.slug + '#shop-' + t.slug} style={{ display:'block', textAlign:'center', padding:'6px', fontSize:'11px', fontWeight:'600', color:'#1D9E75', textDecoration:'none', background:'rgba(29,158,117,0.08)', borderRadius:'0 0 10px 10px', borderTop:'1px solid rgba(29,158,117,0.15)', marginTop:'-2px' }}>
+                Get the gear →
+              </Link>
+            </div>
           ))}
         </div>
 
@@ -440,7 +474,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <div className={styles.footerLogo}>RABBIT<span>HOLE</span></div>
-        <p>The world's most viewed videos · 100 topics · updated daily</p>
+        <p>Learn from the world's best · 100 topics · updated daily</p>
       </footer>
     </div>
   );
