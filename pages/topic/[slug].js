@@ -171,15 +171,26 @@ function ProductCard({ product }) {
 // FIX 2: Mid-list placement (compact, 2 products)
 function MidListProducts({ topic, position }) {
   const data = TOPIC_PRODUCTS[topic.slug];
-  if (!data) return null;
-  const products = position === 'early' ? data.products.slice(0, 2) : data.products.slice(2, 4);
-  const headline = position === 'early' ? '⚡ Gear the #1 video creator actually uses' : '🛒 Halfway through — ready to try it yourself?';
+  const headline = position === 'early' ? `⚡ Gear the #1 ${topic.name} creator actually uses` : `🛒 Halfway through — ready to try it yourself?`;
+  if (data) {
+    const products = position === 'early' ? data.products.slice(0, 2) : data.products.slice(2, 4);
+    return (
+      <div style={{ margin:'4px 0 20px', padding:'14px', background:'#1e1e1c', borderRadius:'12px', border:'1px solid #333331' }}>
+        <div style={{ fontSize:'12px', fontWeight:'600', color:'#f0efe9', marginBottom:'10px' }}>{headline}</div>
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px' }}>
+          {products.map((p) => <ProductCard key={p.link || p.asin} product={p} />)}
+        </div>
+      </div>
+    );
+  }
+  if (position !== 'early') return null;
   return (
     <div style={{ margin:'4px 0 20px', padding:'14px', background:'#1e1e1c', borderRadius:'12px', border:'1px solid #333331' }}>
-      <div style={{ fontSize:'12px', fontWeight:'600', color:'#f0efe9', marginBottom:'10px' }}>{headline}</div>
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px' }}>
-        {products.map((p) => <ProductCard key={p.asin} product={p} />)}
-      </div>
+      <div style={{ fontSize:'12px', fontWeight:'600', color:'#f0efe9', marginBottom:'8px' }}>{headline}</div>
+      <p style={{ fontSize:'12px', color:'#777672', margin:'0 0 12px' }}>Shop {topic.affText} — as used by the world\'s most viewed {topic.name} creators.</p>
+      <a href={topic.affLink} target="_blank" rel="noopener noreferrer" style={{ display:'inline-block', background:'#D85A30', color:'#fff', padding:'10px 20px', borderRadius:'99px', fontSize:'13px', fontWeight:'600', textDecoration:'none' }}>
+        Shop {topic.name} gear on Amazon →
+      </a>
     </div>
   );
 }
@@ -187,7 +198,6 @@ function MidListProducts({ topic, position }) {
 // FIX 1: Full product cards section
 function FullProductCards({ topic }) {
   const data = TOPIC_PRODUCTS[topic.slug];
-  if (!data) return null;
   return (
     <div id={`shop-${topic.slug}`} style={{ margin:'0 24px 24px', maxWidth:'772px', marginLeft:'auto', marginRight:'auto' }}>
       <div style={{ background:'#1e1e1c', border:'1px solid #333331', borderRadius:'14px', padding:'20px 24px' }}>
@@ -198,9 +208,29 @@ function FullProductCards({ topic }) {
             <div style={{ fontSize:'11px', color:'#444441' }}>{topic.name} gear — hand picked for beginners & enthusiasts</div>
           </div>
         </div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'10px' }}>
-          {data.products.map((p) => <ProductCard key={p.asin} product={p} />)}
-        </div>
+        {data ? (
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'10px' }}>
+            {data.products.map((p) => <ProductCard key={p.link || p.asin} product={p} />)}
+          </div>
+        ) : (
+          <div>
+            <p style={{ fontSize:'13px', color:'#777672', margin:'0 0 14px', lineHeight:1.5 }}>
+              Shop {topic.affText} — the exact gear used by the world\'s most viewed {topic.name} creators.
+            </p>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px', marginBottom:'14px' }}>
+              <a href={topic.affLink} target="_blank" rel="noopener noreferrer" style={{ display:'flex', flexDirection:'column', background:'#111110', border:'1px solid #333331', borderRadius:'12px', padding:'14px', textDecoration:'none' }}>
+                <span style={{ fontSize:'11px', color:'#777672', marginBottom:'6px', textTransform:'uppercase', letterSpacing:'0.05em' }}>Best sellers</span>
+                <span style={{ fontSize:'13px', color:'#f0efe9', fontWeight:'500', marginBottom:'10px' }}>{topic.affText}</span>
+                <span style={{ fontSize:'11px', fontWeight:'700', padding:'6px 14px', borderRadius:'99px', background:'#D85A30', color:'#fff', textAlign:'center', marginTop:'auto' }}>Shop on Amazon →</span>
+              </a>
+              <a href={topic.affLink + '+beginner'} target="_blank" rel="noopener noreferrer" style={{ display:'flex', flexDirection:'column', background:'#111110', border:'1px solid #333331', borderRadius:'12px', padding:'14px', textDecoration:'none' }}>
+                <span style={{ fontSize:'11px', color:'#777672', marginBottom:'6px', textTransform:'uppercase', letterSpacing:'0.05em' }}>Beginner picks</span>
+                <span style={{ fontSize:'13px', color:'#f0efe9', fontWeight:'500', marginBottom:'10px' }}>Starter {topic.name} gear</span>
+                <span style={{ fontSize:'11px', fontWeight:'700', padding:'6px 14px', borderRadius:'99px', background:'#1D9E75', color:'#fff', textAlign:'center', marginTop:'auto' }}>Shop on Amazon →</span>
+              </a>
+            </div>
+          </div>
+        )}
         <p style={{ margin:'12px 0 0', fontSize:'10px', color:'#444441', textAlign:'center' }}>
           As an Amazon Associate we earn from qualifying purchases — at no extra cost to you.
         </p>
