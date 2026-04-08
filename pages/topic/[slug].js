@@ -55,10 +55,10 @@ const TOPIC_PRODUCTS = {
   soccer: {
     inspiration: "Inspired? Get the gear to play like a pro — even in the back garden:",
     products: [
-      { name: 'Nike Premier League Match Football', price: '£29.99', tag: 'Official ball', emoji: '🏆', asin: 'B07XXXXXXS1' },
-      { name: 'Adidas Copa Mundial Football Boots', price: '£89.99', tag: 'Classic choice', emoji: '⭐', asin: 'B08XXXXXXS2' },
-      { name: 'Kickmaster Pro Rebounder Net', price: '£54.99', tag: 'Practice at home', emoji: '🥅', asin: 'B09XXXXXXS3' },
-      { name: 'Coaching Cone & Marker Set', price: '£14.99', tag: 'Train like a pro', emoji: '🎯', asin: 'B06XXXXXXS4' },
+      { name: 'Nike Premier League Match Football', price: 'Shop now', tag: 'Official ball', emoji: '🏆', link: 'https://amzn.to/4cc3gT1' },
+      { name: 'Adidas Football Boots', price: 'Shop now', tag: 'Classic choice', emoji: '⭐', link: 'https://amzn.to/4c1D0Mw' },
+      { name: 'Football Rebounder Net', price: 'Shop now', tag: 'Practice at home', emoji: '🥅', link: 'https://amzn.to/48uVCSz' },
+      { name: 'Football Training Cones Set', price: 'Shop now', tag: 'Train like a pro', emoji: '🎯', link: 'https://amzn.to/4cgHpKi' },
     ],
     blog: [
       { title: 'Best football boots for beginners UK 2025', slug: 'best-football-boots-beginners' },
@@ -69,10 +69,10 @@ const TOPIC_PRODUCTS = {
   'gym-lifting': {
     inspiration: "Ready to start your own transformation? Here's what you actually need:",
     products: [
-      { name: 'Mirafit 20kg Adjustable Dumbbell Set', price: '£79.99', tag: 'Home gym essential', emoji: '🏆', asin: 'B07XXXXXXG1' },
-      { name: 'Harbinger Padded Lifting Belt', price: '£34.99', tag: 'As used by pros', emoji: '⭐', asin: 'B08XXXXXXG2' },
-      { name: 'Optimum Nutrition Gold Standard Whey 2kg', price: '£54.99', tag: 'Top rated protein', emoji: '💊', asin: 'B09XXXXXXG3' },
-      { name: 'RDX Lifting Straps & Gloves Set', price: '£19.99', tag: 'Protect your hands', emoji: '🎯', asin: 'B06XXXXXXG4' },
+      { name: 'Adjustable Dumbbell Set', price: 'Shop now', tag: 'Home gym essential', emoji: '🏆', link: 'https://amzn.to/4mio9kf' },
+      { name: 'Weightlifting Belt', price: 'Shop now', tag: 'As used by pros', emoji: '⭐', link: 'https://amzn.to/4viXFTz' },
+      { name: 'Whey Protein Powder', price: 'Shop now', tag: 'Top rated protein', emoji: '💊', link: 'https://amzn.to/4tua2dQ' },
+      { name: 'Lifting Straps & Gloves', price: 'Shop now', tag: 'Protect your hands', emoji: '🎯', link: 'https://amzn.to/4tG9Oka' },
     ],
     blog: [
       { title: 'Best home gym equipment UK under £200', slug: 'best-home-gym-equipment-uk' },
@@ -83,10 +83,10 @@ const TOPIC_PRODUCTS = {
   'music-videos': {
     inspiration: "Love music this much? Here's how to start making your own:",
     products: [
-      { name: 'Audio-Technica ATH-M50x Headphones', price: '£129.99', tag: 'Industry standard', emoji: '🏆', asin: 'B07XXXXXXM1' },
-      { name: 'Focusrite Scarlett Solo USB Interface', price: '£89.99', tag: 'Best starter kit', emoji: '⭐', asin: 'B08XXXXXXM2' },
-      { name: 'Amazon Music Unlimited 3-Month Gift Card', price: '£29.99', tag: 'Stream everything', emoji: '🎁', asin: 'B09XXXXXXM3' },
-      { name: 'JBL Clip 4 Portable Bluetooth Speaker', price: '£59.99', tag: 'Take music anywhere', emoji: '📻', asin: 'B06XXXXXXM4' },
+      { name: 'Studio Headphones', price: 'Shop now', tag: 'Industry standard', emoji: '🏆', link: 'https://amzn.to/3OtA0iM' },
+      { name: 'USB Audio Interface', price: 'Shop now', tag: 'Best starter kit', emoji: '⭐', link: 'https://amzn.to/41U0LzV' },
+      { name: 'Bluetooth Speaker', price: 'Shop now', tag: 'Take music anywhere', emoji: '📻', link: 'https://amzn.to/4t5zPcA' },
+      { name: 'Recording Microphone', price: 'Shop now', tag: 'Start recording', emoji: '🎙️', link: 'https://amzn.to/4ectdo1' },
     ],
     blog: [
       { title: 'Best headphones for music lovers UK 2025', slug: 'best-music-headphones-uk' },
@@ -97,10 +97,10 @@ const TOPIC_PRODUCTS = {
   'perfume-reviews': {
     inspiration: "Discovered your next signature scent? Shop the most talked-about fragrances:",
     products: [
-      { name: 'Dior Sauvage Eau de Parfum 100ml', price: '£89.99', tag: 'Most viewed fragrance', emoji: '🏆', asin: 'B07XXXXXXP1' },
-      { name: 'Creed Aventus Sample Discovery Set', price: '£34.99', tag: 'Try before you commit', emoji: '⭐', asin: 'B08XXXXXXP2' },
-      { name: 'Versace Eros Pour Femme 100ml', price: '£59.99', tag: "Top rated women's", emoji: '🌸', asin: 'B09XXXXXXP3' },
-      { name: 'The Perfume Society Discovery Box', price: '£24.99', tag: '12 luxury samples', emoji: '🎁', asin: 'B06XXXXXXP4' },
+      { name: 'Dior Sauvage Perfume', price: 'Shop now', tag: 'Most viewed fragrance', emoji: '🏆', link: 'https://amzn.to/4miQG9f' },
+      { name: 'Perfume Discovery Sampler Set', price: 'Shop now', tag: 'Try before you commit', emoji: '⭐', link: 'https://amzn.to/4mfMqHr' },
+      { name: 'Versace Perfume Women', price: 'Shop now', tag: "Top rated women's", emoji: '🌸', link: 'https://amzn.to/3Q9CeUY' },
+      { name: 'Fragrance Atomiser Travel Spray', price: 'Shop now', tag: 'Travel essential', emoji: '✈️', link: 'https://amzn.to/4dHt8Zz' },
     ],
     blog: [
       { title: "Best men's fragrances UK 2025 — ranked", slug: 'best-mens-fragrances-uk' },
@@ -111,10 +111,10 @@ const TOPIC_PRODUCTS = {
   motorcycles: {
     inspiration: "Ready to ride? Start with the right gear — safety first, style second:",
     products: [
-      { name: 'Shark Spartan GT Carbon Fibre Helmet', price: '£299.99', tag: "Editor's choice", emoji: '🏆', asin: 'B07XXXXXXR1' },
-      { name: 'Oxford Lifetime Motorcycle Chain Lock', price: '£34.99', tag: 'Essential security', emoji: '⭐', asin: 'B08XXXXXXR2' },
-      { name: 'Alpinestars Faster-3 Riding Gloves', price: '£44.99', tag: 'Top rated gloves', emoji: '🧤', asin: 'B09XXXXXXR3' },
-      { name: 'Haynes Manual — Motorcycle Maintenance', price: '£19.99', tag: 'Know your bike', emoji: '📖', asin: 'B06XXXXXXR4' },
+      { name: 'Motorcycle Helmet', price: 'Shop now', tag: "Editor's choice", emoji: '🏆', link: 'https://amzn.to/4ttbHR0' },
+      { name: 'Motorcycle Chain Lock', price: 'Shop now', tag: 'Essential security', emoji: '⭐', link: 'https://amzn.to/4cCEdJh' },
+      { name: 'Motorcycle Riding Gloves', price: 'Shop now', tag: 'Top rated gloves', emoji: '🧤', link: 'https://amzn.to/4t36XBR' },
+      { name: 'Motorcycle Maintenance Manual', price: 'Shop now', tag: 'Know your bike', emoji: '📖', link: 'https://amzn.to/4tzSRYk' },
     ],
     blog: [
       { title: 'Best motorcycle helmets UK 2025 — safety rated', slug: 'best-motorcycle-helmets-uk' },
