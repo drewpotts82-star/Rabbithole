@@ -41,7 +41,7 @@ const TOPIC_PRODUCTS = {
   fishing: {
     inspiration: "Inspired by these fishing legends? Here's what you need to land your first big one:",
     products: [
-      { name: 'Penn Battle IV Spinning Rod & Reel Combo', price: 'AUD $360', tag: 'Best seller', emoji: '🏆', link: 'https://amzn.to/4tEpl3V' },
+      { name: 'Penn Battle IV Spinning Rod & Reel Combo', price: 'Shop now', tag: 'Best seller', emoji: '🏆', link: 'https://amzn.to/4tEpl3V' },
       { name: 'Savage Gear Mixed Lure Kit — 35 Pieces', price: 'Shop now', tag: 'Top rated', emoji: '⭐', link: 'https://amzn.to/4vks1VT' },
       { name: 'Fishing Tackle Box & Storage', price: 'Shop now', tag: 'As seen in videos', emoji: '📦', link: 'https://amzn.to/48ygEQg' },
       { name: 'Beginner Fishing Rod Combo', price: 'Shop now', tag: 'Beginner pick', emoji: '🎯', link: 'https://amzn.to/4tzykTK' },
